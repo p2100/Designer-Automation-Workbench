@@ -1,55 +1,182 @@
-# 设计师快速连接
+# Designer-Automation 设计师接入说明
 
-需要Node22.19+、Git及仓库访问权限。首次克隆后安装依赖、连接一次：
+适用对象：使用 Codex、Cursor、Claude Code 或其他支持 MCP 的 Agent 进行站点审核和修改的设计师。
+
+日常流程只有一条：**提供站点 → Agent 审核和调整 → 设计师查看 → 继续调整或确认 → 自动沉淀适用经验。**
+
+正式项目地址：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。本地文件夹继续使用 `Designer-Automation` 这个名字。
+
+## 1. 接入前需要什么
+
+| 条件 | 要求 |
+| --- | --- |
+| Agent | 支持本地命令／stdio MCP，能够读写项目源码 |
+| 本机环境 | Node.js 22.19+、Git；可让 Agent 检查和准备 |
+| 网络 | 可以访问公司内网的共享经验服务 |
+| 浏览器 | Agent 能实际打开和检查站点的 PC、手机布局 |
+| 待审核站点 | 优先提供 Git 地址和分支；也可以提供本地源码 |
+
+共享经验 MCP 在内网使用时免 Token，设计师无需数据库账号，也不用部署服务器。Git 访问、项目受信任和 Agent 启用 MCP 仍按宿主的正常流程完成。
+
+**当前规则范围：本仓库内置 Coupon 规则。App-Automation、Game-Automation 继续独立维护，尚未通过本仓库交付。** Agent 应先确认站点类型；不能把 Coupon 规则直接当作 App/Games 的审核标准。
+
+## 2. 首次接入：把这段发给 Agent
+
+推荐由 Agent 完成安装和本机配置，设计师不需要编写配置文件。
+
+```text
+请接入 Designer-Automation：
+
+项目：https://github.com/p2100/Designer-Automation-Workbench.git
+
+1. 将项目克隆到 Designer-Automation 文件夹；已有克隆时先保留本地改动，再按接入文档更新，不重复克隆或覆盖文件。
+2. 阅读 README.md、AGENTS.md 和 docs/designer-quickstart.md，检查 Node.js 22.19+、Git 和实际浏览器检查能力，安装锁定依赖。
+3. 为当前 Agent 配置 designer_experience MCP。Codex 使用 npm run connect；其他 Agent 使用 npm run connect -- --client generic，并把生成的本机配置接入宿主。
+4. 告诉我是否需要打开该项目文件夹、信任项目或重载 MCP 连接。
+5. 实际发现四个经验工具，并执行只读查询和状态检查。分别报告工具是否加载、中央服务是否连通，不把离线缓存当作在线成功。
+6. 首次只完成接入，不审核站点、不写测试经验；完成后等待我提供站点地址。
+```
+
+如果由设计师手动执行，首次命令如下。后续操作都在克隆出的项目目录中运行。
 
 ```sh
 git clone https://github.com/p2100/Designer-Automation-Workbench.git Designer-Automation
 cd Designer-Automation
 npm ci
+```
+
+### 使用 Codex
+
+在 Codex 中打开 `Designer-Automation` 文件夹作为当前项目，然后执行：
+
+```sh
 npm run connect
 ```
 
-正式交付仓库为 p2100/Designer-Automation-Workbench，保留完整 Git 历史。项目目录继续叫 Designer-Automation；仓库名带 Workbench 是为了避开 GitHub 同名地址与旧转移操作的阻挡。旧个人地址不再作为新设计师的交付入口。
+命令生成项目配置 `.codex/config.toml`。按宿主提示信任项目，再重新加载或重启 `designer_experience` MCP 连接。配置生成成功还不代表中央服务已接通，继续完成第 3 节检查。
 
-已有克隆先执行 `git remote set-url origin https://github.com/p2100/Designer-Automation-Workbench.git`，再执行 `git pull --ff-only`、`npm ci`、`npm run connect`，最后重启Agent的designer_experience连接。此次会把旧远程URL配置自动换成本地stdio MCP入口；普通内网使用不需要Token。Codex须在受信任项目中加载项目配置，参见[OpenAI Docs的MCP配置说明](https://learn.chatgpt.com/docs/extend/mcp?surface=cli)；首次打开项目时按Agent正常流程启用项目信任。
+### 使用其他 Agent
 
-## 交给设计师的最短流程
+在项目目录中执行：
 
-1. 把 [README 的整段接入指令](../README.md#直接交给设计师-agent-的指令) 发给 Agent，由它拉取、安装并生成本机 MCP 配置。
-2. Codex 加载项目配置；其他 Agent 导入生成的 `.designer-data/mcp.json` 中 `designer_experience` 一项。重启或重新加载 MCP 连接一次。
-3. Agent 实际列出 `experience_search`、`experience_capture`、`experience_manage`、`experience_status`，并做只读查询，报告连接状态；工具可见不等于中央服务可达。
-4. 提供要审核的站点 Git 地址和分支，之后只需“审核—调整—查看—继续调整／确认”。
-
-共享经验 MCP 的内网调用免 Token。Git 仓库读取权限、Agent 的项目信任和 MCP 启用属于宿主正常接入过程，不由该免 Token 设置替代。设计师无需 MongoDB 账号，也不需要部署共享服务。
-
-本仓库内置 Coupon 规则；App/Games 专项规则仍独立，不能把 Coupon 验收结果当作 App/Games 已通过。只有预览地址时可审核，自动修改还需要对应源码。
-
-## Agent怎样连接
-
-connect自动生成Codex项目配置；其他Agent运行npm run connect -- --client generic，将生成的.designer-data/mcp.json中的designer_experience配置放入Agent MCP设置。类型选择本地命令／stdio，命令和参数由connect根据当前机器生成，无需手填路径。该入口自动连接中央 http://172.18.188.6:4381/mcp，需要能访问这个内网地址。
-
-```text
-设计师的Agent → 项目本地MCP入口 → 中央MCP → MongoDB
-                      ↓ 断网保留
-                  本地待传记录 → 恢复后自动补传
+```sh
+npm run connect -- --client generic
 ```
 
-本地入口只处理连接、缓存和可靠补传，不部署数据库。workbench也调用同一个MCP入口。直接填写中央HTTP URL会绕过本机断网保护，因此设计师统一使用connect生成的配置。
+命令生成 `.designer-data/mcp.json`。在 Agent 的 MCP 设置中导入其中的 `designer_experience` 配置，类型选择 **本地命令／stdio**，然后重载连接。
 
-## 日常只需审核、调整、确认
+配置内的 Node 和脚本路径由当前机器自动生成。每位设计师在自己的机器上运行一次 connect，不要复制另一台机器生成的绝对路径。项目移动目录或 Node 安装路径变化后，重新运行 connect 并重载连接。
 
-可以告诉Agent：
+配置已包含中央服务地址，无需手填数据库信息。统一使用生成的本地入口，不要直接把中央 HTTP 地址作为设计师的 MCP 入口，否则会绕过本机断网保留和补传能力。
 
-> 先读AGENTS.md和core/maintenance.md，使用designer_experience。接到站点Git地址后，拉取、审核、调整，给我查看；我提问题就继续调整，我明确说没问题后，把已验证的修改归纳为适用经验，绑定我的确认原话和当前版本，自动沉淀并共享生效。断网由MCP自动保留和补传，不让我操作sync或找维护者。
+## 3. 怎样确认已经接通
 
-Agent可见experience_search、experience_capture、experience_manage、experience_status。尚未确认的反馈保存为草稿；复验完成、设计师明确确认准确候选后，Agent自动提交带approval的结构化经验，服务在准确来源站点/页面/组件内生效，其他Agent维护同一作用域时即可使用；同原则跨两站确认后再自动推广。无需维护者发布，也不需要日常Git推送。
+把这段发给 Agent：
 
-Agent负责从真实反馈与修改中归纳原因、预防方法和范围，不能伪造设计师认可或推测根因。单站偏好只对该站生效；没有新增修正就不编造经验。workbench的approve反馈由Agent附带有明确条件和检查ID的lessons，或复用同一候选的learn草稿；没有可复用结论就记录skip理由。重复案例合并证据；错误结论通过experience_manage撤回/替换，不增加相互矛盾的规则。设计师只需一次真实确认。完整规范见[经验规则](../core/experience.md)。
+```text
+请检查 designer_experience 接入状态：
+- 列出 experience_search、experience_capture、experience_manage、experience_status 四个工具。
+- 用 experience_search 做一次只读查询，说明结果来自中央服务还是离线缓存。
+- 用 experience_status 查看 pending、rejected 和异常记录。
+- 不写入测试经验，不启动站点测试。
+```
 
-## 断网时会怎样
+接通的判断是：工具实际可调用，且中央经验查询成功。只出现工具名字、只生成配置文件或只有离线缓存，都不能报告“中央服务已接通”。
 
-提交先保存在本机，再尝试发送；未成功则返回queued，不能称作“已共享”。后台监督及补传进程自动重试，重试间隔从2秒逐步放宽到最多60秒；有积压才运行，传完退出；补传子进程异常退出会自动重启，坏记录隔离后其他记录继续。关闭Agent后它仍可继续补传；电脑关机时记录留在磁盘，下次启动MCP自动接着传。原有workbench outbox也会自动接管。
+四个工具由 Agent 使用，设计师不需要手动填写参数：
 
-服务器确认成功后才移除待传项；相同记录重复发送只保存一份。明确的数据错误保留原文及原因，不无限重试，Agent可通过experience_status查看pending/rejected。断网查询可使用以前读过的缓存，并显示离线来源；缓存按中央服务地址隔离。
+| 工具 | 作用 |
+| --- | --- |
+| `experience_search` | 查找当前站点、页面或组件适用的已有经验 |
+| `experience_capture` | 保存真实反馈及确认后的可复用结论 |
+| `experience_manage` | 查看记录、纠正或撤回错误结论 |
+| `experience_status` | 查看本机待补传、被拒绝和异常记录 |
 
-已开始的审核任务保留选定经验快照，不因后台补传而自动重跑检查或更换规则。MongoDB备份恢复和主机管理见[运维说明](experience-operations.md)；附件存储不在本项目实现范围。
+## 4. 日常审核：提供站点和本轮范围
+
+接入完成后，复制下面的指令，替换站点地址、分支和范围即可：
+
+```text
+请按 Designer-Automation 审核并调整这个站点。
+
+站点 Git：<仓库地址>
+分支：<分支名；未指定时先确认实际默认分支>
+本轮范围：<全站／首页／指定页面或组件>
+
+先读 AGENTS.md、core/maintenance.md、core/experience.md 和适用页面规则，确认站点类型和可用源码。
+查询适用经验，拉取站点并沿用同一工作区完成审核、集中修改和增量复验。
+实际查看 PC 和手机效果，给我稳定预览地址、主要修改说明和仍待确认的问题。
+后续我提出问题就在当前任务继续调整；我明确确认准确候选没问题后，再自动归纳和共享已验证的适用经验。
+不要替我批准候选，也不要擅自提交、推送或部署站点代码。
+```
+
+只提供预览 URL 时，Agent 可以审核能访问到的页面；要自动修改，还需要对应的 Git 仓库或本地源码。私有站点的 Git 访问权限使用设计师自己的正常开发权限。
+
+### 设计师怎样反馈
+
+直接描述哪里不满意即可，例如：
+
+> 手机上的卡片标题和按钮挤在一起了，保持现有风格，调整后再给我看。
+
+或者：
+
+> 这版没问题，确认当前预览版本。请沉淀这次已验证、可复用的修正经验。
+
+认可必须对应实际看过的当前版本。确认后又修改了相关内容，Agent 需要复验并再次交给设计师查看，不能沿用旧版本的认可。
+
+## 5. 经验怎样自动沉淀和共享
+
+Agent 负责整理，设计师不需要提交 Git、手动 sync、填写经验 JSON 或找维护者发布。
+
+- 尚未确认的反馈先保留为草稿；设计师明确确认、相关修正复验完成后，才形成可用结论。
+- 结论包含问题、已验证原因、处理或预防方法，以及具体适用范围。
+- 重复结论合并证据，不堆积同义规则；原因不明、一次性文案或没有可复用修正时，记录跳过理由。
+- 第一次确认先在来源站点的准确范围内生效；同一原则经至少两个独立站点验证后，再自动推广。单站审美偏好不会自动要求所有站点照做。
+- 错误经验可以纠正或撤回，正式业务硬规则不能被个人经验覆盖。
+
+经验共享生效与站点代码发布是两件事。前者通过 MCP 完成；后者仍按该站点的提交、推送和部署授权执行。
+
+## 6. 断网时会怎样
+
+待传内容先保存在本机，恢复连接后由后台自动补传。返回 `queued` 表示仍待上传，不能报告“已共享”。服务器确认成功后才清理待传项。
+
+关闭 Agent 后，已运行的后台补传进程可以继续工作；电脑关机时记录仍保留，下次 MCP 启动恢复。没有积压时后台补传进程退出，属于正常状态。
+
+Agent 可通过 `experience_status` 检查状态。被明确拒绝的数据保留原文与原因，由 Agent 诊断处理；不能把所有异常都当作等待网络恢复。已开始的审核任务固定经验快照，不因后台补传自动重跑整站。
+
+## 7. 后续更新项目
+
+项目程序或正式规则有新版本时，在现有文件夹中更新，不重新建一份项目：
+
+```sh
+git pull --ff-only
+npm ci
+npm run connect
+```
+
+其他 Agent 最后一条使用 `npm run connect -- --client generic`，再更新宿主配置。重载 MCP 连接后使用。
+
+从旧个人仓库拉取过项目的设计师，只需先切换一次远端地址：
+
+```sh
+git remote set-url origin https://github.com/p2100/Designer-Automation-Workbench.git
+```
+
+再执行上面的更新步骤。本地有改动或 pull 失败时，让 Agent 保留改动并检查原因，不删除 `.designer-data` 队列来解决 Git 问题。日常经验共享不需要执行这一节的 Git 更新。
+
+## 8. 常见问题
+
+| 现象 | 交给 Agent 的处理方向 |
+| --- | --- |
+| 找不到四个工具 | 确认当前项目目录、MCP 配置是否加载、项目是否受信任，并重载连接 |
+| 工具可见，但中央查询失败 | 检查是否能访问 `http://172.18.188.6:4381/health`，区分网络不可达、服务异常和离线缓存 |
+| 提示路径不存在或无法启动 Node | 在当前目录重新运行 connect，使用当前机器生成的 Node 和脚本路径 |
+| 返回 queued | 保留待传记录，恢复网络后自动补传；通过 status 查看后续结果 |
+| rejected 或 issues 不为空 | 让 Agent 读取具体原因并处理，不能宣称已共享或简单清空记录 |
+| 只有预览链接，无法自动修改 | 补充站点 Git 地址或可编辑的本地源码 |
+| Agent 没有实际浏览器能力 | 如实报告未检查项目，不能用文件检查冒充视觉审核通过 |
+| 确认之后其他站没采用该经验 | 核对站点、页面、组件和推广范围；来源站点经验不自动适用于所有站点 |
+
+实际运行链路：**设计师 Agent → 本机 stdio MCP → 中央 MCP → MongoDB**。中央服务当前为 `http://172.18.188.6:4381/mcp`，仅用于说明与排查；接入仍使用 connect 生成的本地入口。
+
+更详细的执行规则见[维护工作流](standalone-workbench.md)、[经验维护规则](../core/experience.md)；数据库备份、恢复和主机维护见[运维说明](experience-operations.md)，这些运维工作不需要设计师操作。

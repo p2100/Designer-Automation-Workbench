@@ -103,7 +103,7 @@ npm run connect
 
 在线经验持久化于独立 MongoDB 库；本机 JSON 用于任务记录、缓存和可靠交付。已开始的审核任务固定经验快照，不因新经验或补传自动重跑审核。服务每 **6 小时**备份，保留 **30 天**；v2 备份包含案例、结论、撤回状态和历史，恢复先写入新集合再校验。
 
-连接说明见[设计师快速连接](docs/designer-quickstart.md)，部署、备份和恢复见[运维说明](docs/experience-operations.md)。截图与修改前后证据的附件存储不在本项目实现范围。
+可直接转发给设计师的完整文档见[设计师接入说明](docs/designer-quickstart.md)，部署、备份和恢复见[运维说明](docs/experience-operations.md)。截图与修改前后证据的附件存储不在本项目实现范围。
 
 ## 规则覆盖与维护
 
