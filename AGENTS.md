@@ -2,7 +2,7 @@
 
 维护先读 core/site-quality.md。Agent 使用 workbench inspect 从源码与浏览器判断站型，准备 siteType、页面/模块、选择器及内部配置，设计师不选规则、不填JSON。App/Games 的完整专项快照在 site-types，公共布局/留白/间距/对齐/容量在 knowledge/shared；Games 最新标准和可执行检测器一并加载。
 
-独立工程0.4起，站点审核、修复与设计师反馈先读 core/maintenance.md，使用 bin/workbench.mjs；现有生成仍使用下面的 core/start.md、core/workflow.md 与 bin/da.mjs，禁止把维护流程的人工收尾方式替换到既有生成门禁。设计师给 Git 地址时，先 checkout 一次再检查源码、生成任务配置；Agent负责配置和证据，不要求设计师手填JSON。没有明确要求不提交、推送或部署。
+独立工程0.4起，站点审核、修复与设计师反馈先读 core/maintenance.md，使用 bin/workbench.mjs；现有生成仍使用下面的 core/start.md、core/workflow.md 与 bin/da.mjs，禁止把维护流程的人工收尾方式替换到既有生成门禁。设计师给 Git 地址或本地源码时，分别以 `--repo` 或 `--source` 准备一次隔离工作区，再检查源码、生成任务配置；Agent负责配置和证据，不要求设计师手填JSON。没有明确要求不提交、推送或部署。
 
 经验先读core/experience.md，连接见docs/designer-quickstart.md。运行npm run connect生成本地stdio MCP入口，统一经中央MCP读写MongoDB；workbench使用同一入口。新任务查询适用经验，真实反馈保存草稿；设计师明确确认准确候选后，Agent自动归纳修复经验，附真实确认原话、候选与复验结果，通过experience_capture保存为准确作用域内的结论；重复案例合并证据，冲突待处理，experience_manage可检查、纠正和撤回，不找维护者发布。没有可复用结论时记录skip理由，不强行编经验。断网先保留，后台自动补传，无需手动sync；experience_status查看待传/拒绝状态。Agent不得捏造认可、验证或未知根因。连接和私有队列不进Git及manifest；真实连接以工具发现和读取确认，不自动触发站点测试。
 

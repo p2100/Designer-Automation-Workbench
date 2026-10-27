@@ -6,7 +6,7 @@
 
 **审核 → 调整 → 设计师查看 → 有问题继续调整，确认后沉淀可复用经验。**
 
-当前运行版本 **0.4.0**；原生成规则快照固定为 **2026-10-26.1**。正式交付仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
+当前运行版本 **0.5.0**；原生成规则快照固定为 **2026-10-26.1**。正式交付仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
 
 正式交付入口已迁入 p2100 组织。GitHub 阻止旧仓库直接转移，且 `p2100/Designer-Automation` 同名地址被占用但不可访问，因此采用 `Designer-Automation-Workbench` 仓库名，保留原项目名称与完整 Git 历史。旧个人仓库仅保留历史入口；后续更新以本组织仓库为准。
 
@@ -46,7 +46,7 @@ npm run connect
 
 设计师把下面这一段发给自己的 Agent 即可，首次接入由 Agent 执行安装和配置：
 
-> 请将 https://github.com/p2100/Designer-Automation-Workbench.git 克隆到 Designer-Automation 目录，按 README 和 docs/designer-quickstart.md 安装 Node 22.19+ 所需依赖，运行 npm run connect，为当前 Agent 配置 designer_experience MCP。先列出四个经验工具并做只读连接检查；需要重启连接时明确告诉我。接入完成后等待我提供站点 Git 地址。收到站点后先读 AGENTS.md、core/maintenance.md 和 core/experience.md，沿用同一工作区审核、调整、增量复验，并给我预览。我提出问题就继续调整；我明确确认当前候选没问题后，自动筛选、归并并共享已验证的可复用经验。不要替我编造认可，不要把临时文案或原因不明的问题强行变成规则，不让我手动 sync 或发布经验。
+> 请将 https://github.com/p2100/Designer-Automation-Workbench.git 克隆到 Designer-Automation 目录，按 README 和 docs/designer-quickstart.md 安装 Node 22.19+ 所需依赖，运行 npm run connect，为当前 Agent 配置 designer_experience MCP。先列出四个经验工具并做只读连接检查；需要重启连接时明确告诉我。接入完成后等待我提供站点 Git 地址或本地源码。收到站点后先读 AGENTS.md、core/maintenance.md 和 core/experience.md，沿用同一工作区审核、调整、增量复验，并给我预览。我提出问题就继续调整；我明确确认当前候选没问题后，自动筛选、归并并共享已验证的可复用经验。不要替我编造认可，不要把临时文案或原因不明的问题强行变成规则，不让我手动 sync 或发布经验。
 
 维护规则已统一交付 **Coupon、App、Games**：公共方法共用，专项快照按实际站型加载。原 Coupon 生成仍走其冻结入口；MCP 共享经验继续原有准确候选确认与离线补传流程。
 
@@ -55,14 +55,14 @@ npm run connect
 | 模块 | 入口 | 职责 |
 | --- | --- | --- |
 | 原生成流程 | `bin/da.mjs` | 选择、冻结与执行原生成规则，保留既有生成、独立审核和交付门禁 |
-| 站点维护 | `bin/workbench.mjs` | Git 拉取、审核、修复、增量复验、稳定预览和设计师反馈 |
+| 站点维护 | `bin/workbench.mjs` | Git 拉取或本地源码隔离导入、审核、修复、增量复验、稳定预览和设计师反馈 |
 | 共享经验 | `bin/experience-mcp.mjs` → 中央 MCP | 经验查询、可靠保存、证据归并、冲突处理、纠错和撤回 |
 
 维护流程读取同一套适用规则，不替换原生成入口，也不回写原 Harness 工程。设计师认可由 Agent 如实记录；程序不能代替人审美判断或证明人确实看过页面。
 
 ## 审核与调整怎样提高效率
 
-- Git 仓库拉取一次，后续沿用同一工作区与任务。
+- Git 仓库或本地源码导入一次，后续沿用同一隔离工作区与任务；本地原件不自动回写。
 - 同一页面、宽度和状态的检查合并访问，避免为每个检查重复打开浏览器。
 - 按源码、产物、共享依赖、规则、经验快照和浏览环境判断影响范围，只复验需要更新的项；共享样式等变化会扩大复验。
 - 未变且仍有效的证据可以复用；访问过外部网络的检查不能只靠本地文件指纹复用。

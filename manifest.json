@@ -3,7 +3,7 @@
   "files": [
     {
       "path": ".agents/skills/designer-automation/SKILL.md",
-      "sha256": "3c4e183ac58b95c4a55924f29c11651f0fd20bd20b46a537ac4aedaae7d3fc29"
+      "sha256": "7d92b85cb0fd38a085e7b8357c67a5af51443754ed4ee2ca97ebab838ca2734c"
     },
     {
       "path": ".gitignore",
@@ -11,7 +11,7 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "fcaef39f85ded99f1ea2a56e0f2e1e2a0c7bf48c3716236411c3c435e37dfb44"
+      "sha256": "811fa153d77716cca65ea94701b62c4539fff375ed116887233b84af5a78e500"
     },
     {
       "path": "bin/automatic-layout.mjs",
@@ -79,7 +79,7 @@
     },
     {
       "path": "bin/workbench.mjs",
-      "sha256": "6420995e2ba68b4877a9c3bebb56d2f93ffe93c059e0260bcac3b67b98920220"
+      "sha256": "3621aa0021418dda1e425e9f2d5743bfb3a37df6b407f8437c41e40432154bfc"
     },
     {
       "path": "compatibility/generation-baseline.json",
@@ -119,7 +119,7 @@
     },
     {
       "path": "core/maintenance.md",
-      "sha256": "cea30049dd0ffe774df36caf893add66dc4e479b53f2d6f2218695198ddbaa3c"
+      "sha256": "d93bfce4170de6a43b2cf1c2ba64cdf639d21c872c55215801b72fe2b4d49153"
     },
     {
       "path": "core/quality.md",
@@ -163,7 +163,7 @@
     },
     {
       "path": "docs/designer-quickstart.md",
-      "sha256": "de3442bb4a31364645255a78917628a07395cef1bb6b8ccf51745ffa944d59ff"
+      "sha256": "18738382e31f1b2feb70fe0c86e97ccbafe46fcba922ef6273df804d284de377"
     },
     {
       "path": "docs/experience-operations.md",
@@ -175,7 +175,7 @@
     },
     {
       "path": "docs/standalone-workbench.md",
-      "sha256": "bfd83aa482de816d3fd3e88d4b92fd6cd2da11786793f4f6bd871308981b3fdb"
+      "sha256": "50ee9a3800c1aca3ce2e23e1909a9988704a951b3ab0b8f672def8fa5b9032ed"
     },
     {
       "path": "knowledge/imported/docs/COUPON-FOUR-REFERENCE-COMMON-STANDARDS-2026-10-13.md",
@@ -583,7 +583,7 @@
     },
     {
       "path": "lib/experience-task.mjs",
-      "sha256": "27d07ad8eec1979730e01ec5a823781e80367b6797da721c76d397861a253764"
+      "sha256": "a2b988db836973961e25fe4667837ba3edba43bdd5be916125a9c899a002ce81"
     },
     {
       "path": "lib/experience.mjs",
@@ -591,7 +591,7 @@
     },
     {
       "path": "lib/io.mjs",
-      "sha256": "2ccb20bcdfe5272b96621c54dcf3774c0e8bb19ce5c8e4ab4a9eac82729d2bc0"
+      "sha256": "55fcbd80031de5660dee14307b84e65ca696a7eb372556cae66f8eb5e7d0b3ad"
     },
     {
       "path": "lib/preview.mjs",
@@ -603,7 +603,7 @@
     },
     {
       "path": "lib/workbench.mjs",
-      "sha256": "aa9cae67cdf16ad60391a2258b9dfc28ec4d6b21320b2fd598c989204308d752"
+      "sha256": "76c2f30dc5330b1b406dbd317b8442f1c15a75383fdc67a02fa8d01414e33835"
     },
     {
       "path": "package-lock.json",
@@ -615,7 +615,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "81a948125aff7c9794cdb492e47dc776896940cb47a4fe0d586d02fe9b6e80c3"
+      "sha256": "aa1982c784ec6c56baab754ba08255382a49aa3fcba61951c7a0f6bc65e51fe8"
     },
     {
       "path": "scripts/connect-experience.mjs",
@@ -956,6 +956,10 @@
     {
       "path": "tests/experience.test.mjs",
       "sha256": "3cb300d15b3d35c5d606c0838bdbd49bd9fc1d786939ae37a5b3717bdcf93dcf"
+    },
+    {
+      "path": "tests/local-source.test.mjs",
+      "sha256": "c36bf9a90ff75ce733e9f2e110b87be05fa71f51d20a33d2075e84ddd7d1b24d"
     },
     {
       "path": "tests/portable.test.mjs",

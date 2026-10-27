@@ -16,7 +16,9 @@ node bin/workbench.mjs feedback --id project-a --file .designer-data/feedback.js
 node bin/workbench.mjs learn --id project-a --file .designer-data/lesson.json
 ```
 
-checkout可先拉取供Agent检查源码，start复用同一checkout，不再clone。省略ref使用仓库默认分支。配置参考templates/maintenance-task.json；构建工程设置artifactRoot为实际输出目录，commands.install/build为argv数组。未绑定的额外HTML路由必须补入pages或给出excludedRoutesReason；不是自动跳过。
+本地源码使用相同命令但将 `--repo` 换成 `--source /本机源码目录`，不传 `--ref`。例如 `checkout --id project-a --source /实际源码目录`，之后 `start --id project-a --source /同一目录 --config .designer-data/project-a.json`。Agent 负责确认源码、命令和配置；设计师不用手填 JSON。已有 Git 的本地工作树也可选择 `--source`，此时导入当前文件而不是只取已提交版本。
+
+checkout可先拉取或隔离复制供Agent检查源码，start复用同一工作区，不再重复导入。Git 省略ref使用仓库默认分支。本地源码原件、未提交修改和旧候选保留；排除依赖目录、Git 元数据、环境密钥，遇到软链接、源目录在导入期间变化或与工作区互相嵌套时拒绝并明确报告。修复与构建都在独立副本中，不自动写回原目录。配置参考templates/maintenance-task.json；构建工程设置artifactRoot为实际输出目录，commands.install/build为argv数组。未绑定的额外HTML路由必须补入pages或给出excludedRoutesReason；不是自动跳过。
 
 edits包含candidate与edits数组，每项为file、expectedHash（当前源码UTF-8字节SHA256）、find、replace。程序要求唯一匹配；新建/删除文件或复杂重构由宿主授权源码工具处理，随后cycle核对完整影响范围，不对冻结输出直接打补丁。
 
