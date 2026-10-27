@@ -142,6 +142,8 @@ test('lesson scope is derived from selected checks and cannot expand to every ta
   assert.deepEqual(taskLesson(base, lessonSpec(), 'agent').scope.pages, [
     'home',
   ]);
+  base.feedback.push({id:'f3',decision:'note',candidate,text:'I like this heading'});
+  assert.equal(taskLesson(base, lessonSpec(), 'agent').approval.feedbackId,'f2');
   assert.throws(
     () =>
       taskLesson(

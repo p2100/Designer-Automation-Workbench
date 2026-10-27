@@ -1,19 +1,21 @@
 {
   "name": "designer-automation",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
   "type": "module",
   "engines": {
     "node": ">=22.19.0"
   },
   "bin": {
-    "designer-automation": "bin/workbench.mjs"
+    "designer-automation": "bin/designer-automation.mjs"
   },
   "scripts": {
     "test": "node --test tests/workbench.test.mjs tests/experience.test.mjs",
     "test:legacy": "node --test tests/portable.test.mjs",
+    "test:generation": "node --test tests/generation.test.mjs",
     "manifest": "node scripts/manifest.mjs",
     "workbench": "node bin/workbench.mjs",
+    "generate": "node bin/generate.mjs",
     "knowledge": "node bin/experience-server.mjs",
     "connect": "node scripts/connect-experience.mjs",
     "knowledge:service": "node scripts/experience-service.mjs",

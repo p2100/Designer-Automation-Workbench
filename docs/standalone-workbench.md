@@ -24,7 +24,7 @@ edits包含candidate与edits数组，每项为file、expectedHash（当前源码
 
 observations包含candidate、observations数组；每项为id、status、actor、observations对象。observations逐个填写对应check.criteria，实际阅读status给出的PNG。自动扫描不填写审美结论。
 
-coverage包含actor、notes、gaps。notes记录真实组件与条款对账；缺少状态/能力时填gaps，不可声明完成。feedback包含candidate、actor、text、decision（revise/approve）及可选checkIds；approve时由Agent附lessons（或先learn准备同一候选的草稿）；actor是记录的实际设计师身份，不由程序认证，Agent不得冒充。未给checkIds时全部检查失效。
+coverage包含actor、notes、gaps。notes记录真实组件与条款对账；缺少状态/能力时填gaps，不可声明完成。feedback包含candidate、actor、text、decision（revise/approve/note）及可选checkIds；approve时由Agent附lessons（或先learn准备同一候选的草稿）；actor是记录的实际设计师身份，不由程序认证，Agent不得冒充。revise未给checkIds时全部检查失效。note只记录有具体原话支持的正向创作观察，不改变候选审核状态、批准整站或上传中央经验服务。Agent 可在真实反馈中附 `creativeObservations`（page、component、quote、observation，必要时 sentiment）；quote 必须原样出现在反馈文本，page 必须在受影响检查范围。其他设计师无需填写这些内部字段。
 
 lesson包含actor、summary、cause、prevention、classification（general/site-preference/hard-failure）。lesson还需component、pages或checkIds，以及learning（key、when、exceptions、transferable）。程序从实际选中检查推导作用域，不默认关联整个任务；未复测、未认可或缺少明确条件的案例不进入有效经验；设计师确认后自动处理，无可复用内容可记录learningDecision skip。共享服务保存的是证据声明，不可能仅凭这些字段认证审美或人的真实行为。
 

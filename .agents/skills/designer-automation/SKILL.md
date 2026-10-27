@@ -1,15 +1,19 @@
 ---
 name: designer-automation
-description: Audit, repair and recheck Coupon, App and Games sites through the unified workbench, shared visual methods and separate business rules; retain confirmed designer feedback through the existing central experience MCP.
+description: Create, audit, repair and recheck Coupon, App and Games sites through one Agent entry, separate site rules, and scoped designer feedback.
 ---
 
 以本文件向上三级的 Designer-Automation 为包根，读取 AGENTS.md 和 README.md。复制时携带整个包，不能只复制本 skill。
 
-用户要求审核/调整站点时，按 docs/designer-quickstart.md、core/site-quality.md、core/maintenance.md 使用 bin/workbench.mjs，由 Agent 检查实际源码与浏览器、判断站型并加载公共/专项规则：Git 用 `--repo`，本地源码用 `--source` 导入隔离副本；checkout一次，配置实际页面和源码范围，start审核，Agent实看问题后通过repair修复；读取同轮截图填写observe；确认实际覆盖后handoff给设计师查看。设计师反馈通过feedback保存，只有准确候选复验并获设计师明确确认后，才通过原 designer_experience MCP 自动共享适用经验；离线队列和补传照常，不让设计师手动发布。普通修复不用另做新站设计、重复克隆或每轮全站复验。生成任务继续使用下文原流程。所有命令的JSON由Agent准备，设计师只需自然语言要求和实际复核。
+用户要求审核/调整站点时，按 docs/designer-quickstart.md、core/site-quality.md、core/maintenance.md 使用 bin/workbench.mjs，由 Agent 检查实际源码与浏览器、判断站型并加载公共/专项规则：Git 用 `--repo`，本地源码用 `--source` 导入隔离副本；checkout一次，配置实际页面和源码范围，start审核，Agent实看问题后通过repair修复；读取同轮截图填写observe；确认实际覆盖后handoff给设计师查看。设计师反馈通过feedback保存，只有准确候选复验并获设计师明确确认后，才通过原 designer_experience MCP 自动共享适用经验；离线队列和补传照常，不让设计师手动发布。普通修复不用另做新站设计、重复克隆或每轮全站复验。所有命令的JSON由Agent准备，设计师只需自然语言要求和实际复核。
+
+用户要求新建/授权重做站点时，先读 core/generation-default.md、core/creative-generation.md、core/creative-learning.md，识别真实站型和渠道，以 `node bin/designer-automation.mjs generate start --request <原需求> --site-type <coupon|app|games>` 准备私有独立工作区、冻结规则和匹配经验。站型由 Agent 根据实际需求与证据判断，模糊时继续核实；设计师不用选规则或填写 JSON。按返回 contexts 加载对应规则，调用宿主实际可用的 Image 能力生成并审看首页方向，使用 generate direction 登记实际图像；再按实际页面职责设计内页，在返回的 source 中实现真实页面。Agent 准备实际路由/选择器等内部审核配置，调用 generate review --action start 接入现有工作台，继续实际浏览器审核、集中修复与复查；原 Coupon 原生门禁继续执行。只有规则、空目录或图像不等于站点已生成或验收。
+
+设计师明确喜欢或否定某个实际图稿或页面的具体点时，Agent 如实摘取原话、页面、组件和可观察到的设计点：图稿通过 generate feedback 绑定已登记的实际方向，否定时用 sentiment=negative；工作台候选通过 feedback 的 creativeObservations 记录，单独表扬使用 decision=note，需调整时使用 revise，不替设计师批准整站。下一次同安装的同站型、同页面任务会自动加载本机记录；Agent 判断时间、组件与适用条件，记录不是规则。不得编造满意、根因或跨站型复用；用户只说笼统 OK 时不捏造具体偏好。个人记录不进入 Git；团队共享继续按 core/experience.md 的实际修复、复验及确认门禁执行。
 
 ## 原 Coupon 生成分支
 
-下列生成流程只用于原 Coupon 合同；App/Games 维护遵循上面的统一入口，不能套 Coupon 业务尺寸。
+下列原生生成门禁只用于 Coupon 合同；App/Games 生成使用上面的统一入口与各自专项，不能套 Coupon 业务尺寸。
 
 后续任务默认执行 core/quality.md「后续任务默认执行的设计标准」；用户无需重述历史对卡片、间距、层级、数字与分类、PC／手机构图的要求。作者先主动落实，审核按同一标准检查；具体本站设计保持自由，历史冻结版本按原契约。
 

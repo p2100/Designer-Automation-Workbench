@@ -1,12 +1,14 @@
 当前统一维护入口支持 Coupon / App / Games。设计师接入与中央经验流程见 [设计师接入说明](docs/designer-quickstart.md)，Agent 执行先读 [统一质量入口](core/site-quality.md)。公共方法共用、专项隔离，新增 Games 标准与只读检测器随仓库交付；原 Coupon 生成快照保持。
 
+三类站点新建、授权重做和参考重建使用 `node bin/designer-automation.mjs generate` 统一入口，由 Agent 识别类型、创建工作区、加载规则和适用经验，再调用实际 Image、编码和浏览器工具完成站点。详见[站点生成默认流程](core/generation-default.md)、[视觉创作方法](core/creative-generation.md)与[设计师创作学习方法](core/creative-learning.md)。设计师明确喜欢的实际设计点可在本机随任务记录并供后续同站型、同页面参考；程序不替设计师作审美判断，也不自动把个人偏好同步为团队规则。
+
 # Designer-Automation
 
 面向设计师与 Agent 的站点审核、修复和共享经验工程，维护组织为 [p2100](https://github.com/p2100)。
 
 **审核 → 调整 → 设计师查看 → 有问题继续调整，确认后沉淀可复用经验。**
 
-当前运行版本 **0.5.0**；原生成规则快照固定为 **2026-10-26.1**。正式交付仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
+项目版本 **0.6.0**；原生成规则快照固定为 **2026-10-26.1**。中央经验服务版本独立，以实际健康检查为准。正式交付仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
 
 正式交付入口已迁入 p2100 组织。GitHub 阻止旧仓库直接转移，且 `p2100/Designer-Automation` 同名地址被占用但不可访问，因此采用 `Designer-Automation-Workbench` 仓库名，保留原项目名称与完整 Git 历史。旧个人仓库仅保留历史入口；后续更新以本组织仓库为准。
 
