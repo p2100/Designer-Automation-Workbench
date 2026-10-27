@@ -1,0 +1,13 @@
+{
+  "name": "game-automation",
+  "version": "3.2.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node bin/game.mjs check",
+    "test": "node --test tests/*.test.mjs"
+  }
+}

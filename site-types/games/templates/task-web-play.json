@@ -1,0 +1,11 @@
+{
+  "version":1,"id":"replace-site-id","type":"web-play","language":"en","author":"author-agent",
+  "audience":"Replace with audience, situation and intended game-discovery task.",
+  "sources":[{"id":"mzgen-source","url":"https://mzgen.com/game/detail/sky_swarm_19.html","checkedAt":"2026-10-23","kind":"owner-authorized-source"}],
+  "samples":[{"id":"sky-swarm","title":"Sky Swarm","sourceIds":["mzgen-source"],"runtime":"runtime/sky-swarm/index.html","inputClaims":["source lists keyboard and touch"],"verificationStatus":"not-run"}],
+  "routes":[{"path":"index.html","page":"home"},{"path":"game/sky-swarm.html","page":"detail"},{"path":"play/sky-swarm.html","page":"play"}],
+  "modules":[{"id":"play-shell","route":"play/sky-swarm.html","job":"Start the actual game and provide help and a route back","family":"runtime-and-toolbar","samples":["sky-swarm"],"states":["loading","playing","failed","retry","help","exit","synthetic-touch"]}],
+  "viewports":[{"id":"desktop","width":1440,"height":1000},{"id":"phone","width":393,"height":852},{"id":"narrow","width":320,"height":852},{"id":"phone-landscape","width":852,"height":393}],
+  "breakpoints":[700],"capabilities":[{"name":"browser","status":"not-probed"},{"name":"synthetic-touch","status":"not-probed"},{"name":"physical-phone","status":"unavailable"}],
+  "delivery":{"source":true,"evidence":true,"deployment":false}
+}

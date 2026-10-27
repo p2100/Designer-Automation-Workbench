@@ -1,0 +1,13 @@
+{
+  "version":1,"id":"example-mobile-game-guide","type":"store-referral","language":"en",
+  "audience":"English-speaking phone users identifying Minecraft and reaching its official store listing.",
+  "author":"receiving-author-agent",
+  "sources":[{"id":"minecraft-google","url":"https://play.google.com/store/apps/details?id=com.mojang.minecraftpe&hl=en&gl=US","checkedAt":"2026-10-23","kind":"official-store"}],
+  "samples":[{"id":"minecraft","title":"Minecraft","sourceIds":["minecraft-google"],"stores":[{"platform":"android","url":"https://play.google.com/store/apps/details?id=com.mojang.minecraftpe&hl=en&gl=US","productId":"com.mojang.minecraftpe","region":"US","checkedAt":"2026-10-23"}]}],
+  "routes":[{"path":"index.html","page":"home"},{"path":"game/minecraft.html","page":"detail"}],
+  "modules":[{"id":"game-identity","route":"game/minecraft.html","job":"Identify the actual product before leaving for the store","family":"identity-and-store-actions","samples":["minecraft"],"states":["loaded","keyboard-focus","long-content","missing-image"]}],
+  "viewports":[{"id":"desktop","width":1440,"height":1000},{"id":"phone","width":393,"height":852},{"id":"narrow","width":320,"height":852}],
+  "breakpoints":[700],
+  "capabilities":[{"name":"browser","status":"not-probed"},{"name":"image-generation","status":"not-probed"}],
+  "delivery":{"source":true,"evidence":true,"deployment":false}
+}

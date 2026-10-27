@@ -1,3 +1,5 @@
+当前统一维护入口支持 Coupon / App / Games。设计师接入与中央经验流程见 [设计师接入说明](docs/designer-quickstart.md)，Agent 执行先读 [统一质量入口](core/site-quality.md)。公共方法共用、专项隔离，新增 Games 标准与只读检测器随仓库交付；原 Coupon 生成快照保持。
+
 # Designer-Automation
 
 面向设计师与 Agent 的站点审核、修复和共享经验工程，维护组织为 [p2100](https://github.com/p2100)。
@@ -46,7 +48,7 @@ npm run connect
 
 > 请将 https://github.com/p2100/Designer-Automation-Workbench.git 克隆到 Designer-Automation 目录，按 README 和 docs/designer-quickstart.md 安装 Node 22.19+ 所需依赖，运行 npm run connect，为当前 Agent 配置 designer_experience MCP。先列出四个经验工具并做只读连接检查；需要重启连接时明确告诉我。接入完成后等待我提供站点 Git 地址。收到站点后先读 AGENTS.md、core/maintenance.md 和 core/experience.md，沿用同一工作区审核、调整、增量复验，并给我预览。我提出问题就继续调整；我明确确认当前候选没问题后，自动筛选、归并并共享已验证的可复用经验。不要替我编造认可，不要把临时文案或原因不明的问题强行变成规则，不让我手动 sync 或发布经验。
 
-当前内置的正式站点规则面向 **Coupon**。App-Automation、Game-Automation 继续独立维护，尚未并入本仓库；接入共享经验 MCP 不代表已加载 App/Games 专项规则。
+维护规则已统一交付 **Coupon、App、Games**：公共方法共用，专项快照按实际站型加载。原 Coupon 生成仍走其冻结入口；MCP 共享经验继续原有准确候选确认与离线补传流程。
 
 ## 三个模块的边界
 

@@ -1,0 +1,120 @@
+{
+  "template": true,
+  "schemaVersion": 1,
+  "rulesVersion": "1.1.0",
+  "instructions": "Agent fills actual data and routes, replaces every blank, and sets template=false. Empty records are not acceptance. Designer does not fill this manually.",
+  "site": {
+    "brand": "",
+    "type": "app",
+    "contentLanguage": "en",
+    "advertising": "none"
+  },
+  "scope": {
+    "mode": "new-site",
+    "sourceRoot": "",
+    "allowedPaths": [],
+    "delivery": [],
+    "knownLimitations": []
+  },
+  "features": {
+    "search": false,
+    "categoryOverview": false,
+    "historyVersions": false,
+    "terms": false
+  },
+  "pages": [
+    {
+      "id": "home",
+      "family": "home",
+      "route": "",
+      "modules": []
+    },
+    {
+      "id": "article-example",
+      "family": "article",
+      "kind": "review",
+      "route": "",
+      "appIds": [],
+      "modules": []
+    },
+    {
+      "id": "category-example",
+      "family": "category",
+      "route": "",
+      "categoryId": "",
+      "modules": []
+    },
+    {
+      "id": "detail-example",
+      "family": "detail",
+      "route": "",
+      "appId": "",
+      "modules": []
+    },
+    {
+      "id": "version-example",
+      "family": "version",
+      "route": "",
+      "appId": "",
+      "modules": []
+    },
+    {
+      "id": "about",
+      "family": "information",
+      "kind": "about",
+      "route": ""
+    },
+    {
+      "id": "contact",
+      "family": "information",
+      "kind": "contact",
+      "route": ""
+    },
+    {
+      "id": "privacy",
+      "family": "information",
+      "kind": "privacy",
+      "route": ""
+    },
+    {
+      "id": "disclaimer",
+      "family": "information",
+      "kind": "disclaimer",
+      "route": ""
+    },
+    {
+      "id": "not-found",
+      "family": "information",
+      "kind": "not-found",
+      "route": ""
+    }
+  ],
+  "apps": [],
+  "appRecordShape": {
+    "id": "",
+    "name": "",
+    "platforms": [],
+    "platformIds": {
+      "android": null,
+      "ios": null
+    },
+    "detailRoute": "",
+    "versionRoute": "",
+    "sources": [],
+    "media": [],
+    "channels": [],
+    "facts": {},
+    "missing": []
+  },
+  "cardFamilies": [],
+  "responsivePlan": {
+    "desktop": null,
+    "phones": [
+      393,
+      320
+    ],
+    "actualBreakpoints": []
+  },
+  "exceptions": [],
+  "moduleDataPlan": []
+}

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "authority": "Direct owner request 2026-10-27 and existing quickstart/workbench contract",
+  "sharedMethods": [
+    "layout",
+    "purposeful whitespace",
+    "four-level spacing",
+    "optical alignment",
+    "capacity",
+    "responsive composition",
+    "media roles",
+    "interaction states",
+    "evidence"
+  ],
+  "providers": {
+    "coupon": "Existing frozen Coupon generation and maintenance rules",
+    "app": "site-types/app/manifest.json",
+    "games": "site-types/games/manifest.json"
+  },
+  "experience": "Existing designer_experience MCP, exact designer approval and durable offline delivery; no replacement service"
+}

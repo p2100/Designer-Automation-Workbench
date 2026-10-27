@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "version": "1.1.0",
+  "kind": "app-rules-package",
+  "integrityOnly": true,
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "12caa9b5fbd13b36d489ce82e365b153acdc3da60a703eccbe816cdff213ea48"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "066ba1629e82613aebbdf43ec5d86505bbfb311cf3ba30337374a11bb70d68a4"
+    },
+    {
+      "path": "CONTEXT.md",
+      "sha256": "10c1281d752bc2265b819872dfc837888cbe7ac671ef8aa8e8d469d61cd4ef58"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b301128e6e8d6e32cbb14da6d43e2e64abc78e0e63306c46c24c492323e68aa8"
+    },
+    {
+      "path": "contracts/module-data.json",
+      "sha256": "bc4eadcf121d4289da43e726cfd9bc9cad5bba72737e643ba93cd226a8d6249f"
+    },
+    {
+      "path": "contracts/requirements.json",
+      "sha256": "35d24abdc05323692fd3cae8a7cd78b7ed0758f43029c26f097ca2b0889c5423"
+    },
+    {
+      "path": "core/data-and-channels.md",
+      "sha256": "30205ad7ffbb14bdb205257f6f92036e739c5ca571f2a0bb67d2b2aebef70864"
+    },
+    {
+      "path": "core/module-data.md",
+      "sha256": "6f01139a18c512760ab477a6039d152d79ab9182e042976af5372da27fd31d8b"
+    },
+    {
+      "path": "core/quality.md",
+      "sha256": "be71bfd9c1cd5210f5e14ea1ee6d081bde3021f0be9659d21310dee8c609b4a9"
+    },
+    {
+      "path": "core/review.md",
+      "sha256": "10c830a9526c631d697b443e95e888a581698d933ee0aaecc96dce7d4fd0b658"
+    },
+    {
+      "path": "core/start.md",
+      "sha256": "4993084f2ff85a026e8a893e8ed7d45fdee8806a49f20d1db5e592e9d8d532d1"
+    },
+    {
+      "path": "core/workflow.md",
+      "sha256": "31a351a522345fa43a01a7c4cfb06e1f4bc93e8119277864eb3645f9109c245e"
+    },
+    {
+      "path": "docs/confirmed-decisions.md",
+      "sha256": "424d2d1ee8dcac7f48fa822359467eb301a6b2826d733704f2d14479f74064ad"
+    },
+    {
+      "path": "docs/module-reference-matrix-20261026.md",
+      "sha256": "1ae0db27fc6c2e72cba79eb2816f6ef46bef9050b22c290799521141d483a1f9"
+    },
+    {
+      "path": "docs/reference-audit-20261026.md",
+      "sha256": "deb40a61d5288db2947f8ea59ae2e9044e6f5dcf195f7ca56fa253f0d244facc"
+    },
+    {
+      "path": "docs/rule-design-draft.md",
+      "sha256": "4642ce365e52bb82ee72a31ced845c3b87211233e6cdca476d92b5b0b883c9e7"
+    },
+    {
+      "path": "knowledge/index.json",
+      "sha256": "515871a5bc50ae498b019d56d3c1404e6ef6472a8f6a207319e311cf83420fff"
+    },
+    {
+      "path": "pages/article.md",
+      "sha256": "fed907c3a41c22c299e61c3259f5fe1c24ffa952ed9eca8adbb4314644ad7fd9"
+    },
+    {
+      "path": "pages/category.md",
+      "sha256": "50c9ea84544c6469578e6a90cd76e7e8eefda10a9d452ae72f7f28fe1a083d95"
+    },
+    {
+      "path": "pages/detail.md",
+      "sha256": "376d8f2e020ba7f82d218799d279472f1add313036f51dd2b866fdfd49c6db7f"
+    },
+    {
+      "path": "pages/home.md",
+      "sha256": "c2dbe6231d81f40b7e54b230355e8f90dda687a0a54bc28cc9e4f87642a1e132"
+    },
+    {
+      "path": "pages/information.md",
+      "sha256": "17aa2028db2cb5d4faee7dce9c3a5044803d1d0bc93be7997a111a8b310876b2"
+    },
+    {
+      "path": "pages/search.md",
+      "sha256": "6f0ea81eac07f26c27ae971d83088dd6d2e830596c80998d13ec6416612c809c"
+    },
+    {
+      "path": "pages/version.md",
+      "sha256": "e834ce281a9adbd71b36ed8c57611b994abc1f80c32e383f7cbb467376692b7a"
+    },
+    {
+      "path": "templates/review.json",
+      "sha256": "254b3be1a2d7aa3bdc27de4cc90032c316d3cd5505d1ac52b7bcd2078d931001"
+    },
+    {
+      "path": "templates/site-structure.json",
+      "sha256": "7ae4d1f520497f27a47cc4dd561f166e507d7db9568224db9af8a8bee6b5ca71"
+    }
+  ]
+}

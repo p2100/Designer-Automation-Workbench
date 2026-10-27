@@ -1,0 +1,785 @@
+{
+  "schemaVersion": 1,
+  "version": "1.1.0",
+  "siteType": "app",
+  "authority": "The corresponding APP-* Markdown section is the normative text; this file indexes scope and evidence only",
+  "statusValues": [
+    "pass",
+    "issue",
+    "not-run",
+    "not-applicable"
+  ],
+  "conditionsAre": "Plain-language conditions evaluated and explained by the executing Agent, not an executable policy engine",
+  "rules": [
+    {
+      "id": "APP-SCOPE-001",
+      "level": "hard",
+      "source": "core/start.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "site",
+      "when": "always",
+      "evidence": [
+        "actual-route-inventory",
+        "site-language-and-scope"
+      ]
+    },
+    {
+      "id": "APP-FLOW-001",
+      "level": "hard",
+      "source": "core/start.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "site",
+      "when": "always",
+      "evidence": [
+        "route-and-entity-map",
+        "actual-primary-navigation"
+      ]
+    },
+    {
+      "id": "APP-ADS-001",
+      "level": "hard",
+      "source": "core/start.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "site",
+      "when": "always",
+      "evidence": [
+        "no-ad-components-or-reserved-height",
+        "source-and-rendered-inspection"
+      ]
+    },
+    {
+      "id": "APP-DATA-001",
+      "level": "hard",
+      "source": "core/data-and-channels.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "entity",
+      "when": "application-shown",
+      "evidence": [
+        "canonical-app-and-platform-identifiers",
+        "cross-page-target-map"
+      ]
+    },
+    {
+      "id": "APP-DATA-002",
+      "level": "hard",
+      "source": "core/data-and-channels.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "entity",
+      "when": "application-or-claim-shown",
+      "evidence": [
+        "source-and-retrieved-at",
+        "platform-region-and-claim-provenance"
+      ]
+    },
+    {
+      "id": "APP-DATA-003",
+      "level": "hard",
+      "source": "core/data-and-channels.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "entity",
+      "when": "application-shown",
+      "evidence": [
+        "displayed-fields-versus-source",
+        "missing-field-and-availability-state"
+      ]
+    },
+    {
+      "id": "APP-DATA-004",
+      "level": "hard",
+      "source": "core/data-and-channels.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "entity",
+      "when": "channel-shown-or-app-presented-as-obtainable",
+      "evidence": [
+        "exact-store-or-file-target",
+        "format-and-source",
+        "actual-verification-level"
+      ]
+    },
+    {
+      "id": "APP-DATA-005",
+      "level": "hard",
+      "source": "core/data-and-channels.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "entity",
+      "when": "application-media-shown",
+      "evidence": [
+        "media-provenance-and-platform",
+        "actual-image-role-and-ratio"
+      ]
+    },
+    {
+      "id": "APP-DATA-006",
+      "level": "hard",
+      "source": "core/data-and-channels.md",
+      "pages": [
+        "detail",
+        "version"
+      ],
+      "scope": "entity",
+      "when": "history-versions-shown",
+      "evidence": [
+        "real-per-version-source",
+        "version-specific-target-map"
+      ]
+    },
+    {
+      "id": "APP-QUALITY-001",
+      "level": "hard",
+      "source": "core/quality.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "whole-page-module-relationships",
+        "short-long-and-last-row-samples"
+      ]
+    },
+    {
+      "id": "APP-QUALITY-002",
+      "level": "hard",
+      "source": "core/quality.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "desktop-phone-and-breakpoint-views",
+        "overflow-overlap-and-reflow-observations"
+      ]
+    },
+    {
+      "id": "APP-QUALITY-003",
+      "level": "hard",
+      "source": "core/quality.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "actual-text-and-control-capacity",
+        "painted-contrast-and-states"
+      ]
+    },
+    {
+      "id": "APP-QUALITY-004",
+      "level": "hard",
+      "source": "core/quality.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "component",
+      "when": "always",
+      "evidence": [
+        "image-space-and-aspect",
+        "four-spacing-levels",
+        "load-and-failure-states"
+      ]
+    },
+    {
+      "id": "APP-QUALITY-005",
+      "level": "hard",
+      "source": "core/quality.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "editable-initial-html-css",
+        "first-load-and-client-repaint"
+      ]
+    },
+    {
+      "id": "APP-QUALITY-006",
+      "level": "hard",
+      "source": "core/quality.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "component",
+      "when": "always",
+      "evidence": [
+        "actual-pointer-keyboard-touch-actions",
+        "empty-error-and-recovery-paths"
+      ]
+    },
+    {
+      "id": "APP-QUALITY-007",
+      "level": "hard",
+      "source": "core/quality.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "site",
+      "when": "always",
+      "evidence": [
+        "brand-and-navigation-consistency",
+        "same-purpose-cross-page-comparison"
+      ]
+    },
+    {
+      "id": "APP-TARGET-001",
+      "level": "target",
+      "source": "core/quality.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "component",
+      "when": "always",
+      "evidence": [
+        "actual-typography-and-hit-targets",
+        "deviation-reason-if-any"
+      ]
+    },
+    {
+      "id": "APP-WORKFLOW-001",
+      "level": "hard",
+      "source": "core/workflow.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "site",
+      "when": "always",
+      "evidence": [
+        "candidate-source-artifact-and-rule-identity",
+        "evidence-bindings-and-invalidation"
+      ]
+    },
+    {
+      "id": "APP-WORKFLOW-002",
+      "level": "hard",
+      "source": "core/workflow.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "site",
+      "when": "always",
+      "evidence": [
+        "actual-author-reviewer-separation",
+        "independent-observations-or-not-run"
+      ]
+    },
+    {
+      "id": "APP-HOME-001",
+      "level": "hard",
+      "source": "pages/home.md",
+      "pages": [
+        "home"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "all-minimum-modules",
+        "whole-page-and-first-view"
+      ]
+    },
+    {
+      "id": "APP-HOME-002",
+      "level": "hard",
+      "source": "pages/home.md",
+      "pages": [
+        "home"
+      ],
+      "scope": "component",
+      "when": "always",
+      "evidence": [
+        "app-card-fields-and-destinations",
+        "card-and-carousel-states"
+      ]
+    },
+    {
+      "id": "APP-HOME-003",
+      "level": "hard",
+      "source": "pages/home.md",
+      "pages": [
+        "home"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "category-article-and-footer-navigation"
+      ]
+    },
+    {
+      "id": "APP-HOME-004",
+      "level": "hard",
+      "source": "pages/home.md",
+      "pages": [
+        "home"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "grouping-purpose-and-real-items",
+        "phone-reflow-and-ordinary-rows"
+      ]
+    },
+    {
+      "id": "APP-ARTICLE-001",
+      "level": "hard",
+      "source": "pages/article.md",
+      "pages": [
+        "article"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "real-substantive-title-and-body",
+        "reading-hierarchy-and-claims"
+      ]
+    },
+    {
+      "id": "APP-ARTICLE-002",
+      "level": "hard",
+      "source": "pages/article.md",
+      "pages": [
+        "article"
+      ],
+      "scope": "entity",
+      "when": "always",
+      "evidence": [
+        "mentioned-app-to-detail-map",
+        "body-card-media-identity"
+      ]
+    },
+    {
+      "id": "APP-ARTICLE-003",
+      "level": "hard",
+      "source": "pages/article.md",
+      "pages": [
+        "article"
+      ],
+      "scope": "page",
+      "when": "selected-article-kind",
+      "evidence": [
+        "selected-kind-and-appropriate-structure",
+        "fact-versus-editorial-judgment"
+      ]
+    },
+    {
+      "id": "APP-ARTICLE-004",
+      "level": "hard",
+      "source": "pages/article.md",
+      "pages": [
+        "article"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "media-and-related-or-return-path",
+        "phone-long-body-table-and-link-capacity"
+      ]
+    },
+    {
+      "id": "APP-CATEGORY-001",
+      "level": "hard",
+      "source": "pages/category.md",
+      "pages": [
+        "category"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "category-identity-and-membership"
+      ]
+    },
+    {
+      "id": "APP-CATEGORY-002",
+      "level": "hard",
+      "source": "pages/category.md",
+      "pages": [
+        "category"
+      ],
+      "scope": "component",
+      "when": "always",
+      "evidence": [
+        "actual-app-list-and-detail-targets",
+        "long-name-and-last-row"
+      ]
+    },
+    {
+      "id": "APP-CATEGORY-003",
+      "level": "hard",
+      "source": "pages/category.md",
+      "pages": [
+        "category"
+      ],
+      "scope": "component",
+      "when": "counts-sorting-filter-pagination-or-overview-shown",
+      "evidence": [
+        "actual-data-scope",
+        "control-boundary-and-state-preservation"
+      ]
+    },
+    {
+      "id": "APP-CATEGORY-004",
+      "level": "hard",
+      "source": "pages/category.md",
+      "pages": [
+        "category"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "category-switch-or-return",
+        "empty-state-and-phone-layout"
+      ]
+    },
+    {
+      "id": "APP-DETAIL-001",
+      "level": "hard",
+      "source": "pages/detail.md",
+      "pages": [
+        "detail"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "current-app-icon-full-name-platform-and-category"
+      ]
+    },
+    {
+      "id": "APP-DETAIL-002",
+      "level": "hard",
+      "source": "pages/detail.md",
+      "pages": [
+        "detail"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "scannable-facts-and-platform-labels",
+        "known-and-missing-field-handling"
+      ]
+    },
+    {
+      "id": "APP-DETAIL-003",
+      "level": "hard",
+      "source": "pages/detail.md",
+      "pages": [
+        "detail"
+      ],
+      "scope": "component",
+      "when": "always",
+      "evidence": [
+        "real-product-screenshots",
+        "ratio-and-gallery-boundary-controls"
+      ]
+    },
+    {
+      "id": "APP-DETAIL-004",
+      "level": "hard",
+      "source": "pages/detail.md",
+      "pages": [
+        "detail"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "complete-description-and-core-functions",
+        "optional-claims-if-shown"
+      ]
+    },
+    {
+      "id": "APP-DETAIL-005",
+      "level": "hard",
+      "source": "pages/detail.md",
+      "pages": [
+        "detail"
+      ],
+      "scope": "component",
+      "when": "always",
+      "evidence": [
+        "primary-cta-to-current-version",
+        "optional-exact-store-shortcuts",
+        "unavailable-channel-state"
+      ]
+    },
+    {
+      "id": "APP-DETAIL-006",
+      "level": "hard",
+      "source": "pages/detail.md",
+      "pages": [
+        "detail"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "actual-related-apps-and-relationship",
+        "phone-primary-content-and-recommendation-reflow"
+      ]
+    },
+    {
+      "id": "APP-VERSION-001",
+      "level": "hard",
+      "source": "pages/version.md",
+      "pages": [
+        "version"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "same-app-identity",
+        "working-back-to-detail"
+      ]
+    },
+    {
+      "id": "APP-VERSION-002",
+      "level": "hard",
+      "source": "pages/version.md",
+      "pages": [
+        "version"
+      ],
+      "scope": "entity",
+      "when": "always",
+      "evidence": [
+        "actual-available-platforms-and-targets",
+        "format-version-and-known-conditions"
+      ]
+    },
+    {
+      "id": "APP-VERSION-003",
+      "level": "hard",
+      "source": "pages/version.md",
+      "pages": [
+        "version"
+      ],
+      "scope": "component",
+      "when": "always",
+      "evidence": [
+        "real-channel-actions-and-honest-status",
+        "error-retry-or-return"
+      ]
+    },
+    {
+      "id": "APP-VERSION-004",
+      "level": "hard",
+      "source": "pages/version.md",
+      "pages": [
+        "version"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "secondary-related-content-and-navigation",
+        "phone-channel-priority"
+      ]
+    },
+    {
+      "id": "APP-SEARCH-001",
+      "level": "hard",
+      "source": "pages/search.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "site",
+      "when": "search-enabled-or-search-entry-shown",
+      "evidence": [
+        "actual-search-entry-query-and-correct-targets"
+      ]
+    },
+    {
+      "id": "APP-SEARCH-002",
+      "level": "hard",
+      "source": "pages/search.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "component",
+      "when": "search-enabled",
+      "evidence": [
+        "query-result-empty-error-and-clear",
+        "keyboard-touch-and-phone-capacity"
+      ]
+    },
+    {
+      "id": "APP-INFO-001",
+      "level": "hard",
+      "source": "pages/information.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "site",
+      "when": "always",
+      "evidence": [
+        "all-five-information-kinds",
+        "footer-and-unknown-route-paths"
+      ]
+    },
+    {
+      "id": "APP-INFO-002",
+      "level": "hard",
+      "source": "pages/information.md",
+      "pages": [
+        "information"
+      ],
+      "scope": "page",
+      "when": "kind-is-about-contact-privacy-disclaimer-or-terms",
+      "evidence": [
+        "actual-site-policy-and-identity-content",
+        "long-body-and-link-readability"
+      ]
+    },
+    {
+      "id": "APP-INFO-003",
+      "level": "hard",
+      "source": "pages/information.md",
+      "pages": [
+        "information"
+      ],
+      "scope": "page",
+      "when": "kind-is-contact",
+      "evidence": [
+        "real-contact-target",
+        "form-outcomes-if-form-enabled"
+      ]
+    },
+    {
+      "id": "APP-INFO-004",
+      "level": "hard",
+      "source": "pages/information.md",
+      "pages": [
+        "information"
+      ],
+      "scope": "page",
+      "when": "kind-is-not-found",
+      "evidence": [
+        "unknown-route-actual-response",
+        "not-found-and-recovery-ui"
+      ]
+    },
+    {
+      "id": "APP-MODULE-001",
+      "level": "hard",
+      "source": "core/module-data.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "component",
+      "when": "actual-module-present",
+      "evidence": [
+        "actual-module-data-projection",
+        "media-role-and-provenance",
+        "source-bound-fields-and-selection",
+        "desktop-phone-composition"
+      ]
+    },
+    {
+      "id": "APP-MODULE-002",
+      "level": "hard",
+      "source": "core/module-data.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "component",
+      "when": "actual-module-present",
+      "evidence": [
+        "actual-module-data-projection",
+        "media-role-and-provenance",
+        "source-bound-fields-and-selection",
+        "desktop-phone-composition"
+      ]
+    },
+    {
+      "id": "APP-MODULE-003",
+      "level": "hard",
+      "source": "core/module-data.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "component",
+      "when": "actual-module-present",
+      "evidence": [
+        "actual-module-data-projection",
+        "media-role-and-provenance",
+        "source-bound-fields-and-selection",
+        "desktop-phone-composition"
+      ]
+    },
+    {
+      "id": "APP-MODULE-004",
+      "level": "hard",
+      "source": "core/module-data.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "site",
+      "when": "actual-module-present",
+      "evidence": [
+        "actual-module-data-projection",
+        "media-role-and-provenance",
+        "source-bound-fields-and-selection",
+        "desktop-phone-composition"
+      ]
+    },
+    {
+      "id": "APP-MODULE-005",
+      "level": "hard",
+      "source": "core/module-data.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "component",
+      "when": "actual-module-present",
+      "evidence": [
+        "actual-module-data-projection",
+        "media-role-and-provenance",
+        "source-bound-fields-and-selection",
+        "desktop-phone-composition"
+      ]
+    },
+    {
+      "id": "APP-MODULE-006",
+      "level": "hard",
+      "source": "core/module-data.md",
+      "pages": [
+        "*"
+      ],
+      "scope": "component",
+      "when": "actual-module-present",
+      "evidence": [
+        "actual-module-data-projection",
+        "media-role-and-provenance",
+        "source-bound-fields-and-selection",
+        "desktop-phone-composition"
+      ]
+    },
+    {
+      "id": "APP-HOME-005",
+      "level": "hard",
+      "source": "pages/home.md",
+      "pages": [
+        "home"
+      ],
+      "scope": "page",
+      "when": "always",
+      "evidence": [
+        "per-module-plan-and-rendered-data",
+        "banner-and-recommendation-content",
+        "reference-quality-comparison",
+        "original-layout-and-styling"
+      ]
+    }
+  ]
+}

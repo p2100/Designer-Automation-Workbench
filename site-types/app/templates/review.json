@@ -1,0 +1,47 @@
+{
+  "template": true,
+  "schemaVersion": 1,
+  "rulesVersion": "1.1.0",
+  "instructions": "Agent expands all applicable requirements across the actual route/entity inventory. No empty or unexecuted record is a pass.",
+  "candidate": {
+    "sourceIdentity": "",
+    "artifactIdentity": "",
+    "rulesManifestIdentity": "",
+    "preview": "",
+    "routeInventory": []
+  },
+  "roles": {
+    "author": "",
+    "reviewer": "",
+    "reviewerRole": "independent-reviewer",
+    "independenceEvidence": ""
+  },
+  "coverage": {
+    "expectedRuleInstances": [],
+    "executedRuleInstances": [],
+    "uncovered": []
+  },
+  "checks": [],
+  "checkRecordShape": {
+    "ruleId": "",
+    "scope": "page",
+    "routeOrEntity": "",
+    "candidateIdentity": "",
+    "viewport": null,
+    "state": "",
+    "status": "not-run",
+    "observation": "",
+    "evidence": [],
+    "applicabilityReason": "",
+    "reusedEvidenceDependencies": []
+  },
+  "issues": [],
+  "exceptions": [],
+  "overall": "not-run",
+  "limitations": [],
+  "userAcceptance": {
+    "status": "not-requested",
+    "actualText": null,
+    "candidateIdentity": null
+  }
+}

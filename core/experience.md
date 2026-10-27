@@ -54,3 +54,7 @@ approve反馈中的一条lesson：
 ```
 
 示例不是已验证经验，也不是要求所有按钮统一尺寸。实际字段必须来自当前任务的修复与确认。
+
+## 三站型的作用域
+
+现有 designer_experience MCP、MongoDB、幂等、设计师准确候选确认、两独立来源站点推广与离线自动补传机制保持。workbench 自动把 App/Games 的经验页面键写为 app:home / games:detail 等，并以同样键查询，防止同名页面和组件跨站型误套。Coupon 保留原页面键，已有记录无需迁移。Agent 在直接调用 MCP 时也使用冻结 contexts 中所属站型的页面键；设计师不手填。通用布局/留白/间距方法在 knowledge/shared 正式规则中维护，不因个人经验放宽业务硬要求。

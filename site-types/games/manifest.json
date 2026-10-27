@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "name": "Game-Automation",
+  "release": "3.2.1",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 2560,
+      "sha256": "548f9d302c38b9fed050d03eb52917e6bd552994ad8612b44825109db768c94d"
+    },
+    {
+      "path": "bin/game.mjs",
+      "bytes": 2796,
+      "sha256": "617731194507c5be3707f38e24f90b45594e9f1ff038bc7c9f3ade655d00b05a"
+    },
+    {
+      "path": "bin/inspect-games.mjs",
+      "bytes": 7024,
+      "sha256": "a654286430322a7402ccdea8e7c2b7eea27bfefffa7f1c1f265a36177cfd7860"
+    },
+    {
+      "path": "core/owner-games-rules.md",
+      "bytes": 14795,
+      "sha256": "8d1d26e14db7584aa9ea32f8b3f15e51fbbc7b9b4d1e0660d98f2592b34a96d1"
+    },
+    {
+      "path": "core/owner-requirements.json",
+      "bytes": 23751,
+      "sha256": "7cb4d8f46d6175a67b85cd7c0fa3b270877c9ca786d557b50b26994792042894"
+    },
+    {
+      "path": "core/owner-standards-20261027.md",
+      "bytes": 5348,
+      "sha256": "9b81ba474e5740f782487192cb1b5211c6ca9ccf8f49b8fe0c6f6fb4bf7b143c"
+    },
+    {
+      "path": "core/quality.md",
+      "bytes": 6832,
+      "sha256": "372b3c510fcb476d9a15be3f8926c2a2a256596a344dfe45ffffe4209c25a738"
+    },
+    {
+      "path": "core/restore-and-refine.md",
+      "bytes": 4503,
+      "sha256": "dd00b83a09406a98d61983a6944e8907c900af031c3b6f983e5405f5aaf9b33e"
+    },
+    {
+      "path": "core/start.md",
+      "bytes": 2652,
+      "sha256": "9c9b3aa744447503cb44dfb62857db5bbf9c75b5acb8e31c1f73a9f708d67645"
+    },
+    {
+      "path": "core/workflow.md",
+      "bytes": 2451,
+      "sha256": "5f90cc95049994bda8421a2c0fc16e37a96c1afd21e30116f4c0afb74eb9a52a"
+    },
+    {
+      "path": "docs/portable-review.md",
+      "bytes": 2971,
+      "sha256": "46a88a8c271bf1a858db18f022a3c4e4b889c77060c41e3ecf4e07b36a6b961f"
+    },
+    {
+      "path": "examples/task.json",
+      "bytes": 1402,
+      "sha256": "d7d73ca3b0af7a5c48c4a069dcc12bc74cc9fea8d3ba0138068d96016e16d1a3"
+    },
+    {
+      "path": "lib/contract.mjs",
+      "bytes": 15095,
+      "sha256": "d2995ab638b044c875483582e2c233e4270ab934f9575aea956ce8e4a42f5632"
+    },
+    {
+      "path": "package.json",
+      "bytes": 235,
+      "sha256": "37d30c8ef97006e6c971ef99ce9fae2c430120af7fa0f23d0a3693bb2ca5aa66"
+    },
+    {
+      "path": "pages/detail.md",
+      "bytes": 4306,
+      "sha256": "66c9c097b85cd0331c2f23013186005bf724a8c3520d8c4b457912b2c5e68d23"
+    },
+    {
+      "path": "pages/home.md",
+      "bytes": 1460,
+      "sha256": "4bcd7b283a1b7b6143068c83fb76cf11b17ef9ebfe47560f8c0cab470694c527"
+    },
+    {
+      "path": "pages/information.md",
+      "bytes": 993,
+      "sha256": "475873c771247c91eb46a70de9de8f13a9890112d16414037540926533d79eb0"
+    },
+    {
+      "path": "pages/list.md",
+      "bytes": 623,
+      "sha256": "c3095e2c84b8abddde82d785ffb7d5fa2ec1644e3e718883aa35448be2fb65bd"
+    },
+    {
+      "path": "pages/play.md",
+      "bytes": 1318,
+      "sha256": "0a7c04eaede3dc08fbbc59390e0691056a97f045d03de0a6125a4bb761f6a443"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5133,
+      "sha256": "9d2d9b65ed21d9216c5d9038ab9153cac7aa833740e77f72b41bb6eec02572af"
+    },
+    {
+      "path": "site-types/store-referral.md",
+      "bytes": 1052,
+      "sha256": "23dbee39e244c469202bacddbf10c50437c69668e909405003b1e14be2e0c580"
+    },
+    {
+      "path": "site-types/web-play.md",
+      "bytes": 1266,
+      "sha256": "29db07589b7e47d30e29e971dac8aac1c8746569dfa045f60ee23339519d799f"
+    },
+    {
+      "path": "templates/review.json",
+      "bytes": 488,
+      "sha256": "592d024d58d68f74a5aa0e519dc6b801d1f44830c308999dbe832613ef423221"
+    },
+    {
+      "path": "templates/task-web-play.json",
+      "bytes": 1380,
+      "sha256": "33882c3f980ee9cd2f3a38758f49a34799ced2e55c418e592de9cdf0a2690a86"
+    },
+    {
+      "path": "tests/contract.test.mjs",
+      "bytes": 9978,
+      "sha256": "b68d0214ca0f13bbd175240ffe0b78a7327cc6884d22cd60dbb630da9294a1ba"
+    },
+    {
+      "path": "tests/owner-inspector.test.mjs",
+      "bytes": 4256,
+      "sha256": "0e21913bacc50bc8034e0f354232bba879d0ba568dc484f252af020e1779128a"
+    }
+  ]
+}

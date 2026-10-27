@@ -1,0 +1,170 @@
+{
+  "version": "2026-10-27.4",
+  "siteTypes": [
+    "coupon",
+    "app",
+    "games"
+  ],
+  "rules": [
+    {
+      "id": "SHARED-LAYOUT-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/layout-and-space.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-SPACE-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/layout-and-space.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-GAP-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/layout-and-space.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-ALIGN-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/layout-and-space.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-CAPACITY-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/layout-and-space.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-RESPONSIVE-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/layout-and-space.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-BRAND-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/layout-and-space.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-TYPE-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/content-and-actions.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-MEDIA-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/content-and-actions.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-ACTION-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/content-and-actions.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-STABILITY-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/content-and-actions.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-STATES-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/content-and-actions.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-TRUTH-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/content-and-actions.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-EVIDENCE-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/review-and-learning.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-RECHECK-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/review-and-learning.md",
+      "provenance": "knowledge/shared/sources.json"
+    },
+    {
+      "id": "SHARED-LEARN-001",
+      "status": "active",
+      "level": "required",
+      "pages": [
+        "*"
+      ],
+      "source": "knowledge/shared/review-and-learning.md",
+      "provenance": "knowledge/shared/sources.json"
+    }
+  ]
+}

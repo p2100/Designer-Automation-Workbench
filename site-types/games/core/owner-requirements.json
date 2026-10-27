@@ -1,0 +1,656 @@
+{
+  "version": "2026-10-27.2",
+  "siteType": "games",
+  "sources": [
+    "https://tanyueco.feishu.cn/wiki/Ea7Vw5TYniMyuXkMP4acWLTqnKf",
+    "https://topziz.com/games/detail/com-sunsetgames-bordersecurity.html",
+    "https://mzgen.com/",
+    "direct-owner-message-2026-10-27-games-standards"
+  ],
+  "rules": [
+    {
+      "id": "home-mosaic",
+      "pages": [
+        "home"
+      ],
+      "requirement": "Use the owner-authorized full-width game-led homepage with 20–40px side gutters, finite content height and no empty footer band. Homepage category modules are forbidden."
+    },
+    {
+      "id": "home-desktop-capacity",
+      "pages": [
+        "home"
+      ],
+      "requirement": "Use sensible readable desktop ordinary-card capacity; prior opening base-track geometry must not force twelve tiny cards into the lower homepage"
+    },
+    {
+      "id": "home-phone-three",
+      "pages": [
+        "home"
+      ],
+      "requirement": "Three ordinary phone columns after the opening feature group; stable last row"
+    },
+    {
+      "id": "home-brand-variation",
+      "pages": [
+        "home"
+      ],
+      "requirement": "Preserve brand; vary feature count/placement and component paint"
+    },
+    {
+      "id": "detail-capability-route",
+      "pages": [
+        "detail"
+      ],
+      "requirement": "Real browser runtime selects playable landing; store-only retains download detail"
+    },
+    {
+      "id": "download-white",
+      "pages": [
+        "detail"
+      ],
+      "types": [
+        "store-referral"
+      ],
+      "requirement": "White/light neutral canvas and facts; no icon backdrop"
+    },
+    {
+      "id": "download-identity-capacity",
+      "pages": [
+        "detail"
+      ],
+      "types": [
+        "store-referral"
+      ],
+      "requirement": "Content-sized identity, 120–200px desktop icon and 80–90px phone icon"
+    },
+    {
+      "id": "download-sidebar-fields",
+      "pages": [
+        "detail"
+      ],
+      "types": [
+        "store-referral"
+      ],
+      "requirement": "Icon/title plus one or two verified category/rating/download facts"
+    },
+    {
+      "id": "download-type-sizes",
+      "pages": [
+        "detail"
+      ],
+      "types": [
+        "store-referral"
+      ],
+      "requirement": "Fact labels14–16, values12–15, prose15–17 CSS px"
+    },
+    {
+      "id": "download-store-color",
+      "pages": [
+        "detail"
+      ],
+      "types": [
+        "store-referral"
+      ],
+      "requirement": "Blue/green official store buttons and readable contrast"
+    },
+    {
+      "id": "download-gallery-height",
+      "pages": [
+        "detail"
+      ],
+      "types": [
+        "store-referral"
+      ],
+      "requirement": "Screenshot viewport/images no higher than320px, intrinsic ratios and usable controls"
+    },
+    {
+      "id": "download-no-top-decoration",
+      "pages": [
+        "detail"
+      ],
+      "types": [
+        "store-referral"
+      ],
+      "requirement": "No breadcrumb/header/eyebrow above identity"
+    },
+    {
+      "id": "playable-layout",
+      "pages": [
+        "detail"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "Follow the current task's approved reference and authorized modules inside the current 1200px content container and required top recommendation row; do not apply an earlier Topziz or Mzgen skeleton to every brand."
+    },
+    {
+      "id": "playable-header",
+      "pages": [
+        "detail",
+        "play"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "Logo and functional search icon only, maximum50px header; actual visible logo dimensions and working known/empty/reset search"
+    },
+    {
+      "id": "playable-simple-controls",
+      "pages": [
+        "detail"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "How-to box is optional. Hover/focus must communicate a game action with game wording, gamepad or arrow; no triangular video-play button and no forced identical overlay."
+    },
+    {
+      "id": "playable-palette",
+      "pages": [
+        "home",
+        "detail",
+        "play"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "Keep brand-coherent surfaces and brighter, higher-purity game-action colors with readable contrast; old blue/green-only web-play surface directions are superseded. Store-only platform button restrictions remain scoped."
+    },
+    {
+      "id": "playable-cohesive-sidebar",
+      "pages": [
+        "detail",
+        "play"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "One coherent recommendation rail without height coupling"
+    },
+    {
+      "id": "playable-gap",
+      "pages": [
+        "detail"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "Highlighted strip/body and rail/main visible separations at most20px"
+    },
+    {
+      "id": "play-four-regions",
+      "pages": [
+        "play"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "Game, side recommendations, immediate lower recommendations, bottom information"
+    },
+    {
+      "id": "play-columns",
+      "pages": [
+        "play"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "Desktop left/right game and recommendations; no initial fullscreen-only mode"
+    },
+    {
+      "id": "play-recommendations",
+      "pages": [
+        "play"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "Real recommendations present; controls/help cannot replace them; persistent readable names at rest on phone detail/play recommendations"
+    },
+    {
+      "id": "play-contrast",
+      "pages": [
+        "play"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "Readable title/prose/control text on actual nested surfaces; nested controls and meaningful supporting text meet4.5:1"
+    },
+    {
+      "id": "play-no-insertion",
+      "pages": [
+        "play"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "No intervening toolbar/text/module between game and lower recommendations"
+    },
+    {
+      "id": "identity-actions-integrity",
+      "pages": [
+        "home",
+        "detail",
+        "play"
+      ],
+      "requirement": "Same title/image/runtime/store entity; truthful facts, working actions, static first paint; natural and rendered brand dimensions are positive; meaningful nested text remains legible"
+    },
+    {
+      "id": "game-card-single-line",
+      "pages": [
+        "home",
+        "list",
+        "category",
+        "genres",
+        "collection",
+        "detail",
+        "play"
+      ],
+      "requirement": "Ordinary/recommended game names stay one line and ellipsize when necessary, including sidebar and below-content cards. Preserve full DOM/accessibility and full main game title, summary and body. Do not shrink text to evade capacity."
+    },
+    {
+      "id": "game-card-spacing-capacity",
+      "pages": [
+        "home",
+        "list",
+        "category",
+        "genres",
+        "collection",
+        "detail",
+        "play"
+      ],
+      "requirement": "Within each brand/card family, use reasonable caption inset and consistent capacity; inspect real first/middle/long-name/last items, stable image roles and equal ordinary-row geometry. Do not stretch the final row or let short labels create empty panels."
+    },
+    {
+      "id": "component-wide-sweep",
+      "pages": [
+        "home",
+        "list",
+        "category",
+        "genres",
+        "collection",
+        "detail",
+        "play"
+      ],
+      "requirement": "A repeated-component defect triggers proactive inspection of all affected siblings: sidebar, lower recommendations, home/detail/play variants, search repaint, hover/focus, long names and last rows. Fix equivalent defects without separate owner reports; declare exact visual samples and exhaustive static identity/link/media coverage."
+    },
+    {
+      "id": "search-result-capacity",
+      "pages": [
+        "home",
+        "detail",
+        "play"
+      ],
+      "requirement": "Where search is present, check real long-name results after typing at desktop and narrow widths: one-line ellipsis, fixed intended thumbnail size, min-width/flex capacity, clear/empty states and correct result navigation. An absent search must not leave a fake entry."
+    },
+    {
+      "id": "game-action-label-capacity",
+      "pages": [
+        "home",
+        "list",
+        "category",
+        "genres",
+        "collection",
+        "detail",
+        "play"
+      ],
+      "requirement": "Primary game action wording/icon/hit area remain complete and readable on PC,393,320 and intermediate breakpoint neighbors. Avoid unintended button-label wrapping or crowding; remove redundant optional ornament before shrinking important text."
+    },
+    {
+      "id": "game-stage-width-containment",
+      "pages": [
+        "play"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "Measure actual stage width when aspect-ratio and minimum height coexist: constrain it to its parent at narrow widths, with no root overflow. Fix component sizing rather than masking the root page."
+    },
+    {
+      "id": "game-hover-semantics",
+      "pages": [
+        "home",
+        "list",
+        "detail",
+        "play"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "Use purposeful game hover/focus/pressed feedback with PLAY GAME/gamepad/arrow or equivalent game action; no video-play triangle. Feedback must not move neighbors, hide essential names or depend on hover for phone access."
+    },
+    {
+      "id": "brand-loading-and-readiness",
+      "pages": [
+        "play"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "Each brand owns an animated loading treatment with real recovery and reduced-motion behavior. Distinguish iframe document load from engine readiness; do not invent progress/completion or claim network games are playable offline."
+    },
+    {
+      "id": "source-core-module-whitelist",
+      "pages": [
+        "home",
+        "detail",
+        "play"
+      ],
+      "types": [
+        "web-play"
+      ],
+      "requirement": "Use real source-linked title/artwork/summary/About/How/runtime. Do not invent categories, ratings, descriptions or extra blocks; do not import reference videos, advertising blanks, scripts or broken details without explicit authorization. Inspect reference problems instead of reproducing them."
+    },
+    {
+      "id": "approved-reference-precedence",
+      "pages": [
+        "home",
+        "detail",
+        "play"
+      ],
+      "requirement": "The latest user-approved reference and explicit exclusions own the requested design. Earlier geometry and a prior internal pass do not override a later owner correction; historical releases remain immutable."
+    },
+    {
+      "id": "multi-site-inner-page-distinction",
+      "pages": [
+        "home",
+        "detail",
+        "play"
+      ],
+      "requirement": "For multi-site work, complete and check one site before authoring the next. Compare the same real detail/play entities and ordinary cards at equal PC/phone widths. Grouping, reading order, artwork/action relation and recommendation construction must be independently designed; names/colors/images alone do not count. Shared facts/behavior do not authorize one common visual renderer."
+    },
+    {
+      "id": "current-preview-and-artifact",
+      "pages": [
+        "home",
+        "list",
+        "category",
+        "genres",
+        "collection",
+        "detail",
+        "play"
+      ],
+      "requirement": "Verify the reported and reviewed build IDs and same entity/route. Preserve immutable old links/artifacts; safely use the corresponding current page for review without discarding active user state. Preview and downloadable ZIP must match the same accepted candidate."
+    },
+    {
+      "id": "game-card-caption-alignment",
+      "pages": [
+        "home",
+        "list",
+        "category",
+        "genres",
+        "collection",
+        "detail",
+        "play"
+      ],
+      "requirement": "Center game names beneath their artwork within the actual card, with balanced caption insets and one-line ellipsis. Include phone row-to-grid regrouping. Do not center prose, main identities or desktop horizontal image/text rows by analogy."
+    },
+    {
+      "id": "home-discovery-distinction",
+      "pages": [
+        "home"
+      ],
+      "requirement": "If an authorized homepage discovery interaction is retained, it performs a useful brand-specific task. It must not add category modules or introductory subtitle copy. Finish and check one site before the next."
+    },
+    {
+      "id": "home-category-truth-and-links",
+      "pages": [
+        "list",
+        "category"
+      ],
+      "requirement": "On actual list/category pages, use real bound games, recorded editorial inferences, derived counts and matching local routes. This rule does not permit a homepage category module."
+    },
+    {
+      "id": "required-information-pages",
+      "pages": [
+        "home",
+        "list",
+        "category",
+        "genres",
+        "collection",
+        "detail",
+        "play",
+        "information"
+      ],
+      "requirement": "Working local About, Privacy and Contacts pages, truthful product/storage/contact content, footer links on every page family and a valid return route; desktop/phone/320 navigation checked."
+    },
+    {
+      "id": "section-browse-brand-controls",
+      "pages": [
+        "home",
+        "list",
+        "category",
+        "genres",
+        "collection",
+        "detail",
+        "play",
+        "information"
+      ],
+      "requirement": "View all/See more and equivalent section browsing entries use a visible-at-rest button or named icon tag in this brand’s action language, not bare text, underline or text plus arrow. Preserve real link destinations, 44px targets, responsive capacity and hover/focus/pressed states; ordinary prose/footer links retain their roles. Canonical design rule: Designer-Automation brand-section-actions@2026-10-27.1."
+    },
+    {
+      "id": "home-full-width-gutters",
+      "pages": [
+        "home"
+      ],
+      "requirement": "Homepage uses the full viewport width with 20–40 CSS px visible side gutters; no narrow centered homepage canvas. Measure desktop and phone actual boundaries.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "home-square-artwork",
+      "pages": [
+        "home"
+      ],
+      "requirement": "Prefer square game icon/artwork frames with stable space; preserve the actual identity and avoid distorted artwork.",
+      "level": "target",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "home-contextual-information",
+      "pages": [
+        "home"
+      ],
+      "requirement": "Homepage game information appears on hover, keyboard focus and deliberate tap/click. Phone disclosure and navigation are usable without hover; full accessible names remain available.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "home-hover-design-variety",
+      "pages": [
+        "home"
+      ],
+      "requirement": "A hover button is not a fixed requirement. Across brands vary useful information/action presentation; do not impose one overlay/button skin.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "home-no-category-module",
+      "pages": [
+        "home"
+      ],
+      "requirement": "Do not place category modules, genre/category sections or category browsing blocks on the homepage. Existing category pages remain independently valid; earlier lower-home category requirements are superseded.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "home-coherent-game-background",
+      "pages": [
+        "home"
+      ],
+      "requirement": "Background patterns, texture, geometry or illustration have a clear game-related logic, restrained attention and coherent top-to-bottom transitions, with no arbitrary shapes or visible seams.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "detail-top-game-recommendation-row",
+      "pages": [
+        "detail"
+      ],
+      "requirement": "Include a top row of real game-icon recommendations in the current brand style, before the main game identity. Bind each icon to its own game and keep the row usable on phones.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "inner-content-width-1200",
+      "pages": [
+        "detail",
+        "play"
+      ],
+      "requirement": "Desktop detail and play content containers have a 1200 CSS px width when space permits, with responsive max-width containment on narrower screens. This replaces historical 1180px observations.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "detail-how-single-column",
+      "pages": [
+        "detail"
+      ],
+      "requirement": "PC How to play content uses one column by default; do not split it into two columns. Preserve actual instructions and natural reading order.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "sky-swarm-layout-regression",
+      "pages": [
+        "detail",
+        "play"
+      ],
+      "requirement": "For the actual Sky Swarm module, locate the current candidate and repair the reported abnormal layout using real whole-module/neighbor/PC/phone evidence. No precise rejected geometry or screenshot was supplied in this message; do not invent it or claim a text rule fixes the module.",
+      "level": "required",
+      "when": "game=Sky Swarm",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "play-bottom-information-width",
+      "pages": [
+        "play"
+      ],
+      "requirement": "Bottom game information shares the main page content container width and alignment; do not leave it in a narrower unrelated track.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "play-image-generated-loading-art",
+      "pages": [
+        "play"
+      ],
+      "requirement": "The loading background is an Image-generated refined flat illustration with a game atmosphere, composed for this brand and game, with purposeful animation and reduced-motion behavior. Keep generation provenance and local files.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "play-truthful-progress-bar",
+      "pages": [
+        "play"
+      ],
+      "requirement": "Show a loading progress bar. Bind determinate progress to observed real loading/engine progress; when progress cannot be observed use a clearly indeterminate bar without invented percentages or fake completion. Preserve failure/retry and distinguish frame load from engine readiness.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "play-no-desktop-fullscreen",
+      "pages": [
+        "play"
+      ],
+      "requirement": "Do not show a fullscreen button on PC. Preserve ordinary responsive game operation without adding a redundant desktop fullscreen control.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "play-no-detail-back-button",
+      "pages": [
+        "play"
+      ],
+      "requirement": "Do not show a separate Back to detail button. Preserve normal browser/exit/recovery navigation and avoid trapping the player.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "mobile-all-targets-pressed-feedback",
+      "pages": [
+        "*"
+      ],
+      "requirement": "Every interactive target on mobile has visible, purposeful pressed/tap feedback: cards, links, buttons, icon controls, menus, search results, pagination and runtime-shell actions. Cover redraw states and reduced-motion; feedback must not move neighboring layout.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "module-heading-without-description",
+      "pages": [
+        "*"
+      ],
+      "requirement": "Module heading areas contain the title without introductory/descriptive subtitle copy. Preserve necessary game description, How to play body, factual conditions and status/error messages in their actual content roles.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "vivid-harmonious-game-actions",
+      "pages": [
+        "*"
+      ],
+      "requirement": "Buttons use brighter, higher-purity colors that remain harmonious with the page and game atmosphere; check rendered text/icon contrast and all interaction states. Existing narrower store-platform color rules still apply.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "image-generated-linear-game-icons",
+      "pages": [
+        "*"
+      ],
+      "requirement": "Use Image-generated refined linear icons for new/replaced game and game-UI icon assets, with coherent stroke/scale and usable labels. Save generation evidence and local assets; editorial game artwork must not masquerade as official screenshots.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "full-container-natural-text-wrap",
+      "pages": [
+        "*"
+      ],
+      "requirement": "Text uses the full width of its assigned content container before natural wrapping. Remove unnecessary hard line breaks, narrow inner wrappers and arbitrary ch widths that cause early wrapping; preserve paragraph semantics, long-word safety and explicitly required ordinary-name ellipsis.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "mobile-font-maximum-24",
+      "pages": [
+        "*"
+      ],
+      "requirement": "At phone widths every visible text role, including headings, navigation, controls and states, has computed font-size no greater than 24 CSS px. Preserve applicable readability minimums; fix hierarchy and grouping rather than hiding text.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "portable-games-measurement",
+      "pages": [
+        "*"
+      ],
+      "requirement": "Run the bundled read-only bin/inspect-games.mjs against actual mapped modules at PC/phone/320 and real breakpoint neighbors; supplement geometry with actual pixel, pressed-state, generated-asset and runtime evidence. Missing mappings/capability remain not-run.",
+      "level": "required",
+      "when": "always",
+      "source": "core/owner-standards-20261027.md"
+    }
+  ],
+  "applicability": "Accumulates direct owner corrections and approved-reference precedence. Applies to new/authorized maintenance scope; frozen historical releases retain their own rules."
+}

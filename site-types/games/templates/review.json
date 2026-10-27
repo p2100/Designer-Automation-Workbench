@@ -1,0 +1,5 @@
+{
+  "role":"independent-reviewer","reviewer":"REPLACE_WITH_DISTINCT_REVIEWER","candidateDigest":"COPY_FROM_candidate.json",
+  "items":[{"id":"COPY_EACH_plan.items.id_PLUS_exhaustive-routes_AND_cross-site-distinction","status":"not-run","observation":"Describe what you actually observed","evidence":[{"path":"evidence/actual-file.png","sha256":"ACTUAL_SHA256"}]}],
+  "issues":[{"priority":"P2","status":"open","description":"Replace with actual issues or an empty array after review"}]
+}

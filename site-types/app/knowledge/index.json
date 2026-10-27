@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "version": "1.1.0",
+  "siteType": "app",
+  "contentLanguage": "en",
+  "status": "active",
+  "ownerDecisionSource": "docs/confirmed-decisions.md",
+  "referenceObservations": "docs/reference-audit-20261026.md",
+  "requirements": "contracts/requirements.json",
+  "loading": {
+    "method": "Agent reads active common entries, the actual page entries, role-specific entries and every source required by applicable checklist items; no automatic loader is included",
+    "roles": [
+      "author",
+      "reviewer"
+    ],
+    "neverImportImplicitly": [
+      "Coupon business rules",
+      "Games browser-runtime rules",
+      "reference advertising/scripts",
+      "unscoped shared experience"
+    ],
+    "relativeTo": "package-root"
+  },
+  "common": [
+    {
+      "id": "entry",
+      "status": "active",
+      "path": "AGENTS.md",
+      "roles": [
+        "author",
+        "reviewer"
+      ]
+    },
+    {
+      "id": "start",
+      "status": "active",
+      "path": "core/start.md",
+      "roles": [
+        "author",
+        "reviewer"
+      ]
+    },
+    {
+      "id": "quality",
+      "status": "active",
+      "path": "core/quality.md",
+      "roles": [
+        "author",
+        "reviewer"
+      ]
+    },
+    {
+      "id": "data-and-channels",
+      "status": "active",
+      "path": "core/data-and-channels.md",
+      "roles": [
+        "author",
+        "reviewer"
+      ]
+    },
+    {
+      "id": "module-data",
+      "status": "active",
+      "path": "core/module-data.md",
+      "roles": [
+        "author",
+        "reviewer"
+      ]
+    },
+    {
+      "id": "workflow",
+      "status": "active",
+      "path": "core/workflow.md",
+      "roles": [
+        "author",
+        "reviewer"
+      ]
+    },
+    {
+      "id": "information-route-inventory",
+      "status": "active",
+      "path": "pages/information.md",
+      "roles": [
+        "author",
+        "reviewer"
+      ],
+      "note": "Site-level APP-INFO-001 always applies; the remaining clauses apply to their information kinds"
+    },
+    {
+      "id": "review-method",
+      "status": "active",
+      "path": "core/review.md",
+      "roles": [
+        "reviewer"
+      ]
+    }
+  ],
+  "conditional": [
+    {
+      "id": "search-feature",
+      "status": "active",
+      "path": "pages/search.md",
+      "roles": [
+        "author",
+        "reviewer"
+      ],
+      "when": "search-enabled-or-search-entry-shown",
+      "note": "Also load for an embedded search panel without a separate search route"
+    }
+  ],
+  "pages": {
+    "home": {
+      "status": "active",
+      "required": true,
+      "path": "pages/home.md",
+      "moduleRule": "APP-HOME-001"
+    },
+    "article": {
+      "status": "active",
+      "required": true,
+      "path": "pages/article.md",
+      "moduleRule": "APP-ARTICLE-001",
+      "kinds": [
+        "review",
+        "tutorial",
+        "collection",
+        "comparison"
+      ]
+    },
+    "category": {
+      "status": "active",
+      "required": true,
+      "path": "pages/category.md",
+      "moduleRule": "APP-CATEGORY-001",
+      "optionalOverview": true
+    },
+    "detail": {
+      "status": "active",
+      "required": true,
+      "path": "pages/detail.md",
+      "moduleRule": "APP-DETAIL-001"
+    },
+    "version": {
+      "status": "active",
+      "required": true,
+      "path": "pages/version.md",
+      "moduleRule": "APP-VERSION-001",
+      "meaning": "download-handoff",
+      "optionalHistory": true
+    },
+    "search": {
+      "status": "active",
+      "required": false,
+      "path": "pages/search.md",
+      "moduleRule": "APP-SEARCH-001",
+      "when": "search-enabled"
+    },
+    "information": {
+      "status": "active",
+      "required": true,
+      "path": "pages/information.md",
+      "moduleRule": "APP-INFO-001",
+      "requiredKinds": [
+        "about",
+        "contact",
+        "privacy",
+        "disclaimer",
+        "not-found"
+      ],
+      "optionalKinds": [
+        "terms"
+      ]
+    }
+  },
+  "ruleLevels": {
+    "hard": "Required when applicable, including explicit conditions",
+    "target": "Initial production budget; any deviation needs a reason and actual readability/interaction evidence"
+  },
+  "referenceStatus": "Observation only; incomplete device coverage is documented and does not certify a future site",
+  "moduleData": "contracts/module-data.json"
+}

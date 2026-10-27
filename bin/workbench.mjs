@@ -7,6 +7,8 @@ import {audit,status} from '../lib/audit.mjs';
 import {ensurePreview,stopPreview} from '../lib/preview.mjs';
 import {learnTask,captureDialogue} from '../lib/experience.mjs';
 import {ExperienceBridgeClient} from '../lib/experience-bridge.mjs';
+import {inspectSource} from './intake.mjs';
+import {experiencePage} from '../lib/site-rules.mjs';
 export async function workbench(args) {
   const [action,...rest] = args, options = {};
   if (!action || ['help','--help'].includes(action)) return {
@@ -16,11 +18,14 @@ export async function workbench(args) {
   for (let i=0;i<rest.length;i+=2) { if (!rest[i].startsWith('--') || rest[i+1] === undefined) throw Error('Expected --key value'); options[rest[i].slice(2)] = rest[i+1]; }
   const data = path.resolve(options.data || defaultData), id = options.id, client = new ExperienceBridgeClient({data,url:options['experience-url'] || process.env.DA_EXPERIENCE_URL,token:process.env.DA_EXPERIENCE_TOKEN});
   try {
+    if(action==='inspect')return inspectSource(path.resolve(options.source));
     if (action === 'checkout') return checkoutRepository({data,id,repo:options.repo,ref:options.ref});
     const payload = options.file ? await readJSON(path.resolve(options.file)) : {};
     if (action === 'open' || action === 'start') {
-      const config = await readJSON(path.resolve(options.config));
-      const lessons = await client.search({pages:[...new Set(config.pages.map(p=>p.family))],site:options.repo});
+      let config = await readJSON(path.resolve(options.config));
+      const checkout=await checkoutRepository({data,id,repo:options.repo,ref:options.ref});
+      if(!config.siteType){const detected=await inspectSource(checkout.source);if(detected.siteType)config={...config,siteType:detected.siteType};}
+      const lessons = await client.search({pages:[...new Set(config.pages.map(p=>experiencePage(config.siteType,p.family)))],site:options.repo});
       await openTask({data,id,repo:options.repo,ref:options.ref,config,lessons:lessons.cases});
       if (action === 'open') return {id,step:'registered',experience:lessons.source || 'local'};
       await prepare(data,id); await audit({data,id}); return status(data,id);

@@ -1,0 +1,25 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {inspectGames} from '../bin/inspect-games.mjs';
+
+const ready=Boolean(process.env.SITE_BROWSER_EXECUTABLE&&process.env.DA_PLAYWRIGHT_MODULE);
+test('real browser detects and rechecks new owner geometry, font and forbidden controls',{skip:!ready},async t=>{
+  const {chromium}=await import(process.env.DA_PLAYWRIGHT_MODULE),browser=await chromium.launch({executablePath:process.env.SITE_BROWSER_EXECUTABLE,headless:true});t.after(()=>browser.close());
+  const page=await browser.newPage({viewport:{width:1440,height:900}});
+  const inspect=options=>page.evaluate('('+inspectGames.toString()+')(document,'+JSON.stringify(options)+')');
+  const html=(style,body)=>'<!doctype html><style>*{box-sizing:border-box}body{margin:0;font:16px Arial}'+style+'</style>'+body;
+  await page.setContent(html('.canvas{width:1100px;margin:auto}','<main class="canvas"><section data-categories>Categories</section></main>'));
+  let result=await inspect({page:'home',selectors:{homeCanvas:'.canvas',categories:'[data-categories]'}});assert(result.findings.some(f=>f.check==='home-left-gutter'));assert(result.findings.some(f=>f.check==='home-no-category-module'));
+  await page.setContent(html('.canvas{margin:0 24px}','<main class="canvas"><h1>Games</h1></main>'));
+  result=await inspect({page:'home',selectors:{homeCanvas:'.canvas',categories:'[data-categories]'}});assert.equal(result.status,'measured');assert(!result.findings.length);
+  const detail=broken=>html('.content{width:'+(broken?'1100':'1200')+'px;max-width:100%;margin:auto}.how{'+(broken?'display:grid;grid-template-columns:1fr 1fr':'display:block')+'}.prose{'+(broken?'max-width:200px':'width:auto')+'}', '<main class="content">'+(!broken?'<div class="rail">Related game icons</div>':'')+'<h1 class="identity">Sky Swarm fixture</h1>'+(broken?'<div class="rail">Related game icons</div>':'')+'<section class="how"><p>First actual instruction.</p><p>Second actual instruction.</p></section><p class="prose">A fixture description'+(broken?'<br>':' ')+'with naturally wrapping text.</p></main>');
+  const selectors={contentContainer:'.content',topRecommendations:'.rail',identity:'.identity',howToPlay:'.how',prose:'.prose'};
+  await page.setContent(detail(true));result=await inspect({page:'detail',selectors});for(const check of ['inner-content-width-1200','detail-top-game-recommendation-row','detail-how-single-column','full-container-natural-text-wrap'])assert(result.findings.some(f=>f.check===check),check);
+  await page.setContent(detail(false));result=await inspect({page:'detail',selectors});assert.equal(result.status,'measured');assert(!result.findings.length);
+  const play=broken=>html('.content{width:1200px;max-width:100%;margin:auto}.info{width:'+(broken?'900px':'100%')+'}', '<main class="content"><div>Game viewport fixture</div><section class="info">Game information</section>'+(broken?'<button class="fullscreen">Fullscreen</button><button class="detail-back">Back to detail</button>':'')+'</main>');
+  const playSelectors={contentContainer:'.content',bottomInformation:'.info',fullscreen:'.fullscreen',backToDetail:'.detail-back'};
+  await page.setContent(play(true));result=await inspect({page:'play',selectors:playSelectors});for(const check of ['bottom-information-width','play-no-desktop-fullscreen','play-no-detail-back-button'])assert(result.findings.some(f=>f.check===check),check);
+  await page.setContent(play(false));result=await inspect({page:'play',selectors:playSelectors});assert.equal(result.status,'measured');assert(!result.findings.length);assert(result.notRun.some(c=>c.check==='generated-loading-art-and-progress'));
+  await page.setViewportSize({width:393,height:900});await page.setContent(html('h1{font-size:26px}','<h1>Phone title</h1><button>Play</button>'));result=await inspect({page:'list'});assert(result.findings.some(f=>f.check==='mobile-font-maximum-24'));assert(result.clickableTargets.length);assert(result.notRun.some(c=>c.check==='mobile-all-targets-pressed-feedback'));
+  await page.setContent(html('h1{font-size:24px}','<h1>Phone title</h1><button>Play</button>'));result=await inspect({page:'list'});assert(!result.findings.some(f=>f.check==='mobile-font-maximum-24'));
+});

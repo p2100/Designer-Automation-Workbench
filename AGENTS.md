@@ -1,10 +1,14 @@
-# Designer-Automation：Coupon 工作入口
+# Designer-Automation：Coupon / App / Games 统一维护入口
+
+维护先读 core/site-quality.md。Agent 使用 workbench inspect 从源码与浏览器判断站型，准备 siteType、页面/模块、选择器及内部配置，设计师不选规则、不填JSON。App/Games 的完整专项快照在 site-types，公共布局/留白/间距/对齐/容量在 knowledge/shared；Games 最新标准和可执行检测器一并加载。
 
 独立工程0.4起，站点审核、修复与设计师反馈先读 core/maintenance.md，使用 bin/workbench.mjs；现有生成仍使用下面的 core/start.md、core/workflow.md 与 bin/da.mjs，禁止把维护流程的人工收尾方式替换到既有生成门禁。设计师给 Git 地址时，先 checkout 一次再检查源码、生成任务配置；Agent负责配置和证据，不要求设计师手填JSON。没有明确要求不提交、推送或部署。
 
 经验先读core/experience.md，连接见docs/designer-quickstart.md。运行npm run connect生成本地stdio MCP入口，统一经中央MCP读写MongoDB；workbench使用同一入口。新任务查询适用经验，真实反馈保存草稿；设计师明确确认准确候选后，Agent自动归纳修复经验，附真实确认原话、候选与复验结果，通过experience_capture保存为准确作用域内的结论；重复案例合并证据，冲突待处理，experience_manage可检查、纠正和撤回，不找维护者发布。没有可复用结论时记录skip理由，不强行编经验。断网先保留，后台自动补传，无需手动sync；experience_status查看待传/拒绝状态。Agent不得捏造认可、验证或未知根因。连接和私有队列不进Git及manifest；真实连接以工具发现和读取确认，不自动触发站点测试。
 
 本独立仓库的 knowledge/imported 保留2026-10-26.1规则快照。现有生成工程不受本仓库修改影响。维护程序与新经验以本独立仓库及配置的共享服务为源；不要运行原Harness导出覆盖独立工程。现有规则的正式升级须另发明确版本，修改所属条款并更新索引、manifest和兼容基线，不在个人经验中静默覆盖。经验服务不可达时保留本地记录及待同步队列，不能因此丢弃设计师反馈。
+
+## 原 Coupon 生成分支（App/Games 维护使用上面的统一入口）
 
 新 Agent 先读 core/start.md 和 core/quality.md；以任务文件和分阶段 context 进入 core/workflow.md、core/knowledge.md 及页面规则。所有已启用条款仍必须在适用阶段执行，不能只读页面 skill 或挑其中几项。包可独立复制，工作路径以本目录为根，不以某个开发者的机器路径为准。
 后续生成和修改默认采用 core/quality.md「后续任务默认执行的设计标准」，作者与审核者都须加载。它是长期规则，不限于本次八站；无需用户在新会话再次提醒。实际工程按页面、模式和授权范围应用，具体皮肤与构图由本站设计决定。
