@@ -33,7 +33,7 @@ test('anonymous MCP captures governed lessons and corrects them without maintain
   t.after(() => client.close());
   const health = await fetch(service.url + '/health').then((r) => r.json());
   assert.equal(health.version, client.getServerVersion().version);
-  assert.equal(health.version, '0.6.0');
+  assert.equal(health.version, '0.7.0');
   assert.deepEqual(
     (await client.listTools()).tools.map((t) => t.name),
     ['experience_search', 'experience_capture', 'experience_manage'],

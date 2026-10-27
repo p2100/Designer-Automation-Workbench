@@ -1,6 +1,6 @@
 # Designer-Automation：Coupon / App / Games 统一维护入口
 
-新站生成、授权重做或参考重建先读 `core/generation-default.md`、`core/creative-generation.md` 与 `core/creative-learning.md`，由 Agent 使用 `node bin/designer-automation.mjs generate` 统一入口：按真实站型准备隔离工作区和适用规则，调用宿主 Image 生成首页效果稿，再按页面职责实现真实全站并接入审核。设计师不选规则、不填 JSON。实际图稿、代码、浏览器和独立审核由 Agent 与工具执行；创建工作区不等于已经完成生成。设计师明确的满意点随实际图稿/候选记录，本机后续同站型、页面自动加载，不能把个人偏好当公共规则。原有生成门禁继续执行。
+新站生成、授权重做或参考重建先读 `core/generation-default.md`、`core/creative-generation.md` 与 `core/creative-learning.md`，由 Agent 使用 `node bin/designer-automation.mjs generate` 统一入口：按真实站型准备隔离工作区和适用规则，调用宿主 Image 生成首页效果稿，再按页面职责实现真实全站并接入审核。设计师不选规则、不填 JSON。实际图稿、代码、浏览器和独立审核由 Agent 与工具执行；创建工作区不等于已经完成生成。设计师明确的满意点随实际图稿/候选记录，自动同步到团队创作参考，后续同站型、页面自动加载；不能把主观偏好当公共规则。原有生成门禁继续执行。
 
 维护先读 core/site-quality.md。Agent 使用 workbench inspect 从源码与浏览器判断站型，准备 siteType、页面/模块、选择器及内部配置，设计师不选规则、不填JSON。App/Games 的完整专项快照在 site-types，公共布局/留白/间距/对齐/容量在 knowledge/shared；Games 最新标准和可执行检测器一并加载。
 

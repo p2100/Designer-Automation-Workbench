@@ -14,6 +14,7 @@ import {
 } from '../lib/experience-backup.mjs';
 import {digest, readJSON} from '../lib/io.mjs';
 import {sample} from './experience-fixture.mjs';
+import {creativeCase} from '../lib/team-creative.mjs';
 const file = process.env.DA_EXPERIENCE_TEST_CONFIG,
   options = {skip: !file};
 async function fixture(t) {
@@ -204,3 +205,14 @@ test(
     assert.equal((await store.read()).cases.length, 1);
   },
 );
+
+test('Mongo persists creative references with type and page isolation', options, async t => {
+  const {store}=await fixture(t);
+  const entry=creativeCase({siteType:'games',page:'home',component:'cards',quote:'I like the cards',observation:'Clear card grouping',kind:'positive-reference',candidate:'a'.repeat(64),actor:'designer',source:'generation',task:'fixture',feedbackId:'feedback-1',at:'2026-10-27T00:00:00.000Z'});
+  await store.capture(entry);await store.capture(entry);
+  const games=await store.search({siteType:'games',pages:['games:home'],includeCreative:true});
+  assert.equal(games.creative.length,1);assert.equal(games.cases.length,0);
+  assert.equal((await store.search({siteType:'app',pages:['app:home'],includeCreative:true})).creative.length,0);
+  assert.equal((await store.search({siteType:'games',pages:['games:detail'],includeCreative:true})).creative.length,0);
+  assert.equal((await store.read()).cases.length,1);
+});

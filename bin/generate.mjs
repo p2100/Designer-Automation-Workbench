@@ -21,7 +21,12 @@ export async function generate(args){
   }
   if(action==='status')return generationStatus(data,id);
   if(action==='direction')return generationDirection({data,id,page:options.page||'home',image:options.image,prompt:options.prompt});
-  if(action==='feedback')return generationFeedback({data,id,actor:options.actor,text:options.text,page:options.page,component:options.component,quote:options.quote,observation:options.observation,target:options.target,sentiment:options.sentiment});
+  if(action==='feedback'){
+    const recorded=await generationFeedback({data,id,actor:options.actor,text:options.text,page:options.page,component:options.component,quote:options.quote,observation:options.observation,target:options.target,sentiment:options.sentiment});
+    const client=new ExperienceBridgeClient({data,url:options['experience-url']||process.env.DA_EXPERIENCE_URL,token:process.env.DA_EXPERIENCE_TOKEN});
+    try {const sync=await client.call('experience_status',{});return {...recorded,teamSync:sync.pending?'queued':'check-delivery-status',pending:sync.pending,rejected:sync.rejected};}
+    catch(error){return {...recorded,teamSync:'pending-local',warning:error.message};}finally{await client.close();}
+  }
   if(action==='review'){
     if(!['open','start'].includes(options.action||'open'))throw Error('Review action must be open or start');
     const input=await generationReviewInput({data,id,configFile:options.config});

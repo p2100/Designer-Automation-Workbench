@@ -3,7 +3,7 @@
   "files": [
     {
       "path": ".agents/skills/designer-automation/SKILL.md",
-      "sha256": "f40a597681f75222589bcb1a6dbd0c7d361fd3b39faeaa8496e2310ff9c8e1a5"
+      "sha256": "cdd7a4160a7573e41f29047b18697b11621225bf2e73aa01eda6af2b955c5ee0"
     },
     {
       "path": ".gitignore",
@@ -11,7 +11,7 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "2d61741f31838b1dd5277d7f0cac73cd2ac063a6de51f1113c953679c913c152"
+      "sha256": "f2b284835fdd333100b8172033dc8f57a3661976510394095e6efc0f548b133e"
     },
     {
       "path": "bin/automatic-layout.mjs",
@@ -55,7 +55,7 @@
     },
     {
       "path": "bin/generate.mjs",
-      "sha256": "149691ecda76cd5a1e7e7bfb7d31c3874a67f6ee74132bb9226bc9017c42a7e9"
+      "sha256": "ba1db28e26fada271bb481222c0059a0813a33a8ba6c6f882ac7e844b809d158"
     },
     {
       "path": "bin/intake.mjs",
@@ -87,7 +87,7 @@
     },
     {
       "path": "bin/workbench.mjs",
-      "sha256": "0587b73bb393f7595c826af5297f48f9f726a7f1e04bd6fb6de6dff21376ff42"
+      "sha256": "c48a52c9271429081dadfa3cc838e88fb6a2ef8abb6528da6dd5f6e1c803ee0b"
     },
     {
       "path": "compatibility/generation-baseline.json",
@@ -119,11 +119,11 @@
     },
     {
       "path": "core/creative-generation.md",
-      "sha256": "319327eb588390b9630d02ecd356f7d29dd59ad6030b9a70b73739bb812bf723"
+      "sha256": "780bba4e50bd49a50ec763994da308bad6eec952d6934c86130ae266229cd315"
     },
     {
       "path": "core/creative-learning.md",
-      "sha256": "2da7cb18881e8262d6952e79e0d8c9140aaab093d93a47a1646b0c38f32c45c1"
+      "sha256": "934504265792b0c17125c45b8447ab73f4d64786bac1b97d66da38a550e1dbe6"
     },
     {
       "path": "core/experience.md",
@@ -183,7 +183,7 @@
     },
     {
       "path": "docs/designer-quickstart.md",
-      "sha256": "2ef9e84defde58f16e541937149dfd7095634a4e399b9f14a262101f24ad937b"
+      "sha256": "d886e42a0ffb25a2ca48a84e8cdb0120ea414f599dd48e136fdd6d2888986855"
     },
     {
       "path": "docs/experience-operations.md",
@@ -563,7 +563,7 @@
     },
     {
       "path": "lib/creative-memory.mjs",
-      "sha256": "c13c93fdbfa8d09d80a4c9165ffc5ead6382303f6f4ae462142da46aab75e403"
+      "sha256": "79b133ab7f8018ee106b44fe56749ecb7f9ea67328e1deffc0bb57ebe88d2974"
     },
     {
       "path": "lib/durable-json.mjs",
@@ -583,11 +583,11 @@
     },
     {
       "path": "lib/experience-client.mjs",
-      "sha256": "09c201d6275cca24ef86a888336ada814bf8bae05d022011da4d2aea726b4e82"
+      "sha256": "ce86dbee0f3a5ba4b4b8e87666f7503bcd4d125ab937a5145191640465af280c"
     },
     {
       "path": "lib/experience-delivery.mjs",
-      "sha256": "f4b3e82c43d8111c6842c0110789175f7a3ce110fb1423f0c4291d015d4b5782"
+      "sha256": "42585e160680473546242255e7f94c623a0f8453441db54f1c64fed9baf1fda1"
     },
     {
       "path": "lib/experience-inventory.mjs",
@@ -595,11 +595,11 @@
     },
     {
       "path": "lib/experience-memory.mjs",
-      "sha256": "1f36b60c11424b9553bd14eb1f446ac8e0bdd530ce7db30e5ef377302e0dc00e"
+      "sha256": "37b93e59761ff03950c33a89b332ae43c9c21ca06a3eeefa2908af0fe1ef7d12"
     },
     {
       "path": "lib/experience-mongo.mjs",
-      "sha256": "cd97549ee7fa729dff96e6f732111562d4fbb430719e274aa2dddf39d7214d33"
+      "sha256": "9be0887d00da91220de12c0e5c663692276a42a2f3eab6049b5dc4d09b2bae5b"
     },
     {
       "path": "lib/experience-policy.mjs",
@@ -607,7 +607,7 @@
     },
     {
       "path": "lib/experience-schema.mjs",
-      "sha256": "97ddb6b3b02450f45e6fcd237e106ccd71f413177bdd5accd9fab6c727f700a7"
+      "sha256": "80ee0e195b007747a4b0811f1c155dfa41e6335f7368d7bfe226791dbf994e15"
     },
     {
       "path": "lib/experience-selection.mjs",
@@ -615,7 +615,7 @@
     },
     {
       "path": "lib/experience-server.mjs",
-      "sha256": "c6ca80d3ac491d514e3108a49298f4ac884a854834a055b5c21660ba3e9551fb"
+      "sha256": "c64ce9fdfeadfa1c0083fe760ceb0bd2b7a5763f5b00085b481a716fbe43c91d"
     },
     {
       "path": "lib/experience-task.mjs",
@@ -627,7 +627,7 @@
     },
     {
       "path": "lib/generation.mjs",
-      "sha256": "b24e7782eefadf79a47ace8e47e80c90fbb6ddae1b5283ee34890fb0d3a27787"
+      "sha256": "52da6a85224d2e6e42228be3c70c76f4f4ae4c6d3afc3a15bc282ece488a75b4"
     },
     {
       "path": "lib/io.mjs",
@@ -642,20 +642,24 @@
       "sha256": "ff34ebdadf989770f2bae5dd265ba7c12dae5f6c89a1d02c03dc3a7905ed6900"
     },
     {
+      "path": "lib/team-creative.mjs",
+      "sha256": "5b7d74fc0deeb133ce6e9757a641665aef43b888d51ca2d71863d0b1533e6c5a"
+    },
+    {
       "path": "lib/workbench.mjs",
-      "sha256": "e0feef20a0c1c49848c2807b361c05ea467fbe091dca4b9e02dbd4f2c3290f81"
+      "sha256": "052a2c03c316d6af016a03d63eea5d21bbb2fb23db0ce2a622aba4452ebefe9c"
     },
     {
       "path": "package-lock.json",
-      "sha256": "4044a9dfaa3a1f8bca9f9c621269292f9f071eb89a085642afea18d31b069499"
+      "sha256": "30bacb9efbcbc0ca8eca9e18f65feaaef033030a4c2ba895011d5db155643484"
     },
     {
       "path": "package.json",
-      "sha256": "b3c1ab88dd6fb0bb98097f2018f79a14a3df68cf370e74fc023083e997d40bf9"
+      "sha256": "2698ea6502e0429d800906f146f5f62703ad979dd52303d16d1bc186104cc7c8"
     },
     {
       "path": "README.md",
-      "sha256": "6e90c35b74e3d3976486c77f4c4412b0919845ab7ad68eb5349ec2779cdd10e1"
+      "sha256": "ce612967c61b03db66407bd1d4d3267906fbdcf5c38914234fdb4315c5a23066"
     },
     {
       "path": "scripts/connect-experience.mjs",
@@ -991,7 +995,7 @@
     },
     {
       "path": "tests/experience-mongo.test.mjs",
-      "sha256": "9c9b24297b1d10ef3e3777f1c80986ff1a27ca2f42859a0c37ca71033673c17a"
+      "sha256": "00b8633e8273cf80368a621de2b8698917b141d92cda55be56ac777337062ef2"
     },
     {
       "path": "tests/experience-policy.test.mjs",
@@ -999,7 +1003,7 @@
     },
     {
       "path": "tests/experience.test.mjs",
-      "sha256": "5b2c8997e67c3576588926b43c20b661f7155b86df875185d36f4fb3f43e5a88"
+      "sha256": "055697ebfc2663f3816ea68c7726c4a72e82a1f5b2a978eb463cd12597e04ef3"
     },
     {
       "path": "tests/generation.test.mjs",
@@ -1016,6 +1020,10 @@
     {
       "path": "tests/site-types.test.mjs",
       "sha256": "bac32acceac9800cc4650b66ec1c818544aad2f9d3c77a816ebc4242df4c5321"
+    },
+    {
+      "path": "tests/team-creative.test.mjs",
+      "sha256": "03ea8b1785bf41b55886fd16b34fa712fed212deebe74b3b30d5756a4db375b8"
     },
     {
       "path": "tests/type-experience.test.mjs",
