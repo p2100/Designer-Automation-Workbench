@@ -1,6 +1,6 @@
 当前统一维护入口支持 Coupon / App / Games。设计师接入与中央经验流程见 [设计师接入说明](docs/designer-quickstart.md)，Agent 执行先读 [统一质量入口](core/site-quality.md)。公共方法共用、专项隔离，新增 Games 标准与只读检测器随仓库交付；原 Coupon 生成快照保持。
 
-三类站点新建、授权重做和参考重建使用 `node bin/designer-automation.mjs generate` 统一入口，由 Agent 识别类型、创建工作区、加载规则和适用经验，再调用实际 Image、编码和浏览器工具完成站点。详见[站点生成默认流程](core/generation-default.md)、[视觉创作方法](core/creative-generation.md)与[设计师创作学习方法](core/creative-learning.md)。设计师明确的实际创作反馈先保存在本机，再自动排队同步为中央团队创作参考；后续按站型和页面读取，Agent 判断组件和适用条件。参考不是强制规则；断网或旧服务时保留并重试。
+三类站点新建、授权重做和参考重建使用 `node bin/designer-automation.mjs generate` 统一入口，由 Agent 识别类型、创建工作区、加载规则和适用经验，再调用实际 Image、编码和浏览器工具完成站点。详见[站点生成默认流程](core/generation-default.md)、[视觉创作方法](core/creative-generation.md)与[设计师创作学习方法](core/creative-learning.md)。设计师明确的实际创作反馈先保存在本机，再自动排队同步为中央团队创作参考；Agent 实际查看满意稿件后，提炼布局、留白、配色、组件等文字观察，绑定稿件指纹；后续按站型和页面读取并判断适用条件。团队经验库不存稿件图片。参考不是强制规则；断网或旧服务时保留并重试。
 
 # Designer-Automation
 
@@ -8,7 +8,7 @@
 
 **审核 → 调整 → 设计师查看 → 有问题继续调整，确认后沉淀可复用经验。**
 
-项目版本 **0.7.0**；原生成规则快照固定为 **2026-10-26.1**。中央经验服务版本独立，以实际健康检查为准。正式交付仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
+项目版本 **0.8.0**；原生成规则快照固定为 **2026-10-26.1**。中央经验服务版本独立，以实际健康检查为准。正式交付仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
 
 正式交付入口已迁入 p2100 组织。GitHub 阻止旧仓库直接转移，且 `p2100/Designer-Automation` 同名地址被占用但不可访问，因此采用 `Designer-Automation-Workbench` 仓库名，保留原项目名称与完整 Git 历史。旧个人仓库仅保留历史入口；后续更新以本组织仓库为准。
 
@@ -100,7 +100,7 @@ npm run connect
 | --- | --- |
 | `experience_search` | 查询适用结论，按站点、页面、组件和主题筛选 |
 | `experience_capture` | 保存反馈或已确认的经验，归并有效证据 |
-| `experience_manage` | 查看证据与历史、纠正或撤回结论 |
+| `experience_manage` | 查看证据与历史、纠正或撤回结论及创作参考 |
 | `experience_status` | 查看本机待传、拒绝和异常记录 |
 
 确认与完整待传内容一起原子保存，之后才发送。断网时保留，恢复后自动补传；补传子进程异常退出由监督进程重启，坏记录隔离后其他记录继续。整机关闭后，下次 MCP 启动恢复。`queued` 表示尚未共享，只有当前适用结论有效时才报告 `shared=true`。

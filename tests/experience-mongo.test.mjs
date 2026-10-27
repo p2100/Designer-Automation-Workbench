@@ -14,7 +14,7 @@ import {
 } from '../lib/experience-backup.mjs';
 import {digest, readJSON} from '../lib/io.mjs';
 import {sample} from './experience-fixture.mjs';
-import {creativeCase} from '../lib/team-creative.mjs';
+import {creativeCase,visualSpecCase} from '../lib/team-creative.mjs';
 const file = process.env.DA_EXPERIENCE_TEST_CONFIG,
   options = {skip: !file};
 async function fixture(t) {
@@ -215,4 +215,18 @@ test('Mongo persists creative references with type and page isolation', options,
   assert.equal((await store.search({siteType:'app',pages:['app:home'],includeCreative:true})).creative.length,0);
   assert.equal((await store.search({siteType:'games',pages:['games:detail'],includeCreative:true})).creative.length,0);
   assert.equal((await store.read()).cases.length,1);
+});
+
+test('Mongo retains scoped visual text and creative corrections without images',options,async t=>{
+ const {store,restored}=await fixture(t);const spec={observations:[{aspect:'layout',description:'Synthetic visible arrangement'}],applicability:'Synthetic home',limits:'Only one fixture',evidenceHash:'b'.repeat(64)};
+ const ref={siteType:'games',page:'home',component:'cards',quote:'I like this',observation:'Clear grouping',kind:'positive-reference',candidate:'a'.repeat(64),actor:'designer',source:'generation',task:'fixture',feedbackId:'feedback-1',at:'2026-10-27T00:00:00.000Z',visualSpec:spec};
+ const captured=await store.capture(creativeCase(ref));await store.capture(visualSpecCase(ref));
+ const find=(siteType,page)=>store.search({siteType,pages:[siteType==='coupon'?page:siteType+':'+page],includeCreative:true,includeRetired:true,includeVisualSpecs:true});
+ assert.equal((await find('games','home')).creative[0].visualSpec.observations[0].description,'Synthetic visible arrangement');assert.equal((await find('app','home')).creative.length,0);
+ const corrected={observations:[{aspect:'spacing',description:'Corrected fixture spacing'}],applicability:spec.applicability,limits:spec.limits};
+ const result=await store.manage({action:'replace',id:captured.id,expectedRevision:1,actor:'reviewer',reason:'Correct fixture',observation:'Corrected grouping',visualSpec:corrected});
+ const current=(await find('games','home')).creative[0];assert.equal(current.visualSpec.observations[0].description,'Corrected fixture spacing');assert.equal(current.visualSpec.evidenceHash,spec.evidenceHash);
+ await store.manage({action:'retract',id:current.id,expectedRevision:1,actor:'reviewer',reason:'Withdraw fixture'});assert.equal((await find('games','home')).creative.length,0);
+ const backup=backupDocument(await store.read(),{fixture:true});await store.restoreInto(restored,backup);const restoredStore=new MongoExperienceStore(store.client,store.database,restored);assert.equal((await restoredStore.search({siteType:'games',pages:['games:home'],includeCreative:true,includeRetired:true,includeVisualSpecs:true})).creative.length,0);
+ assert.equal(result.reference.creativeState,'replaced');
 });

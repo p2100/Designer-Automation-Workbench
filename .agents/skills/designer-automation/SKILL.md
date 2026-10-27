@@ -9,7 +9,7 @@ description: Create, audit, repair and recheck Coupon, App and Games sites throu
 
 用户要求新建/授权重做站点时，先读 core/generation-default.md、core/creative-generation.md、core/creative-learning.md，识别真实站型和渠道，以 `node bin/designer-automation.mjs generate start --request <原需求> --site-type <coupon|app|games>` 准备私有独立工作区、冻结规则和匹配经验。站型由 Agent 根据实际需求与证据判断，模糊时继续核实；设计师不用选规则或填写 JSON。按返回 contexts 加载对应规则，调用宿主实际可用的 Image 能力生成并审看首页方向，使用 generate direction 登记实际图像；再按实际页面职责设计内页，在返回的 source 中实现真实页面。Agent 准备实际路由/选择器等内部审核配置，调用 generate review --action start 接入现有工作台，继续实际浏览器审核、集中修复与复查；原 Coupon 原生门禁继续执行。只有规则、空目录或图像不等于站点已生成或验收。
 
-设计师明确喜欢或否定某个实际图稿或页面的具体点时，Agent 如实摘取原话、页面、组件和可观察到的设计点：图稿通过 generate feedback 绑定已登记的实际方向，否定时用 sentiment=negative；工作台候选通过 feedback 的 creativeObservations 记录，单独表扬使用 decision=note，需调整时使用 revise，不替设计师批准整站。记录先本机保存并自动排队同步中央团队库；下一次同站型、同页面任务加载本机和团队创作参考；Agent 判断时间、组件与适用条件，记录不是规则。不得编造满意、根因或跨站型复用；用户只说笼统 OK 时不捏造具体偏好。反馈摘录与观察作为主观创作参考，不能冒充正式审核结论；正式修复经验继续按 core/experience.md 的实际修复、复验及确认门禁执行。
+设计师明确喜欢或否定某个实际图稿或页面的具体点时，Agent 如实摘取原话、页面、组件和可观察到的设计点：图稿通过 generate feedback 绑定已登记的实际方向，否定时用 sentiment=negative；工作台候选通过 feedback 的 creativeObservations 记录，单独表扬使用 decision=note，需调整时使用 revise，不替设计师批准整站。记录先本机保存并自动排队同步中央团队库；下一次同站型、同页面任务加载本机和团队创作参考；Agent 实际查看明确满意的图稿或对应候选截图后，按 core/creative-learning.md 提炼布局、间距、配色和组件等可观察的文字经验，并注明适用条件和看不到的内容；通过 Agent 内部 visual-spec 或 visualSpec 保存，不上传图片。无法查看时如实说明，不虚构。新任务按站型、页面和组件参考文字经验，不把其当成硬规则；明确纠正或撤回时使用 experience_manage inspect 后按 revision 操作，并保留原因和历史。不得编造满意、根因或跨站型复用；用户只说笼统 OK 时不捏造具体偏好。反馈摘录与观察作为主观创作参考，不能冒充正式审核结论；正式修复经验继续按 core/experience.md 的实际修复、复验及确认门禁执行。
 
 ## 原 Coupon 生成分支
 
