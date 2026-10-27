@@ -5,6 +5,8 @@ description: Create, audit, repair and recheck Coupon, App and Games sites throu
 
 以本文件向上三级的 Designer-Automation 为包根，读取 AGENTS.md 和 README.md。复制时携带整个包，不能只复制本 skill。
 
+用户要求本地改造后更新站点库时读取 docs/site-library.md。由 Agent 使用 bin/designer-automation.mjs library 连接准确站点并获取可编辑源码，继续现有审核/修复；既有 ZIP/Git 任务先核对起点再绑定。本地 Agent 直接连接内网站点库，无需 Harness、登录或浏览器配对，不让设计师填写 JSON。绑定任务获准确候选认可后自动回传，返回真实预览才报告已更新；pending/冲突保留原任务，不能覆盖其他更新或代替原生审核、下载与发布批准。
+
 用户要求审核/调整站点时，按 docs/designer-quickstart.md、core/site-quality.md、core/maintenance.md 使用 bin/workbench.mjs，由 Agent 检查实际源码与浏览器、判断站型并加载公共/专项规则：Git 用 `--repo`，本地源码用 `--source` 导入隔离副本；checkout一次，配置实际页面和源码范围，start审核，Agent实看问题后通过repair修复；读取同轮截图填写observe；确认实际覆盖后handoff给设计师查看。设计师反馈通过feedback保存，只有准确候选复验并获设计师明确确认后，才通过原 designer_experience MCP 自动共享适用经验；离线队列和补传照常，不让设计师手动发布。普通修复不用另做新站设计、重复克隆或每轮全站复验。所有命令的JSON由Agent准备，设计师只需自然语言要求和实际复核。
 
 用户要求新建/授权重做站点时，先读 core/generation-default.md、core/creative-generation.md、core/creative-learning.md，识别真实站型和渠道，以 `node bin/designer-automation.mjs generate start --request <原需求> --site-type <coupon|app|games>` 准备私有独立工作区、冻结规则和匹配经验。站型由 Agent 根据实际需求与证据判断，模糊时继续核实；设计师不用选规则或填写 JSON。按返回 contexts 加载对应规则，调用宿主实际可用的 Image 能力生成并审看首页方向，使用 generate direction 登记实际图像；再按实际页面职责设计内页，在返回的 source 中实现真实页面。Agent 准备实际路由/选择器等内部审核配置，调用 generate review --action start 接入现有工作台，继续实际浏览器审核、集中修复与复查；原 Coupon 原生门禁继续执行。只有规则、空目录或图像不等于站点已生成或验收。

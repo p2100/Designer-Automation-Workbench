@@ -1,5 +1,7 @@
 # Designer-Automation：Coupon / App / Games 统一维护入口
 
+用户要求把本地改造更新回站点库时，先读 docs/site-library.md，使用统一入口 library connect/pull/bind/push/status。本地 Agent 直接连接内网站点库并校验准确站点，无需 Harness、登录或浏览器配对；从库中拉取的源码任务自动绑定，已有 ZIP/Git 任务校验起点后绑定。准确候选经设计师明确确认后自动回传，失败保留待传记录和原认可，Agent 不把 pending 说成上传成功。回传新增原站点的待审核版本，保留历史；身份、站型、起始版本与源码冲突时合并后重验，不强行覆盖。不把连接凭据或站点图片写到经验库。
+
 新站生成、授权重做或参考重建先读 `core/generation-default.md`、`core/creative-generation.md` 与 `core/creative-learning.md`，由 Agent 使用 `node bin/designer-automation.mjs generate` 统一入口：按真实站型准备隔离工作区和适用规则，调用宿主 Image 生成首页效果稿，再按页面职责实现真实全站并接入审核。设计师不选规则、不填 JSON。实际图稿、代码、浏览器和独立审核由 Agent 与工具执行；创建工作区不等于已经完成生成。设计师明确的满意点随实际图稿/候选记录，自动同步到团队创作参考，后续同站型、页面自动加载；不能把主观偏好当公共规则。原有生成门禁继续执行。
 
 维护先读 core/site-quality.md。Agent 使用 workbench inspect 从源码与浏览器判断站型，准备 siteType、页面/模块、选择器及内部配置，设计师不选规则、不填JSON。App/Games 的完整专项快照在 site-types，公共布局/留白/间距/对齐/容量在 knowledge/shared；Games 最新标准和可执行检测器一并加载。

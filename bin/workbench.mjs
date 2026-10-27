@@ -34,6 +34,7 @@ export async function workbench(args) {
       const lessons = await client.search({pages:[...new Set(config.pages.map(p=>experiencePage(config.siteType,p.family)))],site:checkout.repo,includePending:true,includeCreative:true,includeRetired:true,includeVisualSpecs:true,siteType:config.siteType,limit:100});
       const selected=selectTaskExperience(lessons,config);
       const opened=await openTask({data,id,repo:options.repo,ref:options.ref,localSource:options.source,config,lessons:selected,teamCreative:lessons.creative||[],teamRetired:lessons.creativeRetired||[],experienceMeta:{source:lessons.creativeSource || lessons.source || 'unknown',truncated:lessons.truncated===true,...(lessons.warning?{warning:lessons.warning}:{})}});
+      if(options.source){const {bindPulledSource}=await import('../lib/library-client.mjs');await bindPulledSource(data,id,options.source);}
       if (action === 'open') return {id,step:'registered',experience:opened.experienceMeta?.source || 'unknown',experienceTruncated:opened.experienceMeta?.truncated===true,lessons:opened.lessons,creative:opened.creative};
       await prepare(data,id); await audit({data,id}); return status(data,id);
     }
@@ -48,7 +49,8 @@ export async function workbench(args) {
       const visualLearning=points.some(p=>p.kind==='positive-reference'&&!p.visualSpec)?'pending-agent-inspection':points.some(p=>p.visualSpec)?'recorded':'not-applicable';
       if(payload.decision==='note'){const sync=await client.call('experience_status',{});return {...await status(data,id),creativeFeedback:'saved-local',visualLearning,experienceSync:sync.pending?'queued':'check-delivery-status',pending:sync.pending,rejected:sync.rejected};}
       const experience = await captureDialogue({data,id,client}), records = experience.records || [experience];
-      return {...await status(data,id),visualLearning,experienceSync:experience.sync,experience:{shared:records.length > 0 && records.every(r=>r.shared === true && r.sync !== 'queued'),records:records.map(r=>({id:r.id,status:r.status,sync:r.sync,shared:r.shared,lessons:r.lessons,review:r.review,conflicts:r.conflicts}))}};
+      const library=payload.decision==='approve'?await (await import('../lib/library-client.mjs')).uploadAfterApproval(data,id):undefined;
+      return {...await status(data,id),...(library?{library}:{}),visualLearning,experienceSync:experience.sync,experience:{shared:records.length > 0 && records.every(r=>r.shared === true && r.sync !== 'queued'),records:records.map(r=>({id:r.id,status:r.status,sync:r.sync,shared:r.shared,lessons:r.lessons,review:r.review,conflicts:r.conflicts}))}};
     }
     if (action === 'handoff') { await handoff(data,id); return {task:await status(data,id),preview:await ensurePreview(data,id)}; }
     if (action === 'preview') return ensurePreview(data,id);

@@ -4,6 +4,8 @@
 
 日常流程只有一条：**提供站点 → Agent 审核和调整 → 设计师查看 → 继续调整或确认 → 自动沉淀适用经验。**
 
+需要在设计师自己的电脑上完成改造并更新回原站点库时，直接告诉 Agent“确认后更新站点库”，并提供库中预览地址。本地 Agent 直接连接站点库，自动管理连接、站点身份、源码和回传，无需 Harness 或登录，后续认可准确候选时自动新增原站点的待审核版本。详细流程见[本地改造回传站点库](site-library.md)。库服务和本地包均须升级，上传成功以真实新预览为准。
+
 正式项目地址：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。本地文件夹继续使用 `Designer-Automation` 这个名字。
 
 ## 1. 接入前需要什么

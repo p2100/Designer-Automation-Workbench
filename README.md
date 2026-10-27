@@ -8,7 +8,7 @@
 
 **审核 → 调整 → 设计师查看 → 有问题继续调整，确认后沉淀可复用经验。**
 
-项目版本 **0.8.0**；原生成规则快照固定为 **2026-10-26.1**。中央经验服务版本独立，以实际健康检查为准。正式交付仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
+项目版本 **0.9.0**；原生成规则快照固定为 **2026-10-26.1**。中央经验服务版本独立，以实际健康检查为准。正式交付仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
 
 正式交付入口已迁入 p2100 组织。GitHub 阻止旧仓库直接转移，且 `p2100/Designer-Automation` 同名地址被占用但不可访问，因此采用 `Designer-Automation-Workbench` 仓库名，保留原项目名称与完整 Git 历史。旧个人仓库仅保留历史入口；后续更新以本组织仓库为准。
 
@@ -140,3 +140,5 @@ npm run test:experience
 0.4.0 已通过 24 项经验服务验证，覆盖真实 MongoDB 并发归并、纠错撤回、确认后中断恢复、补传进程重启、坏记录隔离和备份恢复。MongoDB 集成用例需管理员的私有测试配置，未配置时会明确 skip；测试使用隔离数据，不向正式库写测试经验。
 
 当前尚未进行真实业务站点联测，不能据此宣称任意站点或全部 Agent 已通过生成与验收。
+
+本地 Agent 改造完成后回传原站点库，见[站点库连接与回传](docs/site-library.md)。Agent 直接连接内网站点库并核对准确站点，无需 Harness、登录或浏览器配对，后续确认的准确候选自动回传为待审核新版本，保留旧版本和原有发布门禁。
