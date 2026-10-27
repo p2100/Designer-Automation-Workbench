@@ -11,6 +11,33 @@ import {audit} from '../lib/audit.mjs';
 import {feedbackCases} from '../lib/experience-task.mjs';
 import {hash} from '../bin/common.mjs';
 
+test('shared rule directory covers each registered clause exactly once without changing site boundaries',async()=>{
+  const shared=await readJSON(path.join(root,'knowledge/shared/rules.json'));
+  const directory=await fs.readFile(path.join(root,'knowledge/shared/README.md'),'utf8');
+  const entries=[...directory.matchAll(/^\| (SHARED-[A-Z]+-\d+) \| \[[^\]]+\]\(([^)#]+)#([^)]+)\) \|$/gm)];
+  const ids=shared.rules.map(rule=>rule.id);
+  assert.equal(new Set(ids).size,ids.length,'registered rule IDs must be unique');
+  assert.equal(entries.length,ids.length,'every registered rule must appear exactly once');
+  assert.equal(new Set(entries.map(entry=>entry[1])).size,entries.length,'directory must not duplicate rule IDs');
+  assert.deepEqual(entries.map(entry=>entry[1]).sort(),[...ids].sort());
+  for(const [,id,file,anchor] of entries){
+    const rule=shared.rules.find(item=>item.id===id);
+    assert.equal(rule.source,'knowledge/shared/'+file,`${id} must link to its registered source`);
+    assert.equal(rule.status,'active');
+    assert.deepEqual(rule.pages,['*']);
+    const source=await fs.readFile(path.join(root,rule.source),'utf8');
+    assert.match(source,new RegExp('^## '+id+' · ','m'),`${id} must identify a real clause`);
+    const heading=source.match(new RegExp('^## ('+id+' · .+)$','m'))[1];
+    const slug=heading.toLowerCase().replace(/[\p{P}\p{S}]/gu,char=>char==='-'?'-':'').replace(/ /g,'-');
+    assert.equal(anchor,slug,`${id} must link to its clause heading`);
+  }
+  assert.deepEqual(shared.siteTypes,['coupon','app','games']);
+  for(const siteType of shared.siteTypes){
+    const selected=await maintenanceContext(root,{siteType,page:'home'});
+    for(const id of ids)assert.equal(selected.obligations.filter(rule=>rule.id===id).length,1,`${siteType}: ${id}`);
+  }
+});
+
 test('maintenance providers share methods and keep all original generation bytes pinned',async()=>{
   const baseline=await readJSON(path.join(root,'compatibility/generation-baseline.json'));
   for(const item of baseline.files)assert.equal(hash(await fs.readFile(path.join(root,item.path))),item.sha256,item.path);

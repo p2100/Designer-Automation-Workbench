@@ -4,6 +4,7 @@ import {readJSON} from '../lib/io.mjs';
 import {MongoExperienceStore} from '../lib/experience-mongo.mjs';
 import {backupDocument,readBackup,writeBackup} from '../lib/experience-backup.mjs';
 import {validateStoredCase} from '../lib/experience-case.mjs';
+import {summarizeExperienceInventory} from '../lib/experience-inventory.mjs';
 
 const action = process.argv[2], options = {};
 for (let i=3;i<process.argv.length;i+=2) {
@@ -15,7 +16,12 @@ try {
   const config = await readJSON(path.resolve(options.config));
   if (!config.mongo?.uri || !config.mongo.database) throw Error('Explicit MongoDB configuration is required');
   let result;
-  if (action === 'backup') {
+  if (action === 'inventory') {
+    if (!config.maintainerToken) throw Error('Configure maintainerToken');
+    const response = await fetch('http://127.0.0.1:'+config.port+'/v1/admin/snapshot',{headers:{authorization:'Bearer '+config.maintainerToken},signal:AbortSignal.timeout(60000)});
+    if (!response.ok) throw Error('Snapshot endpoint HTTP '+response.status);
+    result = summarizeExperienceInventory(await response.json());
+  } else if (action === 'backup') {
     if (!config.backup?.directory || !config.maintainerToken) throw Error('Configure backup.directory and maintainerToken');
     const url = 'http://127.0.0.1:'+config.port+'/v1/admin/snapshot';
     const response = await fetch(url,{headers:{authorization:'Bearer '+config.maintainerToken},signal:AbortSignal.timeout(60000)});
@@ -46,7 +52,7 @@ try {
         result = {...await store.importCases(source.cases),legacyBackup:archive.file};
       }
     } finally { await store.close(); }
-  } else throw Error('Use backup, verify, status, restore or import-json');
+  } else throw Error('Use inventory, backup, verify, status, restore or import-json');
   console.log(JSON.stringify(result,null,2));
 } catch (error) {
   console.error('Experience administration: '+String(error.message).replace(/mongodb(?:\+srv)?:\/\/[^\s]+/gi,'[private MongoDB connection]'));

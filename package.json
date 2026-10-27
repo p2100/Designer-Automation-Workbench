@@ -18,7 +18,7 @@
     "connect": "node scripts/connect-experience.mjs",
     "knowledge:service": "node scripts/experience-service.mjs",
     "knowledge:admin": "node scripts/experience-admin.mjs",
-    "test:experience": "node --test tests/experience.test.mjs tests/experience-backup.test.mjs tests/experience-mongo.test.mjs tests/experience-delivery.test.mjs tests/experience-policy.test.mjs",
+    "test:experience": "node --test tests/experience.test.mjs tests/experience-backup.test.mjs tests/experience-mongo.test.mjs tests/experience-delivery.test.mjs tests/experience-policy.test.mjs tests/experience-inventory.test.mjs tests/type-experience.test.mjs",
     "knowledge:install-linux": "node scripts/install-experience-linux.mjs",
     "test:sites": "node --test tests/site-types.test.mjs site-types/games/tests/owner-inspector.test.mjs"
   },

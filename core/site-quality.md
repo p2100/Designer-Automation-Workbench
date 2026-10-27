@@ -4,6 +4,8 @@
 
 公共方法读取 knowledge/shared/layout-and-space.md、content-and-actions.md、review-and-learning.md，覆盖布局、有效留白、四层累计间距、光学对齐、文字/按钮/宿主容量、媒体比例、PC/手机重组、加载/重绘、状态和真实证据。不统一颜色、列数、卡片形状或各站型的业务尺寸。
 
+公共条款导航和正式规则、专项、案例、经验的边界见 knowledge/shared/README.md；该目录是导航，不替代规则原文。rules.json 是公共条款的唯一索引，变更规则时同步维护导航和验证。
+
 Coupon 继续原 context 和页面合同；App 读取完整 site-types/app 的身份、媒体、detail→version→真实渠道及页面条款；Games 读取 site-types/games 的能力分流、页面条款和 core/owner-standards-20261027.md。下载型手游按实际 App 获取路径处理，不因标题是游戏而套在线运行规则。
 
 冻结 contexts 保存公共和专项 obligations。逐页/宽度的规则检查与布局、视觉、交互共用同次访问和截图；observe 中说明条件是否成立、实际观察及证据范围。条件不成立说明实体/范围依据，不以 not-run 冒充通过。条款未查、缺实际模块或范围未对账时保留 gaps，不能 handoff 为已验证。

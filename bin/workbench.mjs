@@ -9,6 +9,7 @@ import {learnTask,captureDialogue} from '../lib/experience.mjs';
 import {ExperienceBridgeClient} from '../lib/experience-bridge.mjs';
 import {inspectSource} from './intake.mjs';
 import {experiencePage} from '../lib/site-rules.mjs';
+import {selectTaskExperience} from '../lib/experience-selection.mjs';
 export async function workbench(args) {
   const [action,...rest] = args, options = {};
   if (!action || ['help','--help'].includes(action)) return {
@@ -24,10 +25,16 @@ export async function workbench(args) {
     if (action === 'open' || action === 'start') {
       let config = await readJSON(path.resolve(options.config));
       const checkout=await checkoutRepository({data,id,repo:options.repo,ref:options.ref,localSource:options.source});
-      if(!config.siteType){const detected=await inspectSource(checkout.source);if(detected.siteType)config={...config,siteType:detected.siteType};}
-      const lessons = await client.search({pages:[...new Set(config.pages.map(p=>experiencePage(config.siteType,p.family)))],site:checkout.repo});
-      await openTask({data,id,repo:options.repo,ref:options.ref,localSource:options.source,config,lessons:lessons.cases});
-      if (action === 'open') return {id,step:'registered',experience:lessons.source || 'local'};
+      const detected=await inspectSource(checkout.source);
+      const declarations=[...new Set(detected.evidence.map(e=>e.declaredSiteType).filter(Boolean))];
+      if(declarations.length>1 || (config.siteType && declarations.length===1 && declarations[0]!==config.siteType))
+        throw Error('Site type conflicts with actual source declarations; inspect product and source before continuing');
+      if(!config.siteType&&detected.classification==='declared-with-source-evidence')config={...config,siteType:detected.siteType};
+      if(!config.siteType)throw Error('Site type is ambiguous; Agent must inspect the actual product and pages before selecting rules or experience');
+      const lessons = await client.search({pages:[...new Set(config.pages.map(p=>experiencePage(config.siteType,p.family)))],site:checkout.repo,includePending:true,limit:100});
+      const selected=selectTaskExperience(lessons,config);
+      const opened=await openTask({data,id,repo:options.repo,ref:options.ref,localSource:options.source,config,lessons:selected,experienceMeta:{source:lessons.source || 'unknown',truncated:lessons.truncated===true,...(lessons.warning?{warning:lessons.warning}:{})}});
+      if (action === 'open') return {id,step:'registered',experience:opened.experienceMeta?.source || 'unknown',experienceTruncated:opened.experienceMeta?.truncated===true,lessons:opened.lessons};
       await prepare(data,id); await audit({data,id}); return status(data,id);
     }
     if (action === 'cycle') { await prepare(data,id); await audit({data,id}); return status(data,id); }

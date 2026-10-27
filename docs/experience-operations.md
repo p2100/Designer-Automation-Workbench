@@ -28,6 +28,8 @@ node scripts/install-experience-linux.mjs /home/liusili/.config/designer-automat
 
 ## 备份与检查
 
+维护者可用 `node scripts/experience-admin.mjs inventory --config /home/liusili/.config/designer-automation/service.json` 只读盘点中央快照，输出案例/结论的状态、适用范围和缺少确认的数量，不输出反馈正文、身份、站点或经验 key，也不修改数据。重复 key 只是复核线索，不证明案例重复；站点不同、条件不同或版本不同不能直接合并。该结果不包含设计师电脑上尚未上传的队列。普通 experience_search 不带站点时不能作为全库盘点。
+
 crond按服务器时区每6小时执行一次。备份通过本机维护者快照接口读取MongoDB的snapshot事务，得到包含全部候选和已发布经验的同一时点数据，正常查询/记录无需停机。[MongoDB快照读说明](https://www.mongodb.com/docs/manual/reference/read-concern-snapshot/)是该实现依赖的副本集能力；服务拒绝使用不支持该恢复保证的单机MongoDB。归档v2同时保存案例、结论、撤回状态和历史，带分别条数及整体SHA256的JSON gzip，是备份格式，在线读写始终使用数据库。
 
 文件先写临时路径并fsync，再原子改名并核验；只有新备份核验成功才删除本工具30天前的归档，不处理其他文件。备份在服务服务器上，与现有Mongo副本集分开；它不是另一套自动异地容灾系统。默认最大损失窗口约6小时，实际取决于最后成功备份时间。

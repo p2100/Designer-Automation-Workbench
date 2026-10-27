@@ -19,7 +19,7 @@ async function fixture(t){
   await fs.writeFile(path.join(original,'.env.local'),'PRIVATE_FIXTURE_DO_NOT_COPY');
   await fs.mkdir(path.join(original,'node_modules'));await fs.writeFile(path.join(original,'node_modules','unused.txt'),'dependency');
   await fs.mkdir(path.join(original,'.git'));await fs.writeFile(path.join(original,'.git','config'),'fixture metadata');
-  const config={version:1,request:'Fix overflow in the actual local draft',artifactRoot:'.',allowedPaths:['**/*.css'],widths:[320],commands:{},pages:[{id:'home',family:'home',route:'/index.html',dependsOn:['index.html','style.css']}]};
+  const config={version:1,siteType:'coupon',request:'Fix overflow in the actual local draft',artifactRoot:'.',allowedPaths:['**/*.css'],widths:[320],commands:{},pages:[{id:'home',family:'home',route:'/index.html',dependsOn:['index.html','style.css']}]};
   return {temp,original,data,config};
 }
 
@@ -38,7 +38,7 @@ test('local import captures current files once, isolates edits and never copies 
   const task=await openTask({data,id:'local',localSource:original,config});assert.equal(task.sourceKind,'local');
   assert.equal(task.repo,first.repo);assert(!JSON.stringify(task).includes(original));
   assert((await prepare(data,'local')).candidates.length===1);
-  assert.throws(()=>taskLesson(task,{learning:{transferable:true}},'fixture'),/cannot prove independent sites/);
+  assert.throws(()=>taskLesson({...task,config:{...task.config,siteType:undefined}},{learning:{transferable:true}},'fixture'),/actual site type/);
 });
 
 test('local rebuild discards stale output in the copy while preserving the original output',async t=>{

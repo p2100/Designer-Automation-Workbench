@@ -4,7 +4,7 @@
 
 独立工程0.4起，站点审核、修复与设计师反馈先读 core/maintenance.md，使用 bin/workbench.mjs；现有生成仍使用下面的 core/start.md、core/workflow.md 与 bin/da.mjs，禁止把维护流程的人工收尾方式替换到既有生成门禁。设计师给 Git 地址或本地源码时，分别以 `--repo` 或 `--source` 准备一次隔离工作区，再检查源码、生成任务配置；Agent负责配置和证据，不要求设计师手填JSON。没有明确要求不提交、推送或部署。
 
-经验先读core/experience.md，连接见docs/designer-quickstart.md。运行npm run connect生成本地stdio MCP入口，统一经中央MCP读写MongoDB；workbench使用同一入口。新任务查询适用经验，真实反馈保存草稿；设计师明确确认准确候选后，Agent自动归纳修复经验，附真实确认原话、候选与复验结果，通过experience_capture保存为准确作用域内的结论；重复案例合并证据，冲突待处理，experience_manage可检查、纠正和撤回，不找维护者发布。没有可复用结论时记录skip理由，不强行编经验。断网先保留，后台自动补传，无需手动sync；experience_status查看待传/拒绝状态。Agent不得捏造认可、验证或未知根因。连接和私有队列不进Git及manifest；真实连接以工具发现和读取确认，不自动触发站点测试。
+经验先读core/experience.md，连接见docs/designer-quickstart.md。运行npm run connect生成本地stdio MCP入口，统一经中央MCP读写MongoDB；workbench使用同一入口。先结合真实产品、源码与页面确认站型，再查同站型和页面的经验，不能默认 Coupon 或跨站型套用；已确认的可迁移候选是参考，不是强制规则，Agent仍须判断组件、条件和例外。真实反馈保存草稿；设计师明确确认准确候选后，Agent自动归纳修复经验，附真实确认原话、候选与复验结果，通过experience_capture保存为准确作用域内的结论；重复案例合并证据，冲突待处理，experience_manage可检查、纠正和撤回，不找维护者发布。没有可复用结论时记录skip理由，不强行编经验。断网先保留，后台自动补传，无需手动sync；experience_status查看待传/拒绝状态。Agent不得捏造认可、验证或未知根因。连接和私有队列不进Git及manifest；真实连接以工具发现和读取确认，不自动触发站点测试。
 
 本独立仓库的 knowledge/imported 保留2026-10-26.1规则快照。现有生成工程不受本仓库修改影响。维护程序与新经验以本独立仓库及配置的共享服务为源；不要运行原Harness导出覆盖独立工程。现有规则的正式升级须另发明确版本，修改所属条款并更新索引、manifest和兼容基线，不在个人经验中静默覆盖。经验服务不可达时保留本地记录及待同步队列，不能因此丢弃设计师反馈。
 

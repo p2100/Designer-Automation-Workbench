@@ -39,6 +39,24 @@ async function fixture(t) {
   return {store, config, restored};
 }
 test(
+  'Mongo keeps local ZIP references type-scoped and cannot promote local copies',
+  options,
+  async (t) => {
+    const {store} = await fixture(t);
+    for(const digit of ['1','2']) {
+      const site='local:'+digit.repeat(64);
+      const input=sample({site,classification:'local-reference',scope:{site,pages:['games:home'],component:'offer-card'}});
+      input.verification.pages=['games:home'];
+      await store.capture(input);
+    }
+    const games=await store.search({site:'local:'+'3'.repeat(64),pages:['games:home'],includePending:true});
+    assert.equal(games.cases.length,1);
+    assert.equal(games.cases[0].status,'candidate');
+    assert.equal((await store.search({site:'local:'+'3'.repeat(64),pages:['games:home']})).cases.length,0);
+    assert.equal((await store.search({site:'local:'+'3'.repeat(64),pages:['app:home'],includePending:true})).cases.length,0);
+  },
+);
+test(
   'Mongo transactions merge concurrent retries and independent evidence without duplicate conclusions',
   options,
   async (t) => {
