@@ -11,7 +11,7 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "af574298a74fc2f362eb5bba47e846f408cc89b9dd300e8d66d09b143629d39d"
+      "sha256": "0452f4632eab1505ae5dd463875e5fefdf95c167434ce1f2810f036acaae6748"
     },
     {
       "path": "bin/automatic-layout.mjs",
@@ -75,7 +75,7 @@
     },
     {
       "path": "bin/library.mjs",
-      "sha256": "e9bdd700728db3b824b4d25da87eb6d87b870aae6bac3a4ce6d90a57a47948eb"
+      "sha256": "806d3b9f81fc2affd71b175612e8411b464f6d6c1d948f7bd23238a00159e472"
     },
     {
       "path": "bin/module-review.mjs",
@@ -147,7 +147,7 @@
     },
     {
       "path": "core/maintenance.md",
-      "sha256": "b96232614dfa14b5614cd0fcefa61c83868bafec114de95d93a934cf33eb33e9"
+      "sha256": "ef2bed1493bcf2a89b74333ba5bf17e3c494124d83ca33d26dc8e9e4d146c773"
     },
     {
       "path": "core/quality.md",
@@ -191,7 +191,7 @@
     },
     {
       "path": "docs/designer-quickstart.md",
-      "sha256": "0f6e57a447db2a96e15aefbce97df45ecb7cb98bf1d2bfac6c282c201259ce66"
+      "sha256": "2eb6222772941d8b24259a41da2028c3739aaf3c6513770d4704ed1543a92ebe"
     },
     {
       "path": "docs/experience-operations.md",
@@ -203,7 +203,7 @@
     },
     {
       "path": "docs/site-library.md",
-      "sha256": "3acb018c3f41b675aa0eaf38a9de7c8b1341201260d878e0675b901e585d3be4"
+      "sha256": "2ddb7244ebc184966487c4a96c69cba3e00ce3c804ada643913dcf1a7108e144"
     },
     {
       "path": "docs/standalone-workbench.md",
@@ -655,7 +655,7 @@
     },
     {
       "path": "lib/library-client.mjs",
-      "sha256": "35a6c29bdaacc2eb81d37307a1f6f4d4c7539199482261a944b5dd41f4dfa265"
+      "sha256": "915c33ff55a30bffd41766791fd2259097b537260ba2c4d1d883ef6f2c651348"
     },
     {
       "path": "lib/preview.mjs",
@@ -675,15 +675,15 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "58ab3f018fe99482787e88acf7253c598022d84e64a96ddbeae6b68a52f35285"
+      "sha256": "d2df23334f844509db59c5ff636eaf00f949969b057767268d98b85f9eec4ecb"
     },
     {
       "path": "package.json",
-      "sha256": "11a4bbc3f0b9e2968e391056bfa007674fbc4de2f30744b2f4ee28a78f496fee"
+      "sha256": "fb63c662f1fb0544ef9274bdf10da3ebe10a8ff78e14add5dc716824dfc580e3"
     },
     {
       "path": "README.md",
-      "sha256": "d735145c35136590fac5078685ccca2a4071d5f2f89261547e85efda48b3f1d2"
+      "sha256": "579537eaaa24e59e7148ca68c5dc84ba55b29d223d939288dc38c1a941e64dce"
     },
     {
       "path": "scripts/connect-experience.mjs",

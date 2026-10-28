@@ -14,6 +14,10 @@
 
 使用 task.contexts 给出的冻结规则路径，按 core/site-quality.md 共用布局、留白、间距、对齐、容量、媒体与状态方法；App/Games 加载 site-types 内相应专项，Coupon 独有尺寸与复制规则不进入其他站型。先看真实像素再读作者说明；共享业务、global-layout-baseline、visual-completion、卡片密度以及实际页面条款继续适用。公共底线与detail-layout-methods是布局所属规范，旧摘要中店铺首券全文之类残留句不覆盖当前“店铺首项与普通券同容量”的明确规则；旧生成产物保留原合同。私人偏好及远端经验不豁免业务、可读性与状态硬要求。
 
+## 只上传已经人工审核的本地成品
+
+用户仅要求上传时使用 docs/site-library.md 的 library prepare/push。首次询问是否上传当前版本并标记人工审核通过，确认后直接入库，不启动以下 acceptance/adjustment 审核流程，也不要求补 coverage、handoff 或再次确认审核结果。已有候选无需重建；同版本重试复用上传确认。此人工确认不生成自动测试、视觉观察或可迁移修复经验。
+
 ## 新站源码：全站验收
 
 `audit start` 默认是 acceptance。按全站实际页面、模块、状态、PC/手机与断点加载全部适用规则，构建、浏览、实际视觉观察和交互验收。布局、视觉、专项检查合并同次访问，但不能省略条款。首次确认 coverage 前按真实模块、短长样本、调用位置核对清单，补齐 layoutChecks、interactions、visualCriteria 或保留 gaps。全部适用项通过后 handoff；独立视觉与设计师认可保留原有要求。未授权缩小验收范围时，不用 adjustment 绕过新站全站验收。

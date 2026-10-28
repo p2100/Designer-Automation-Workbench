@@ -10,7 +10,9 @@
 
 **设计师调整 → 快速修改 → 立即预览 → 局部复验与设计师确认 → 后台沉淀中央经验。**
 
-项目版本 **0.10.0**；原生成规则快照固定为 **2026-10-26.1**。中央经验服务版本独立，以实际健康检查为准。正式交付仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
+**本地成品上传 → 首次询问是否上传并标记人工审核通过 → 确认后直接入库、可下载。上传不启动页面检查，也不要求补齐审核任务。** 见[上传流程](docs/site-library.md)。
+
+项目版本 **0.11.0**；原生成规则快照固定为 **2026-10-26.1**。中央经验服务版本独立，以实际健康检查为准。正式交付仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
 
 正式交付入口已迁入 p2100 组织。GitHub 阻止旧仓库直接转移，且 `p2100/Designer-Automation` 同名地址被占用但不可访问，因此采用 `Designer-Automation-Workbench` 仓库名，保留原项目名称与完整 Git 历史。旧个人仓库仅保留历史入口；后续更新以本组织仓库为准。
 
