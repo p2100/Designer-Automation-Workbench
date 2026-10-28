@@ -8,7 +8,9 @@ import {library} from './library.mjs';
 export async function designerAutomation(args){
   if(!args.length||['help','--help'].includes(args[0]))return {
     generation:'generate start|status|direction|feedback|review',
-    maintenance:'audit inspect|checkout|open|start|cycle|feedback|handoff|status',
+    acceptance:'audit start (full rules and visual acceptance; default)',
+    adjustment:'adjust --id ID --file adjustment.json → audit recheck → audit observe → audit handoff → audit feedback',
+    maintenance:'audit inspect|checkout|open|start|cycle|adjust|recheck|feedback|handoff|status',
     library:'library connect|pull|bind|push|status',
     legacy:'Existing workbench actions remain available directly.',
     note:'Agent uses actual Image, source and browser capabilities; no generated page or visual approval is simulated.'};

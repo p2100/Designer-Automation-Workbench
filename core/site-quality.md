@@ -8,7 +8,7 @@
 
 Coupon 继续原 context 和页面合同；App 读取完整 site-types/app 的身份、媒体、detail→version→真实渠道及页面条款；Games 读取 site-types/games 的能力分流、页面条款和 core/owner-standards-20261027.md。下载型手游按实际 App 获取路径处理，不因标题是游戏而套在线运行规则。
 
-冻结 contexts 保存公共和专项 obligations。逐页/宽度的规则检查与布局、视觉、交互共用同次访问和截图；observe 中说明条件是否成立、实际观察及证据范围。条件不成立说明实体/范围依据，不以 not-run 冒充通过。条款未查、缺实际模块或范围未对账时保留 gaps，不能 handoff 为已验证。
+冻结 contexts 保存公共和专项 obligations。新站验收逐页/宽度执行全部适用条款，与布局、视觉、交互共用同次访问和截图；observe 中说明条件是否成立、实际观察及证据范围。设计师局部调整按 core/maintenance.md 先返回预览，只观察改动组件及必要回归：基础布局/视觉/交互，加 Agent 选择的相关专项条款；不重填整站 obligations。两种范围在候选、交接和认可中分别记录。条件不成立说明实体/范围依据，不以 not-run 冒充通过。适用条款未查、缺实际模块或范围未对账时保留 gaps，不能 handoff 为已验证。
 
 Games 通过 page.ownerSelectors 绑定 inspect-games 探针，自动检查确定的容器/边距/字号；Image 生图、背景质感、所有触控反馈、真实 loading 和运行仍须实际观察。缺工具如实 not-run。原 Coupon 生成快照和 bin/da.mjs 门禁保留原合同；本文件用于维护统一入口。
 

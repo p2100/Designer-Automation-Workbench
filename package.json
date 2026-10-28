@@ -1,6 +1,6 @@
 {
   "name": "designer-automation",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -10,7 +10,7 @@
     "designer-automation": "bin/designer-automation.mjs"
   },
   "scripts": {
-    "test": "node --test tests/workbench.test.mjs tests/experience.test.mjs",
+    "test": "node --test tests/workbench.test.mjs tests/experience.test.mjs tests/adjustment.test.mjs",
     "test:legacy": "node --test tests/portable.test.mjs",
     "test:generation": "node --test tests/generation.test.mjs",
     "manifest": "node scripts/manifest.mjs",
@@ -23,7 +23,8 @@
     "test:experience": "node --test tests/experience.test.mjs tests/experience-backup.test.mjs tests/experience-mongo.test.mjs tests/experience-delivery.test.mjs tests/experience-policy.test.mjs tests/experience-inventory.test.mjs tests/type-experience.test.mjs",
     "knowledge:install-linux": "node scripts/install-experience-linux.mjs",
     "test:sites": "node --test tests/site-types.test.mjs site-types/games/tests/owner-inspector.test.mjs",
-    "test:library": "node --test tests/library.test.mjs"
+    "test:library": "node --test tests/library.test.mjs",
+    "test:adjustment": "node --test tests/adjustment.test.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.32.2",
