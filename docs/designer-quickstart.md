@@ -88,7 +88,7 @@ npm run connect -- --client generic
 
 ```text
 请检查 designer_experience 接入状态：
-- 列出 experience_search、experience_capture、experience_manage、experience_status 四个工具。
+- 列出 experience_search、experience_feedback_search、experience_capture、experience_manage、experience_status 工具；查询历史原话需要中央服务也升级支持该接口。
 - 用 experience_search 做一次只读查询，说明结果来自中央服务还是离线缓存。
 - 用 experience_status 查看 pending、rejected 和异常记录。
 - 不写入测试经验，不启动站点测试。
@@ -101,6 +101,7 @@ npm run connect -- --client generic
 | 工具 | 作用 |
 | --- | --- |
 | `experience_search` | 查找当前站点、页面或组件适用的已有经验 |
+| `experience_feedback_search` | 按准确站点及可选候选查找未分类原始反馈；不等于已验证经验 |
 | `experience_capture` | 保存真实反馈及确认后的可复用结论 |
 | `experience_manage` | 查看记录、纠正或撤回错误结论 |
 | `experience_status` | 查看本机待补传、被拒绝和异常记录 |

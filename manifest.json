@@ -11,7 +11,7 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "0452f4632eab1505ae5dd463875e5fefdf95c167434ce1f2810f036acaae6748"
+      "sha256": "3cb6c66ec68da12b44c6e0e13426b8e4e191d798f4e4e92f4d7eae9ed5b98e77"
     },
     {
       "path": "bin/automatic-layout.mjs",
@@ -59,7 +59,7 @@
     },
     {
       "path": "bin/generate.mjs",
-      "sha256": "12140d2bf4d7fde3405324e97b70461b92ce64f10614860ea4d2bc433719d526"
+      "sha256": "8c16830339843ef08b8f2244d973f5886114de59e73a254858fc33aa8ef9c051"
     },
     {
       "path": "bin/intake.mjs",
@@ -75,7 +75,7 @@
     },
     {
       "path": "bin/library.mjs",
-      "sha256": "806d3b9f81fc2affd71b175612e8411b464f6d6c1d948f7bd23238a00159e472"
+      "sha256": "3bb1e24d6e27ef8fc06843af7bcf6147a6de2e0d867eac6e43f90ddf661b0e37"
     },
     {
       "path": "bin/module-review.mjs",
@@ -87,7 +87,7 @@
     },
     {
       "path": "bin/sites.mjs",
-      "sha256": "f15a1a54ef5434a1d2990100b4bfb92886b24f14a96197af5f01ed6d7a562d5f"
+      "sha256": "c43c254b31c37894950aff06cdca7a6e59a71394a9e238fc586af603cb271171"
     },
     {
       "path": "bin/task.mjs",
@@ -139,7 +139,7 @@
     },
     {
       "path": "core/generation-default.md",
-      "sha256": "fb023932d68337b98d7107b2dc5507f463c6f429695a338afef43ef79f75ed7a"
+      "sha256": "28640329261af8e44a4f3755b182c141cf9177d40bd1a11db028bb16b323d52e"
     },
     {
       "path": "core/knowledge.md",
@@ -191,7 +191,7 @@
     },
     {
       "path": "docs/designer-quickstart.md",
-      "sha256": "2eb6222772941d8b24259a41da2028c3739aaf3c6513770d4704ed1543a92ebe"
+      "sha256": "205aba83295ee543e114511d77992d8d316f388704b12cb623bb64d16b61dfd4"
     },
     {
       "path": "docs/experience-operations.md",
@@ -203,7 +203,7 @@
     },
     {
       "path": "docs/site-library.md",
-      "sha256": "2ddb7244ebc184966487c4a96c69cba3e00ce3c804ada643913dcf1a7108e144"
+      "sha256": "9543f2f673122942d75e1a9a3f83db77b5ab125a6ec93675fb162df308f965be"
     },
     {
       "path": "docs/standalone-workbench.md",
@@ -603,7 +603,7 @@
     },
     {
       "path": "lib/experience-delivery.mjs",
-      "sha256": "3c22ac7717d00fb2ec090541b97f3088b69398c4b07d292990ade0ec460bf680"
+      "sha256": "b105e38fe0216a83c7567d43f86cbc851cfccffbd85de456f476ac96125d1079"
     },
     {
       "path": "lib/experience-inventory.mjs",
@@ -611,11 +611,11 @@
     },
     {
       "path": "lib/experience-memory.mjs",
-      "sha256": "955cd0a418b23a6e03bf952535145f0f2dfc7c2d52871004d41eb5c561c8822f"
+      "sha256": "c5cc48737b6363464a429e571b81708bfc24ad0e680eda2c63affcc1fafc6314"
     },
     {
       "path": "lib/experience-mongo.mjs",
-      "sha256": "5c24d5741a80517aa2ff5e3ab6b52ccc0ac541321e674070bb38b4dbfe622638"
+      "sha256": "461115322374a3966f2bd7ee1748bc8c23db985f5fa4af8cd1354fcff64e4bb3"
     },
     {
       "path": "lib/experience-policy.mjs",
@@ -631,11 +631,11 @@
     },
     {
       "path": "lib/experience-server.mjs",
-      "sha256": "6dae732ad11b8592ebb90f8f55176484fa179b2a27727f0c0541e62d84319030"
+      "sha256": "36b9efa4df4ff9f5612094b8492ece4318053bfb01822371e364af11d39e899c"
     },
     {
       "path": "lib/experience-task.mjs",
-      "sha256": "668365f24616834fafca024c8178c2c9eca8746b9af5f0347d3d4aad67542d8b"
+      "sha256": "2a4ab31fb8defa8653605106b3c66efb31f398db0a438e6e463f4136a81a19a2"
     },
     {
       "path": "lib/experience.mjs",
@@ -647,7 +647,7 @@
     },
     {
       "path": "lib/generation.mjs",
-      "sha256": "2dc582d5dbd48297d7c2b6feb7943db36644d075d4feceac97877079b2333ac3"
+      "sha256": "6537b1178288134398035257ae8ec4e008129a9376cd5c6484b326f5809d6439"
     },
     {
       "path": "lib/io.mjs",
@@ -655,7 +655,11 @@
     },
     {
       "path": "lib/library-client.mjs",
-      "sha256": "915c33ff55a30bffd41766791fd2259097b537260ba2c4d1d883ef6f2c651348"
+      "sha256": "818a9d81e3d75793d4ef054fb24e0e6f9df8f8dd4cf09e15b28751d2efc7dde2"
+    },
+    {
+      "path": "lib/library-feedback.mjs",
+      "sha256": "274ed2b992696ac50864a8aa2b72c3485ef627688d44cea31fce76ed30463cfb"
     },
     {
       "path": "lib/preview.mjs",
@@ -671,23 +675,23 @@
     },
     {
       "path": "lib/workbench.mjs",
-      "sha256": "1cd3601ecb2383ae372bbf392c411903f05c75a553fd413a3f3ef535279b93e0"
+      "sha256": "bf4c4bb67bc6a37aca4b4e897af0484d5da35d9456042541834236ca90de5fdb"
     },
     {
       "path": "package-lock.json",
-      "sha256": "91a301c9119ec178254062001be2ecf0b347b7e4f4f47d8eb47363681a5fabb5"
+      "sha256": "4f3d29ee0e04bbe132285fa4b00d61733a109ad49dcd5829f17e3f60430ae071"
     },
     {
       "path": "package.json",
-      "sha256": "70c748119b9c4f01f955fdc5142d9760ce93c6714858c4ba2d0bcb9aed5e492e"
+      "sha256": "2ab57425c34b72c2ca4a33b4f3181ff16fed66ab2949bb2b63de39418a2a3f07"
     },
     {
       "path": "README.md",
-      "sha256": "eec2d53c78349707d16bb82ef66215bca2e7a54b4dbec7d9eb8b19078a7c8468"
+      "sha256": "8dc43906d266d0acf69daf3902678f34192f95d1ead649a1fb20c87810fc6845"
     },
     {
       "path": "scripts/connect-experience.mjs",
-      "sha256": "88916d6f910c5936edb7645c76a939e04a0646c6c2b6a8c1bba6bf93b5d0d7a7"
+      "sha256": "a14898785f66322e69712ca65de272b9ac8be3d251ca11cb237fb6f6ae4772a3"
     },
     {
       "path": "scripts/experience-admin.mjs",
@@ -819,15 +823,19 @@
     },
     {
       "path": "site-types/games/bin/game.mjs",
-      "sha256": "39891a940a08123c672ee0fb8cbb789a6fd45fab93d573dd8663a16b83a46a94"
+      "sha256": "22c9ce57a2b39a83cc0ca38d12316ad421483a910d52e5c901d70cacc97e4993"
     },
     {
       "path": "site-types/games/bin/inspect-games.mjs",
-      "sha256": "8a877daa187de82385f98a4f516813f0f18ff0ec3c88c4c104ea861d7a0875d7"
+      "sha256": "958409e109aeb4628fb42ab07612b259e609270f351fd32756ea560cd6c6af79"
     },
     {
       "path": "site-types/games/core/acceptance-application.md",
-      "sha256": "ba8ddb5ec36f32769b62f976b3948cd933b980c5f8fa2870ec80111dacdbf646"
+      "sha256": "4dc044fe6ee0d4f76faad2b558ae43dc947e6fa29342f2268863b711b452bc8b"
+    },
+    {
+      "path": "site-types/games/core/acceptance-criteria.json",
+      "sha256": "2346baa6ab10d9a3f16ad117f45156156d2fb35201fb392178dc9d640aaeb3cf"
     },
     {
       "path": "site-types/games/core/acceptance-experience-20261028.md",
@@ -839,7 +847,7 @@
     },
     {
       "path": "site-types/games/core/designer-learning.md",
-      "sha256": "4721fa9fb81f0d0f27c51f9688f9159cb39134a75808b8cf18c76a93206ee2e4"
+      "sha256": "977167b8041d64bf85cd206d6e84d01ff50a56a1bbb4e5ebf8335b230a3ea85b"
     },
     {
       "path": "site-types/games/core/experience-adoption-20261028.md",
@@ -887,11 +895,11 @@
     },
     {
       "path": "site-types/games/lib/contract.mjs",
-      "sha256": "dbcc0a9d8db81068f4ea6f01f689f9c0c82a76b4f6dca726a4e2c7fd279e3ea6"
+      "sha256": "ca74d0e3820f04ed754eab95e63f76fdd37c4841906410230464f78eeafa4541"
     },
     {
       "path": "site-types/games/manifest.json",
-      "sha256": "8ab5e890865fe4e0b9f601a7d5d33fb352b1f6220ee6053f39d579bb7059081a"
+      "sha256": "23f741a870ee8b44564250c5f43d79e1f07917d7a9a85c4e6df76f3c86084b74"
     },
     {
       "path": "site-types/games/package.json",
@@ -919,7 +927,7 @@
     },
     {
       "path": "site-types/games/README.md",
-      "sha256": "e0cc17a2999e8446cf2ae3a7f919ce48721fdb78f08f32bb116e2e4a77651a09"
+      "sha256": "11f0c1dc6a897a931ef77b12b2aea08ca54a9bb28947ecaef0426ac5dfe7bf9d"
     },
     {
       "path": "site-types/games/site-types/store-referral.md",
@@ -930,20 +938,24 @@
       "sha256": "29db07589b7e47d30e29e971dac8aac1c8746569dfa045f60ee23339519d799f"
     },
     {
+      "path": "site-types/games/templates/acceptance-parameters.json",
+      "sha256": "ec0c32faabd3ffa8ef20bbf76dbe79b514bb04451b316d56e279338fc4113274"
+    },
+    {
       "path": "site-types/games/templates/review.json",
       "sha256": "592d024d58d68f74a5aa0e519dc6b801d1f44830c308999dbe832613ef423221"
     },
     {
       "path": "site-types/games/templates/task-web-play.json",
-      "sha256": "33882c3f980ee9cd2f3a38758f49a34799ced2e55c418e592de9cdf0a2690a86"
+      "sha256": "ff8cac9e99a2c74aa00fe6fb72555c18378b2f24e0aaf19301fd25f30829a754"
     },
     {
       "path": "site-types/games/tests/contract.test.mjs",
-      "sha256": "0d8260a26c83dab85d7b1416d315dfb5cfc1573b31e854c22df1752d985438ae"
+      "sha256": "980306a1a373fa33a33c97d9410ac2475066fdff6ced55d5e55949ea24c6af4e"
     },
     {
       "path": "site-types/games/tests/owner-inspector.test.mjs",
-      "sha256": "0e21913bacc50bc8034e0f354232bba879d0ba568dc484f252af020e1779128a"
+      "sha256": "8a8093e3ae6e2e710db8dfd67a5d49af46ec50bf5a0a00ba3c4ef19fdce67669"
     },
     {
       "path": "systems/browser.md",
@@ -1011,7 +1023,7 @@
     },
     {
       "path": "tests/adjustment.test.mjs",
-      "sha256": "39c8260f9be9bf4cf455e7d59bcdf5ce6adf248ac092126c3d5a3a92018c0c48"
+      "sha256": "659fc0737b070bc7340577cfb22b84b7697e5f61d1100ed4f815df9bc38b820c"
     },
     {
       "path": "tests/browser/coupon-detail-inspector.test.mjs",
@@ -1035,7 +1047,7 @@
     },
     {
       "path": "tests/experience-delivery.test.mjs",
-      "sha256": "eb95a6c497fb1492a0ecacdcd95182e5fa7935d2229fa4557815abeb976d7691"
+      "sha256": "09ed5a9eec22a4286e2131423b20122431d68c75b08188b4e3e96fd1df5b7bdc"
     },
     {
       "path": "tests/experience-fixture.mjs",
@@ -1055,15 +1067,15 @@
     },
     {
       "path": "tests/experience.test.mjs",
-      "sha256": "5cb45e3cdf08d6387f841a8c71ae3ed6564811cf2667935fc764a1d7a50b41c6"
+      "sha256": "109726557966045be3b792f088462e5dae4d31bc4e59412760203cc908e86c2a"
     },
     {
       "path": "tests/generation.test.mjs",
-      "sha256": "a41ac42a33886854b2167ff582832131b30717b2f0eba2ba71db81205b39af38"
+      "sha256": "0460ef4e8abf8d72da723dad189841c250f889810583faa2a6e9a2d07d28f642"
     },
     {
       "path": "tests/library.test.mjs",
-      "sha256": "a3ee6912fd9eefaec7eda506ed9480a23274f60584034eba7b8986ba310d3c29"
+      "sha256": "2cae2ff8198dd0c25f59bfabf92fb72ab697e6506f4308231fa53808862852ee"
     },
     {
       "path": "tests/local-source.test.mjs",

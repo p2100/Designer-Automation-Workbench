@@ -1,5 +1,5 @@
 {
-  "version":1,"id":"replace-site-id","type":"web-play","language":"en","author":"author-agent",
+  "version":1,"qualityWorkflow":2,"id":"replace-site-id","type":"web-play","language":"en","author":"author-agent",
   "audience":"Replace with audience, situation and intended game-discovery task.",
   "sources":[{"id":"mzgen-source","url":"https://mzgen.com/game/detail/sky_swarm_19.html","checkedAt":"2026-10-23","kind":"owner-authorized-source"}],
   "samples":[{"id":"sky-swarm","title":"Sky Swarm","sourceIds":["mzgen-source"],"runtime":"runtime/sky-swarm/index.html","inputClaims":["source lists keyboard and touch"],"verificationStatus":"not-run"}],

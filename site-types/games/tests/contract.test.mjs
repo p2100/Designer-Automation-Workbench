@@ -4,7 +4,7 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { readJson, writeJson, validateTask, createPlan, selectDesignReferences, inventory, sha, verifyPackage, packPackage, initRun, freezeCandidate, verifyRun, validateReview } from '../lib/contract.mjs';
+import { readJson, writeJson, validateTask, createPlan, selectDesignReferences, inventory, sha, verifyPackage, packPackage, initRun, freezeCandidate, verifyRun, validateReview, recordAcceptance } from '../lib/contract.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const example = () => readJson(path.join(root, 'examples/task.json'));
 const temporary = async (t) => { const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'game-contract-')); t.after(() => fs.rm(dir, { recursive: true, force: true })); return dir; };
@@ -74,3 +74,17 @@ test('required homepage history and introduction are planned for every home view
 test('designer learning stays scoped and is not promoted into mandatory owner coverage',async()=>{const learning=await readJson(path.join(root,'core/designer-learning.json')),plan=createPlan(await example());assert.equal(learning.entries.length,learning.uniqueTopics);assert.equal(new Set(learning.entries.flatMap(e=>e.sources.map(s=>s.id))).size,learning.sourceReferences);for(const e of learning.entries){assert.equal(e.status,'reference-only');assert(e.checks.length&&e.exceptions.length&&e.sources.length);assert(!plan.items.some(x=>x.module===e.id));}assert(selectDesignReferences('play').some(e=>e.id==='loading-handoff'));assert(!selectDesignReferences('information').some(e=>e.id==='runtime-orientation'));for(const route of plan.designReferences.byRoute)assert.deepEqual(route.ids,selectDesignReferences(route.page).map(e=>e.id));assert.equal(plan.designReferences.status,'reference-only');});
 
 test("global Games standards remain in every actual page/viewport plan",async()=>{const task=await example(),plan=createPlan(task);for(const route of task.routes)for(const viewport of plan.viewports)for(const rule of ["mobile-font-maximum-24","mobile-all-targets-pressed-feedback","full-container-natural-text-wrap","module-heading-without-description","image-generated-linear-game-icons"])assert(plan.items.some(item=>item.module===rule&&item.route===route.path&&item.viewport.id===viewport.id),rule+" missing");});
+
+test('new workflow freezes page-scoped experience decisions, parameter sources and 40 acceptance items',async()=>{
+ const task=await example();task.qualityWorkflow=2;task.ownerParameters={contentWidth:{value:1080,source:'approved brief'},search:{value:false,source:'disabled in brief'}};task.routes.find(r=>r.page==='detail').ownerParameters={contentWidth:{value:1000,source:'detail brief'}};
+ task.experienceReferences=[{id:'case-'+'a'.repeat(32),siteType:'games',page:'home',observation:'Check long game labels',experienceUse:'creative-reference'}];
+ const plan=createPlan(task);assert.equal(plan.items.filter(x=>x.family==='acceptance-01-40').length,40);assert(plan.items.some(x=>x.referenceId==='case-'+'a'.repeat(32)&&x.route==='index.html'));assert(plan.items.some(x=>x.family==='experience-decision'&&x.componentCandidates.length));
+ assert.equal(plan.parameters.contentWidth.value,1080);assert.equal(plan.pageParameters.find(x=>x.route===task.routes.find(r=>r.page==='detail').path).parameters.contentWidth.value,1000);assert.equal(plan.parameters.ads.value,null);
+ assert(plan.items.some(x=>x.module==='inner-content-width-1200'&&x.requirement.includes('1000')));assert.throws(()=>createPlan({...task,ownerParameters:{search:{value:false}}}),/requires value and source/);
+});
+
+test('acceptance records bind all four statuses to the immutable candidate and reject missing evidence',async t=>{
+ const dir=await temporary(t),task=await example();task.qualityWorkflow=2;const taskFile=path.join(dir,'task.json'),run=path.join(dir,'run'),site=path.join(dir,'site');await writeJson(taskFile,task);await initRun(root,taskFile,run);await fs.mkdir(site);await fs.writeFile(path.join(site,'index.html'),'<h1>fixture</h1>');const candidate=await freezeCandidate(site,run);
+ const report={actor:'fixture observer',candidateDigest:candidate.candidateDigest,items:Array.from({length:40},(_,i)=>({id:'acceptance-'+String(i+1).padStart(2,'0'),status:'not-run'}))};
+ assert.equal((await recordAcceptance(run,report)).status,'recorded');const invalid=structuredClone(report);invalid.items[0].status='pass';await assert.rejects(recordAcceptance(run,invalid),/needs evidence/);invalid.items[0].status='not-applicable';await assert.rejects(recordAcceptance(run,invalid),/requires an actual reason/);await assert.rejects(recordAcceptance(run,{...report,candidateDigest:'wrong'}),/another candidate/);
+});

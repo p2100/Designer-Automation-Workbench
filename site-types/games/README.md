@@ -1,5 +1,7 @@
 # Game-Automation 3.2.11
 
+新任务使用 `qualityWorkflow: 2`，冻结带来源的任务/页面参数、适用经验和01–40检查项。作者为实际组件选择经验、方法和样本；独立审核使用准确候选和真实证据，未测试不得冒称通过。`game.mjs record-acceptance --run <运行目录> --report <实际记录>` 保存完整40项结果，不将记录本身当作独立审核。既有冻结任务保留原计划。
+
 Current games-only generation and maintenance rules: read the [owner contract](core/owner-games-rules.md) and [81-item review checklist](core/owner-requirements.json), version 2026-10-30.4. They include the owner’s accumulated component, search, action, loading, source-truth, publishing and cross-site corrections. The latest task and approved references own layout; no historical skeleton becomes every brand’s template. Every `context` includes these sources and every new `plan` expands applicable checks. Historical packages remain unchanged; these rules do not apply to Coupon or App sites.
 
 A portable authoring contract and evidence workflow for game websites. It is independent of Coupon and Harness. Copy this whole folder to another machine; the only CLI dependency is Node 22 or newer. Browser and image-generation tools belong to the receiving agent and must be probed, not assumed.

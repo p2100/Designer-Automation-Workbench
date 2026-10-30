@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import {generationStart,generationStatus,generationDirection,generationFeedback,generationReviewInput} from '../lib/generation.mjs';
+import {generationStart,generationStatus,generationDirection,generationFeedback,generationReviewInput,generationGamesPlan} from '../lib/generation.mjs';
 import {searchCreative} from '../lib/creative-memory.mjs';
 import {openTask,prepare,feedback} from '../lib/workbench.mjs';
 import {writeJSON} from '../lib/io.mjs';
@@ -14,6 +14,19 @@ import {startExperienceServer} from '../lib/experience-server.mjs';
 const image=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jL1sAAAAASUVORK5CYII=','base64');
 const silent={search:async()=>({cases:[],source:'fixture'})};
 async function fixture(t){const temp=await fs.mkdtemp(path.join(os.tmpdir(),'da-generation-'));t.after(()=>fs.rm(temp,{recursive:true,force:true}));return {temp,data:path.join(temp,'data')};}
+
+test('Games generation freezes live experience with actual route and component quality plan',async t=>{
+  const {temp,data}=await fixture(t),reference={id:'case-'+'a'.repeat(32),siteType:'games',page:'home',observation:'Check actual card capacity',experienceUse:'creative-reference'};
+  const client={search:async()=>({cases:[],creative:[reference],source:'fixture',creativeTruncated:false})};
+  const run=await generationStart({data,id:'quality',siteType:'games',gameType:'store-referral',request:'Synthetic game store',pages:['home','detail'],client});
+  assert.equal(run.gamesQuality.status,'awaiting-route-and-module-inventory');
+  const reviewFile=path.join(temp,'review-config.json');await writeJSON(reviewFile,{siteType:'games',pages:[{family:'home',route:'/index.html'}]});await assert.rejects(generationReviewInput({data,id:'quality',configFile:reviewFile}),/quality plan/);
+  const task=await readJSON(path.join(root,'site-types/games/examples/task.json'));const taskFile=path.join(temp,'game-task.json');await writeJSON(taskFile,task);
+  const result=await generationGamesPlan({data,id:'quality',taskFile});assert.equal(result.status,'planned');
+  const plan=await readJSON(path.join(result.planPath,'plan.json'));assert.equal(plan.qualityWorkflow,2);assert(plan.items.some(item=>item.referenceId===reference.id));assert.equal(plan.items.filter(item=>item.family==='acceptance-01-40').length,40);
+  await fs.writeFile(path.join(run.source,'index.html'),'<h1>Fixture</h1>');assert.equal((await generationReviewInput({data,id:'quality',configFile:reviewFile})).source,run.source);
+  await assert.rejects(generationGamesPlan({data,id:'quality',taskFile}),/already exists/);
+});
 
 test('one generation entry loads matching author rules and freezes the portable package',async t=>{
   const {data}=await fixture(t);

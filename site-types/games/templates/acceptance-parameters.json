@@ -1,0 +1,13 @@
+{
+  "ownerParameters": {
+    "homeGutters": {"value": null, "source": "待确认：实际项目预算"},
+    "contentWidth": {"value": null, "source": "待确认：实际项目预算"},
+    "mobileFontMax": {"value": null, "source": "待确认：实际项目预算"},
+    "desktopFullscreen": {"value": null, "source": "待确认：项目能力"},
+    "mobileBackPolicy": {"value": null, "source": "待确认：项目导航"},
+    "gameOrientation": {"value": null, "source": "待确认：实际游戏能力"},
+    "search": {"value": null, "source": "待确认：项目能力"},
+    "ads": {"value": null, "source": "待确认：项目能力"},
+    "autoFullscreen": {"value": null, "source": "待确认：项目能力"}
+  }
+}

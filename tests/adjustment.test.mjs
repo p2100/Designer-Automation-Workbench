@@ -99,6 +99,15 @@ test('unlocated feedback never invalidates the entire site; unknown inputs keep 
   await assert.rejects(handoff(data,'trial'),/coverage/);
 });
 
+test('summarized adjustments preserve the original feedback and queue separate page-scoped facts',async t=>{
+ const {data}=await fixture(t);let task=await loadTask(data,'trial');const candidate=task.candidates.at(-1).hash;
+ const text='首页卡片太挤；详情按钮太小', adjustmentItems=[{quote:'首页卡片太挤',summary:'调整首页卡片容量',pages:['home'],component:'cards'},{quote:'详情按钮太小',summary:'检查详情按钮尺寸',pages:['detail'],component:'action'}];
+ task=await feedback({data,id:'trial',candidate,actor:'Designer',text,decision:'revise',pages:['home','detail'],adjustmentItems});
+ assert.equal(task.feedback.at(-1).text,text);assert.deepEqual(task.feedback.at(-1).adjustmentItems,adjustmentItems);
+ const jobs=task.experienceDeliveries.slice(-2);assert.equal(jobs.length,2);assert.deepEqual(jobs.map(j=>j.entry.scope.pages),[['app:home'],['app:detail']]);assert(jobs.every(j=>j.entry.evidence[0].originalFeedback===text));assert(jobs.every(j=>j.entry.verification.retested===false));
+ await assert.rejects(feedback({data,id:'trial',candidate,actor:'Designer',text,adjustmentItems:[{quote:'不存在',summary:'wrong'}]}),/exact quote/);
+});
+
 test('page-specific CSS is inferred without expansion; declared global dependencies still cover every call site', async t => {
   const {data} = await fixture(t);
   const payload = await editPayload(data,'home.css','700px','680px');

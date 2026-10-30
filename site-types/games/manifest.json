@@ -10,18 +10,23 @@
     },
     {
       "path": "bin/game.mjs",
-      "bytes": 3235,
-      "sha256": "39891a940a08123c672ee0fb8cbb789a6fd45fab93d573dd8663a16b83a46a94"
+      "bytes": 3390,
+      "sha256": "22c9ce57a2b39a83cc0ca38d12316ad421483a910d52e5c901d70cacc97e4993"
     },
     {
       "path": "bin/inspect-games.mjs",
-      "bytes": 7074,
-      "sha256": "8a877daa187de82385f98a4f516813f0f18ff0ec3c88c4c104ea861d7a0875d7"
+      "bytes": 9490,
+      "sha256": "958409e109aeb4628fb42ab07612b259e609270f351fd32756ea560cd6c6af79"
     },
     {
       "path": "core/acceptance-application.md",
-      "bytes": 2437,
-      "sha256": "ba8ddb5ec36f32769b62f976b3948cd933b980c5f8fa2870ec80111dacdbf646"
+      "bytes": 2625,
+      "sha256": "4dc044fe6ee0d4f76faad2b558ae43dc947e6fa29342f2268863b711b452bc8b"
+    },
+    {
+      "path": "core/acceptance-criteria.json",
+      "bytes": 11132,
+      "sha256": "2346baa6ab10d9a3f16ad117f45156156d2fb35201fb392178dc9d640aaeb3cf"
     },
     {
       "path": "core/acceptance-experience-20261028.md",
@@ -35,8 +40,8 @@
     },
     {
       "path": "core/designer-learning.md",
-      "bytes": 4130,
-      "sha256": "4721fa9fb81f0d0f27c51f9688f9159cb39134a75808b8cf18c76a93206ee2e4"
+      "bytes": 4255,
+      "sha256": "977167b8041d64bf85cd206d6e84d01ff50a56a1bbb4e5ebf8335b230a3ea85b"
     },
     {
       "path": "core/experience-adoption-20261028.md",
@@ -95,8 +100,8 @@
     },
     {
       "path": "lib/contract.mjs",
-      "bytes": 15700,
-      "sha256": "dbcc0a9d8db81068f4ea6f01f689f9c0c82a76b4f6dca726a4e2c7fd279e3ea6"
+      "bytes": 24473,
+      "sha256": "ca74d0e3820f04ed754eab95e63f76fdd37c4841906410230464f78eeafa4541"
     },
     {
       "path": "package.json",
@@ -130,8 +135,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5811,
-      "sha256": "e0cc17a2999e8446cf2ae3a7f919ce48721fdb78f08f32bb116e2e4a77651a09"
+      "bytes": 6233,
+      "sha256": "11f0c1dc6a897a931ef77b12b2aea08ca54a9bb28947ecaef0426ac5dfe7bf9d"
     },
     {
       "path": "site-types/store-referral.md",
@@ -144,24 +149,29 @@
       "sha256": "29db07589b7e47d30e29e971dac8aac1c8746569dfa045f60ee23339519d799f"
     },
     {
+      "path": "templates/acceptance-parameters.json",
+      "bytes": 728,
+      "sha256": "ec0c32faabd3ffa8ef20bbf76dbe79b514bb04451b316d56e279338fc4113274"
+    },
+    {
       "path": "templates/review.json",
       "bytes": 488,
       "sha256": "592d024d58d68f74a5aa0e519dc6b801d1f44830c308999dbe832613ef423221"
     },
     {
       "path": "templates/task-web-play.json",
-      "bytes": 1380,
-      "sha256": "33882c3f980ee9cd2f3a38758f49a34799ced2e55c418e592de9cdf0a2690a86"
+      "bytes": 1400,
+      "sha256": "ff8cac9e99a2c74aa00fe6fb72555c18378b2f24e0aaf19301fd25f30829a754"
     },
     {
       "path": "tests/contract.test.mjs",
-      "bytes": 13192,
-      "sha256": "0d8260a26c83dab85d7b1416d315dfb5cfc1573b31e854c22df1752d985438ae"
+      "bytes": 15603,
+      "sha256": "980306a1a373fa33a33c97d9410ac2475066fdff6ced55d5e55949ea24c6af4e"
     },
     {
       "path": "tests/owner-inspector.test.mjs",
-      "bytes": 4256,
-      "sha256": "0e21913bacc50bc8034e0f354232bba879d0ba568dc484f252af020e1779128a"
+      "bytes": 6114,
+      "sha256": "8a8093e3ae6e2e710db8dfd67a5d49af46ec50bf5a0a00ba3c4ef19fdce67669"
     }
   ]
 }

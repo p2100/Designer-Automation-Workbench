@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { readJson, writeJson, verifyPackage, validateTask, createPlan, selectDesignReferences, initRun, freezeCandidate, verifyRun, validateReview, packPackage } from '../lib/contract.mjs';
+import { readJson, writeJson, verifyPackage, validateTask, createPlan, selectDesignReferences, initRun, freezeCandidate, verifyRun, validateReview, recordAcceptance, packPackage } from '../lib/contract.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 if (Number(process.versions.node.split('.')[0]) < 22) throw new Error('Node 22+ required');
 const [command, ...args] = process.argv.slice(2);
@@ -19,6 +19,7 @@ try {
   else if (command === 'init') result = await initRun(root, value('task'), path.resolve(value('output')));
   else if (command === 'freeze') result = await freezeCandidate(path.resolve(value('candidate')), path.resolve(value('run')));
   else if (command === 'verify') result = await verifyRun(path.resolve(value('run')));
+  else if (command === 'record-acceptance') result = await recordAcceptance(path.resolve(value('run')),await readJson(value('report')));
   else if (command === 'review') { const run = path.resolve(value('run')); result = await validateReview(run, await readJson(value('review'))); await writeJson(path.join(run,'review-integrity.json'),result); }
   else if (command === 'pack') result = { copiedFiles: await packPackage(root,path.resolve(value('output'))) };
   else throw new Error('Usage: game.mjs check|context|init|plan|freeze|verify|review|pack');

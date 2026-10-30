@@ -14,6 +14,8 @@ node bin/designer-automation.mjs library prepare --url <库地址> --project <ID
 
 Agent 按真实项目选择目录和站型；成品目录须直接包含本站实际首页及资源，不能选择另一站或整包父目录。prepare 仅把现有文件冻结为上传版本，不安装依赖、不执行构建脚本、不启动浏览器或审核。源码必须保留库中受保护的数据、运行资源、依赖和构建配置；更新以已连接版本为基线，服务端发现其他修改会停止覆盖。私有 `--data` 目录放在源码与成品之外。
 
+当本轮有设计师修改要求，Agent准备一份内部反馈文件并执行 `library feedback --id <上传ID> --file <反馈文件>`；不要求设计师填表。字段为 `candidate`（prepare返回的准确哈希）、`actor`、`text`（设计师实际原话）、`items`（数组，每项含 `quote` 原话连续片段、`summary`、可选 `pages` 页面族数组和 `component`）。不要将“上传”确认或源码变化编造成修改原话。程序先在私有目录可靠保存站点、基线、候选及原话，再把已定位页面的逐项未分类事实排入经验服务队列；`queued` 不代表已共享或复验。页面未知时本地保存并返回 `pending-location`，定位后补录；入队中断时下次本机MCP启动会从完整记录恢复并补传。均不阻塞上传、预览或另加整站审核。
+
 已有工作台候选可使用 `library bind --url <库地址> --project <ID> --id <任务ID>` 后直接 `library push --id <任务ID>`。无论它的自动检查、coverage、handoff 状态如何，上传只请求本次人工确认，不要求补做审核。
 
 ## 一次确认并上传

@@ -59,6 +59,14 @@ async function fixture(t) {
     },
   };
 }
+
+test('restart recovers a standalone feedback record saved before enqueue',async t=>{
+ const f=await fixture(t),record={version:1,projectId:'game-fixture',siteType:'games',baseBuild:'build-before',candidate:'a'.repeat(64),actor:'Designer',text:'首页卡片太挤',items:[{quote:'首页卡片太挤',summary:'调整卡片容量',pages:['home'],component:'cards'}],at:'2026-10-30T04:00:00.000Z'};
+ const recordId=digest(record);await durableJSON(path.join(f.client.data,'library','feedback','fixture',recordId+'.json'),record);
+ await f.client.initialize();await f.client.flush();
+ const result=await f.store.searchFeedback({site:'game-fixture'});assert.equal(result.total,1);assert.equal(result.cases[0].evidence[0].originalFeedback,record.text);assert.equal(result.cases[0].verification.retested,false);
+ await f.client.recoverLibraryFeedback();await f.client.flush();assert.equal((await f.store.searchFeedback({site:'game-fixture'})).total,1);
+});
 async function drained(client) {
   await until(async () => (await client.syncStatus()).pending === 0);
   await until(async () => !(await client.workerRunning()));

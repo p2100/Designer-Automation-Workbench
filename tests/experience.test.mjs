@@ -36,7 +36,7 @@ test('anonymous MCP captures governed lessons and corrects them without maintain
   assert.equal(health.version, JSON.parse(await fs.readFile(new URL('../package.json',import.meta.url),'utf8')).version);
   assert.deepEqual(
     (await client.listTools()).tools.map((t) => t.name),
-    ['experience_search', 'experience_capture', 'experience_manage'],
+    ['experience_search', 'experience_feedback_search', 'experience_capture', 'experience_manage'],
   );
   const saved = JSON.parse(
     (
@@ -64,6 +64,11 @@ test('anonymous MCP captures governed lessons and corrects them without maintain
     arguments: {pages: ['home'], site: 'fixture-a'},
   });
   assert.equal(JSON.parse(found.content[0].text).cases.length, 0);
+  const actual={summary:'按钮太小',cause:'待查',prevention:'待复验',actor:'designer',classification:'unclassified',scope:{site:'fixture-a',pages:['home'],component:'button'},evidence:[{candidate:'a'.repeat(64),feedback:'按钮太小'}]};
+  await client.callTool({name:'experience_capture',arguments:{case:actual}});
+  const raw=await client.callTool({name:'experience_feedback_search',arguments:{site:'fixture-a',candidate:'a'.repeat(64)}});
+  assert.equal(JSON.parse(raw.content[0].text).cases[0].evidence[0].feedback,'按钮太小');
+  const other=await client.callTool({name:'experience_feedback_search',arguments:{site:'fixture-b'}});assert.equal(JSON.parse(other.content[0].text).total,0);
   assert.equal((await fetch(service.url + '/v1/admin/snapshot')).status, 403);
 });
 test('MCP stdio entry uses the same central store and exposes automatic delivery status', async (t) => {
@@ -86,6 +91,7 @@ test('MCP stdio entry uses the same central store and exposes automatic delivery
     (await client.listTools()).tools.map((t) => t.name),
     [
       'experience_search',
+      'experience_feedback_search',
       'experience_capture',
       'experience_manage',
       'experience_status',
