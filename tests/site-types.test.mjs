@@ -56,12 +56,15 @@ test('Games generation and review load the current publishing experience and sco
   const author=await specialistContext(root,{siteType:'games',page:'home',role:'author',gameType:'web-play'});
   const review=await maintenanceContext(root,{siteType:'games',page:'home',gameType:'web-play'});
   assert(author.read.includes(doc));assert(review.read.includes(doc));
-  for(const id of ['game-home-approved-tdk','game-original-brand-copy','sp-game-routing-and-delivery','sp-game-localized-delivery'])assert(review.obligations.some(rule=>rule.id===id),id);
-  assert.equal(author.sourceVersion,'2026-10-30.3');
+  for(const id of ['game-home-approved-tdk','game-original-brand-copy','sp-game-routing-and-delivery','sp-game-localized-delivery','game-production-robots-policy','game-ads-declarations-and-head','game-release-root-resource-durability'])assert(review.obligations.some(rule=>rule.id===id),id);
+  assert.equal(author.sourceVersion,'2026-10-30.4');
   assert(author.assets.some(asset=>asset.id==='games-designer-learning'));
   assert(author.designReferences.every(ref=>ref.status==='reference-only'&&ref.pages.includes('home')));
   const store=await maintenanceContext(root,{siteType:'games',page:'home',gameType:'store-referral'});
   assert(!store.obligations.some(rule=>rule.id==='sp-game-localized-delivery'));
+  assert(!store.obligations.some(rule=>rule.id==='game-production-robots-policy'));
+  const detail=await maintenanceContext(root,{siteType:'games',page:'detail',gameType:'web-play'});
+  assert(detail.obligations.some(rule=>rule.id==='game-ads-declarations-and-head'));
 });
 
 test('MCP feedback scopes retain existing Coupon keys and isolate App/Games page families',()=>{

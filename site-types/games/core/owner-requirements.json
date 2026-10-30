@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30.3",
+  "version": "2026-10-30.4",
   "siteType": "games",
   "sources": [
     "https://tanyueco.feishu.cn/wiki/Ea7Vw5TYniMyuXkMP4acWLTqnKf",
@@ -796,6 +796,33 @@
       "source": "core/web-game-publishing-experience.md",
       "level": "required",
       "when": "SP-connected web-play site with multilingual delivery"
+    },
+    {
+      "id": "game-production-robots-policy",
+      "requirement": "For an authorized web-play release, implement and verify the site's confirmed production robots.txt policy at the root and enabled locale domains using the actual status, content type and full response. Apply a separate appropriate non-indexing policy to previews and test environments, including page directives and response headers; verify CDN-managed additions or conflicts. The Playaro allow-all example is not a universal substitute for another site's confirmed policy.",
+      "pages": ["home"],
+      "types": ["web-play"],
+      "source": "core/web-game-publishing-experience.md",
+      "level": "required",
+      "when": "web-play site generation or authorized release and indexing scope"
+    },
+    {
+      "id": "game-ads-declarations-and-head",
+      "requirement": "Where advertising integration is applicable, verify the site's authoritative publisher account, root ads.txt authorization and ad-platform head tag across applicable page families and locales; check actual production responses for status, text, exact account and duplicate tags. Keep ad slots and game-iframe ads subject to their own approval and review status. Missing ownership or unexecuted ad review remains unresolved, not a pass.",
+      "pages": ["home", "detail", "play", "information"],
+      "types": ["web-play"],
+      "source": "core/web-game-publishing-experience.md",
+      "level": "required",
+      "when": "web-play site with advertising integration or authorized ad-related review"
+    },
+    {
+      "id": "game-release-root-resource-durability",
+      "requirement": "Trace robots.txt, ads.txt and page head tags through the actual generation and deployment chain; prevent clean or rebuild steps and CDN behavior from silently replacing them. Verify production responses after release and distinguish source, local tests, SP job status and deployed evidence; record missing verification.",
+      "pages": ["home"],
+      "types": ["web-play"],
+      "source": "core/web-game-publishing-experience.md",
+      "level": "required",
+      "when": "web-play site generation or authorized release and applicable integration"
     },
     {
       "id": "detail-brand-distinct-recommendations",

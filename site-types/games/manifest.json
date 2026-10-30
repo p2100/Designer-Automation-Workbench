@@ -1,7 +1,7 @@
 {
   "version": 1,
   "name": "Game-Automation",
-  "release": "3.2.10",
+  "release": "3.2.11",
   "files": [
     {
       "path": "AGENTS.md",
@@ -50,8 +50,8 @@
     },
     {
       "path": "core/owner-requirements.json",
-      "bytes": 32949,
-      "sha256": "d38042e9d48ce332dd1791290caff549605742a0601d2d1e334b4bcd13cbdf1e"
+      "bytes": 35148,
+      "sha256": "293c3155f894a578bafcfe41e8a7ab98d231169a0f5b4662b38baf6dc5360549"
     },
     {
       "path": "core/owner-standards-20261027.md",
@@ -75,8 +75,8 @@
     },
     {
       "path": "core/web-game-publishing-experience.md",
-      "bytes": 5641,
-      "sha256": "f071494496e12b092665a2861d432be3684d775a6bccd6d46c2445d97a849a48"
+      "bytes": 8120,
+      "sha256": "c5c150a09dec42d474ef7ed34dccaf37442b66d8be50a35163bfafb8aa3b12b3"
     },
     {
       "path": "core/workflow.md",
@@ -101,7 +101,7 @@
     {
       "path": "package.json",
       "bytes": 236,
-      "sha256": "734635cce4f27ec2d1683c144994a2aea637477c3cda4cf63ebd7a5ac05dd003"
+      "sha256": "3d6247a968f43b3a123359bcca9dcaad5bd836d9d0b8d8ff6cb405cc9e732164"
     },
     {
       "path": "pages/detail.md",
@@ -130,8 +130,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5799,
-      "sha256": "606edeaeb68257c0820df537bad25d5d4f3d6137f77c8c849797baa4001387f4"
+      "bytes": 5811,
+      "sha256": "e0cc17a2999e8446cf2ae3a7f919ce48721fdb78f08f32bb116e2e4a77651a09"
     },
     {
       "path": "site-types/store-referral.md",
@@ -155,8 +155,8 @@
     },
     {
       "path": "tests/contract.test.mjs",
-      "bytes": 13098,
-      "sha256": "459d41044817ff4c559471a2a9575eff7b47830fe0e019b6ebd706466d3cab51"
+      "bytes": 13192,
+      "sha256": "0d8260a26c83dab85d7b1416d315dfb5cfc1573b31e854c22df1752d985438ae"
     },
     {
       "path": "tests/owner-inspector.test.mjs",

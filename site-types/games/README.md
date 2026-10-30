@@ -1,6 +1,6 @@
-# Game-Automation 3.2.10
+# Game-Automation 3.2.11
 
-Current games-only generation and maintenance rules: read the [owner contract](core/owner-games-rules.md) and [78-item review checklist](core/owner-requirements.json), version 2026-10-30.3. They include the owner’s accumulated component, search, action, loading, source-truth and cross-site corrections. The latest task and approved references own layout; no historical skeleton becomes every brand’s template. Every `context` includes these sources and every new `plan` expands applicable checks. Historical packages remain unchanged; these rules do not apply to Coupon or App sites.
+Current games-only generation and maintenance rules: read the [owner contract](core/owner-games-rules.md) and [81-item review checklist](core/owner-requirements.json), version 2026-10-30.4. They include the owner’s accumulated component, search, action, loading, source-truth, publishing and cross-site corrections. The latest task and approved references own layout; no historical skeleton becomes every brand’s template. Every `context` includes these sources and every new `plan` expands applicable checks. Historical packages remain unchanged; these rules do not apply to Coupon or App sites.
 
 A portable authoring contract and evidence workflow for game websites. It is independent of Coupon and Harness. Copy this whole folder to another machine; the only CLI dependency is Node 22 or newer. Browser and image-generation tools belong to the receiving agent and must be probed, not assumed.
 
