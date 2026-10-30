@@ -10,7 +10,11 @@ One real entity throughout title, icon, cover/screenshots, controls/facts and de
 
 Web-play: identity → input/device judgment → Play; actual controls/About/recommendations. Store-referral: identity/media/facts may lead in the chosen brand order, but official platform actions remain obvious and platform-specific. Main Play/store actions do not overlap content and have complete hit/focus regions.
 
+Both detail types require Game Description and How To Play supported by sources for the same game. Web-play additionally requires Click To Play linked to the matching runtime; store-referral requires Click To Download with real official-store destinations. Acquire missing sourced gameplay instead of silently omitting How To Play; unresolved facts remain explicitly incomplete. Recommendation rail composition is brand-owned, with different legitimate arrangements and readable real names/platform ratings across sites; do not copy a reference rail into every brand.
+
 Check main identity, gallery/cover, facts/controls, description and related ordinary modules independently on desktop/phone/320px. Different game titles and missing fields should not produce fake blank tracks or giant stretched panels.
+
+Previous/next screenshot buttons are designed into the actual gallery's left/right edges at vertical center. A detached controls row is forbidden. Preserve at least44px targets, intrinsic image proportions, visible focus and first/last states; omit redundant controls when no image change is possible. Sweep every same-purpose image-switching component, including single-image and fully-visible variants.
 
 ## Detail is a primary delivery surface
 

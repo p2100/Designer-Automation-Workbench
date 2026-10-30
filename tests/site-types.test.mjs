@@ -5,6 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {root,command,readJSON,writeJSON,digest} from '../lib/io.mjs';
 import {maintenanceContext,experiencePage} from '../lib/site-rules.mjs';
+import {specialistContext} from '../bin/sites.mjs';
 import {inspectSource} from '../bin/intake.mjs';
 import {openTask,prepare,repair,handoff} from '../lib/workbench.mjs';
 import {audit} from '../lib/audit.mjs';
@@ -48,6 +49,19 @@ test('maintenance providers share methods and keep all original generation bytes
     assert(!selected.read.some(p=>p.startsWith('site-types/'+(siteType==='app'?'games':'app')+'/')));
   }
   const games=await maintenanceContext(root,{siteType:'games',page:'play',gameType:'web-play'});for(const id of ['inner-content-width-1200','mobile-font-maximum-24','play-no-desktop-fullscreen','play-image-generated-loading-art'])assert(games.obligations.some(r=>r.id===id),id);
+});
+
+test('Games generation and review load the current publishing experience and scoped rules',async()=>{
+  const doc='site-types/games/core/web-game-publishing-experience.md';
+  const author=await specialistContext(root,{siteType:'games',page:'home',role:'author',gameType:'web-play'});
+  const review=await maintenanceContext(root,{siteType:'games',page:'home',gameType:'web-play'});
+  assert(author.read.includes(doc));assert(review.read.includes(doc));
+  for(const id of ['game-home-approved-tdk','game-original-brand-copy','sp-game-routing-and-delivery','sp-game-localized-delivery'])assert(review.obligations.some(rule=>rule.id===id),id);
+  assert.equal(author.sourceVersion,'2026-10-30.3');
+  assert(author.assets.some(asset=>asset.id==='games-designer-learning'));
+  assert(author.designReferences.every(ref=>ref.status==='reference-only'&&ref.pages.includes('home')));
+  const store=await maintenanceContext(root,{siteType:'games',page:'home',gameType:'store-referral'});
+  assert(!store.obligations.some(rule=>rule.id==='sp-game-localized-delivery'));
 });
 
 test('MCP feedback scopes retain existing Coupon keys and isolate App/Games page families',()=>{

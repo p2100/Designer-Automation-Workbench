@@ -1,11 +1,13 @@
 {
-  "version": "2026-10-27.2",
+  "version": "2026-10-30.3",
   "siteType": "games",
   "sources": [
     "https://tanyueco.feishu.cn/wiki/Ea7Vw5TYniMyuXkMP4acWLTqnKf",
     "https://topziz.com/games/detail/com-sunsetgames-bordersecurity.html",
     "https://mzgen.com/",
-    "direct-owner-message-2026-10-27-games-standards"
+    "direct-owner-message-2026-10-27-games-standards",
+    "direct-owner-message-2026-10-28-image-controls-at-sides",
+    "direct-owner-message-2026-10-30-required-home-grid-history-introduction"
   ],
   "rules": [
     {
@@ -13,7 +15,7 @@
       "pages": [
         "home"
       ],
-      "requirement": "Use the owner-authorized full-width game-led homepage with 20–40px side gutters, finite content height and no empty footer band. Homepage category modules are forbidden."
+      "requirement": "Use the owner-authorized full-width game-led homepage with 20–40px side gutters, finite content height and no empty footer band. Homepage category modules are forbidden. The real game grid, clearable Recently viewed and dedicated factual brand introduction are all required homepage modules; preserve distinct brand composition."
     },
     {
       "id": "home-desktop-capacity",
@@ -35,6 +37,26 @@
         "home"
       ],
       "requirement": "Preserve brand; vary feature count/placement and component paint"
+    },
+    {
+      "id": "home-recently-viewed-required",
+      "pages": [
+        "home"
+      ],
+      "level": "required",
+      "source": "core/owner-standards-20261027.md",
+      "requirement": "Include a required Recently viewed module based on real game visits and matching entity links, with a working clear action. Check first-visit, populated and cleared states; keep an honest compact empty state and never substitute recommendations or fabricated history. Follow the brand layout and phone capacity.",
+      "ownerSource": "direct-owner-message-2026-10-30-required-home-grid-history-introduction"
+    },
+    {
+      "id": "home-brand-introduction-required",
+      "pages": [
+        "home"
+      ],
+      "level": "required",
+      "source": "core/owner-standards-20261027.md",
+      "requirement": "Include a dedicated, factual brand introduction on every homepage, describing this site and its real play/store capabilities. Use its own brand wording and composition; do not copy Playaro-specific styling or claims. Keep the game grid prominent. This required body module is separate from decorative subtitles under module headings.",
+      "ownerSource": "direct-owner-message-2026-10-30-required-home-grid-history-introduction"
     },
     {
       "id": "detail-capability-route",
@@ -391,7 +413,7 @@
       "pages": [
         "home"
       ],
-      "requirement": "If an authorized homepage discovery interaction is retained, it performs a useful brand-specific task. It must not add category modules or introductory subtitle copy. Finish and check one site before the next."
+      "requirement": "Required game grid, Recently viewed and brand introduction keep useful brand-specific composition. Other authorized discovery interactions are optional. Do not add category modules or decorative heading subtitles; preserve the required introduction body in its dedicated module. Finish and check one site before the next."
     },
     {
       "id": "home-category-truth-and-links",
@@ -576,7 +598,7 @@
       "pages": [
         "play"
       ],
-      "requirement": "Do not show a separate Back to detail button. Preserve normal browser/exit/recovery navigation and avoid trapping the player.",
+      "requirement": "Do not show a separate Back to detail button on desktop. An explicitly authorized compact phone shell may retain a 44px same-game return target; preserve normal browser/exit/recovery navigation.",
       "level": "required",
       "when": "always",
       "source": "core/owner-standards-20261027.md"
@@ -596,7 +618,7 @@
       "pages": [
         "*"
       ],
-      "requirement": "Module heading areas contain the title without introductory/descriptive subtitle copy. Preserve necessary game description, How to play body, factual conditions and status/error messages in their actual content roles.",
+      "requirement": "Module heading areas contain the title without introductory/descriptive subtitle copy. Preserve necessary game description, How to play body, factual conditions and status/error messages in their actual content roles. The required homepage brand-introduction body belongs to its own dedicated module and must not be removed as a decorative heading subtitle.",
       "level": "required",
       "when": "always",
       "source": "core/owner-standards-20261027.md"
@@ -650,6 +672,140 @@
       "level": "required",
       "when": "always",
       "source": "core/owner-standards-20261027.md"
+    },
+    {
+      "id": "local-history-truth-and-clear",
+      "pages": [
+        "home",
+        "detail",
+        "play",
+        "information"
+      ],
+      "requirement": "Use actual scoped local browsing history only; label viewed/opened truthfully, keep empty state out of layout, support clear and search repaint, and disclose storage in Privacy.",
+      "source": "core/experience-adoption-20261028.md",
+      "level": "required",
+      "when": "applicable component or authorized configuration"
+    },
+    {
+      "id": "official-rating-overlay-context",
+      "pages": [
+        "home",
+        "list",
+        "detail"
+      ],
+      "requirement": "A rating overlay uses the same entity and verified platform/source snapshot. Omit unknown values; never infer popularity or Android ratings from App Store data.",
+      "source": "core/experience-adoption-20261028.md",
+      "level": "required",
+      "when": "applicable component or authorized configuration"
+    },
+    {
+      "id": "recommendation-icon-feedback-capacity",
+      "pages": [
+        "detail",
+        "play"
+      ],
+      "requirement": "Recommendation strip/rail feedback hugs the actual icon, preserves name capacity and stable neighbor geometry; remove redundant arrows when name-only is requested, and honor reduced motion.",
+      "source": "core/experience-adoption-20261028.md",
+      "level": "required",
+      "when": "applicable component or authorized configuration"
+    },
+    {
+      "id": "action-row-corner-affordance",
+      "pages": [
+        "home",
+        "detail",
+        "play"
+      ],
+      "requirement": "Keep icon/name/action roles readable at actual inner width. Reposition optional arrows to corners before squeezing labels; preserve truthful destinations, platform identity and 44px interaction targets.",
+      "source": "core/experience-adoption-20261028.md",
+      "level": "required",
+      "when": "applicable component or authorized configuration"
+    },
+    {
+      "id": "mobile-game-shell-orientation",
+      "pages": [
+        "play"
+      ],
+      "requirement": "When an authorized compact mobile shell is selected, hide redundant masthead, retain an accessible same-game return target, and size portrait/landscape/responsive stages from actual runtime orientation; desktop has no separate detail-back/fullscreen.",
+      "source": "core/experience-adoption-20261028.md",
+      "level": "required",
+      "when": "applicable component or authorized configuration"
+    },
+    {
+      "id": "feedback-scope-and-promotion",
+      "pages": [
+        "*"
+      ],
+      "requirement": "Separate direct owner instructions, verified methods, pending feedback and single-site style. Preserve actual source status; do not count local copies as independent sites or invent candidate confirmation.",
+      "source": "core/experience-adoption-20261028.md",
+      "level": "required",
+      "when": "applicable component or authorized configuration"
+    },
+    {
+      "id": "image-navigation-at-media-edges",
+      "pages": [
+        "*"
+      ],
+      "level": "required",
+      "when": "image switching component exists in authorized scope",
+      "source": "core/owner-games-rules.md",
+      "requirement": "All previous/next image controls are brand-designed at the image viewport left/right edges, vertically centered; no standalone control row. Preserve >=44px targets, image ratios, focus/pressed/disabled states and keyboard/touch navigation. Hide meaningless single-image/fully-visible controls; position state does not create an extra toolbar. Sweep all affected carousel contexts and real breakpoints."
+    },
+    {
+      "id": "detail-required-sourced-gameplay-and-action",
+      "requirement": "Every game detail must have a same-game sourced Game Description and How To Play; actual browser games have Click To Play linked to their runtime; store-only games have Click To Download with true official-store links. Acquire missing gameplay from verified sources; mark unresolved gaps instead of inventing details or silently omitting the section.",
+      "pages": [
+        "detail"
+      ],
+      "source": "core/owner-games-rules.md",
+      "level": "required",
+      "when": "always"
+    },
+    {
+      "id": "game-home-approved-tdk",
+      "requirement": "When homepage TDK is supplied, generate the exact approved main-language title, description and keywords, escape and decode correctly, avoid duplicate tags, and verify the actual test and production responses. Keep each site's metadata and canonical specific to its own brand and route.",
+      "pages": ["home"],
+      "types": ["web-play"],
+      "source": "core/web-game-publishing-experience.md",
+      "level": "required",
+      "when": "web-play homepage with supplied TDK and authorized release scope"
+    },
+    {
+      "id": "game-original-brand-copy",
+      "requirement": "Write original site information for the current brand, remove unauthorized reference-brand mentions from visible copy, metadata and localized data, and verify every configured locale. Verify any self-developed or rights claims separately from hosting provenance; preserve factual privacy disclosures and internal source records. Record game-runtime or asset coverage not actually checked.",
+      "pages": ["home", "detail", "play", "information"],
+      "types": ["web-play"],
+      "source": "core/web-game-publishing-experience.md",
+      "level": "required",
+      "when": "web-play site generation or authorized brand-copy maintenance"
+    },
+    {
+      "id": "sp-game-routing-and-delivery",
+      "requirement": "For an SP-connected web-play site, verify each configured detail and landing route, links and canonical against the actual game and cover identifiers. Check the site configuration, matching rules, API and asynchronous worker versions and backwards compatibility before database cutover; exercise a real task and separately report callback and consumer evidence.",
+      "pages": ["home", "detail", "play"],
+      "types": ["web-play"],
+      "source": "core/web-game-publishing-experience.md",
+      "level": "required",
+      "when": "SP-connected web-play site and authorized release scope"
+    },
+    {
+      "id": "sp-game-localized-delivery",
+      "requirement": "When language delivery is configured, compare every enabled locale with the returned URL, deployed domain and visible page/game language; test single, multiple, unavailable languages and different browser language settings. Verify both status and callback/source paths, and never equate a translated configuration or HTTP 200 with complete localization.",
+      "pages": ["home", "detail", "play"],
+      "types": ["web-play"],
+      "source": "core/web-game-publishing-experience.md",
+      "level": "required",
+      "when": "SP-connected web-play site with multilingual delivery"
+    },
+    {
+      "id": "detail-brand-distinct-recommendations",
+      "requirement": "Give each site its own recommendation rail composition (such as rows, square grids, or a featured item), using actual game names and available platform-labeled ratings. Vary ordering/selection as appropriate and retain single-line names and responsive capacity.",
+      "pages": [
+        "detail"
+      ],
+      "source": "core/owner-games-rules.md",
+      "level": "required",
+      "when": "always"
     }
   ],
   "applicability": "Accumulates direct owner corrections and approved-reference precedence. Applies to new/authorized maintenance scope; frozen historical releases retain their own rules."

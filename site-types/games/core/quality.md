@@ -1,5 +1,7 @@
 # Shared craft and truth contract
 
+Recent designer optimization references are indexed in [designer-learning.json](designer-learning.json), with the usage boundary in [designer-learning.md](designer-learning.md). Use matched pages/components and preserve exceptions; designer preference, author observation, real interaction testing and exact-candidate approval are separate facts. No reference promotes a source brand's skin into a universal template.
+
 The current [owner games contract](owner-games-rules.md) and [itemized checks](owner-requirements.json) take precedence for the regions they cover. A common home grid or explicitly selected reference skeleton is authorized; a historical reference does not fix every future site's inner layout. Respect the latest approved images and authorized free composition. Do not apply Coupon-specific business or dimensions to Games.
 
 ## Truth and purpose
@@ -30,9 +32,19 @@ Design mobile grouping deliberately: adjust columns, field order and action owne
 
 Semantic anchors navigate; buttons change state. Labels match real destinations. No pretend form success, empty links or buttons with no behavior. Galleries have keyboard controls, position state and natural touch scrolling. Menus have correct expanded state and Escape behavior. Focus is visible and not clipped.
 
+Image navigation buttons belong to the left/right image edges and vertical center, never a separate control row. Their visible treatment follows the brand and their targets remain at least 44px. Inspect actual media boundaries at desktop/phone/320px, mixed portrait/landscape images, first/last positions, focus and reduced motion. Single-image or fully visible image sets do not show meaningless controls. Keep accessible position state without allocating an extra toolbar.
+
 Hover/focus/pressed feedback must not move neighbors or change text geometry. Reserve image and result space. Check first load, first scroll, font load, search/filter repaint, empty results and reduced motion. Ordinary cards must remain correct after client rendering, not just in the first HTML.
 
 ## Distinction and review
+
+### Incremental maintenance cost
+
+Classify the actual diff before choosing verification. A selector/state-only CSS repair uses affected-component checks: one real sample for each relevant media/content variant, desktop/phone/320 and actual breakpoint transitions, hover/focus/pressed/reduced-motion when affected, plus static enumeration of all callers and unchanged-file verification. Do not repeat homepage direction review, upstream research, runtime acceptance or unrelated page-family reviews for that repair. A layout/data/navigation/runtime change expands coverage according to its actual dependencies; a full redesign keeps full-page review.
+
+Independent review and frozen-candidate integrity remain required. An adapter that mandates actual visits for every affected route still owns that evidence requirement: collect those visits once in a bounded browser batch, label them route/geometry coverage, and reserve detailed visual/interaction judgment for declared representative variants. Never pass sampled routes as complete route coverage or change the declared scope to evade a gate. Record any mandatory all-route cost separately from optional author work.
+
+Reuse the already-read applicable rules and established build/handoff tools. Do not rediscover the project, reread whole rule packages or rebuild after a passing check without a new change or failure. Give author/reviewer exclusive viewport ownership; assert actual innerWidth after a viewport change before saving evidence. Pass the current tab explicitly to batch helpers rather than retaining stale tab handles across user turns. Gather a consolidated issue set and perform one focused repair/recheck; a rule already present needs a regression observation, not a duplicate rule document.
 
 When the user explicitly requests matching a reference layout, that lock owns the page's module order, columns, media/action positions and responsive regrouping. Do not invent a different reading structure to satisfy the general distinction check below. Preserve the chosen brands through typography, color roles, iconography and component treatment; compare the requested layout against the reference at equal widths. Record authorized omissions such as ads, video, fake actions or unsupported factual fields instead of recreating their holes or numbers. This exception applies only to the user-locked pages, not unrelated site pages.
 
@@ -43,3 +55,5 @@ The independent reviewer first observes the real candidate and records its first
 Tools can verify files and assertions; they cannot certify originality, beauty, true independence or a game being fun. Bind review evidence to candidate hashes. Report execution limits plainly. User approval of a direction is different from acceptance of finished pages.
 
 The latest [owner standards](owner-standards-20261027.md) (from a core file: owner-standards-20261027.md) apply in every author/review phase. They supersede older homepage category, inner-width, fullscreen and surface-palette directions. Use the portable inspector and actual browser/Image capabilities; preserve feedback and distinguish not-run from a pass.
+
+当前[反馈采纳与交互防退化](experience-adoption-20261028.md)按明确授权范围适用；通用方法、三站配置例外、原case候选状态和品牌偏好分开记录。

@@ -2,6 +2,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import ownerContract from '../core/owner-requirements.json' with {type:'json'};
+import designerLearning from '../core/designer-learning.json' with {type:'json'};
+export const selectDesignReferences = page => designerLearning.entries.filter(entry => entry.status === 'reference-only' && entry.pages.includes(page));
 export const sha = (bytes) => crypto.createHash('sha256').update(bytes).digest('hex');
 export const readJson = async (file) => JSON.parse(await fs.readFile(file, 'utf8'));
 export const writeJson = async (file, data) => { await fs.mkdir(path.dirname(file), { recursive: true }); await fs.writeFile(file, JSON.stringify(data, null, 2) + '\n'); };
@@ -90,7 +92,8 @@ export function createPlan(task) {
   requireValue(new Set(viewports.map((viewport) => viewport.id)).size === viewports.length, 'Viewport id collides with a breakpoint id');
   const items = task.modules.flatMap((module) => viewports.flatMap((viewport) => module.states.map((state) => ({ id: [module.id, viewport.id, state].join(':'), module: module.id, route: module.route, family: module.family, samples: module.samples, viewport, state }))));
   for(const route of task.routes)for(const rule of ownerContract.rules.filter(rule=>(rule.pages.includes('*')||rule.pages.includes(route.page))&&(!rule.types||rule.types.includes(task.type))))for(const viewport of viewports)items.push({id:['owner',rule.id,route.path,viewport.id].join(':'),module:rule.id,route:route.path,family:'owner-games-contract',samples:task.modules.filter(module=>module.route===route.path).flatMap(module=>module.samples),viewport,state:'owner-contract',requirement:rule.requirement,when:rule.when||'always',level:rule.level||'required',source:rule.source||'core/owner-requirements.json'});
-  return { version: 1, taskId: task.id, type: task.type, ownerContract:ownerContract.version, routes: task.routes, viewports, items, rule: 'Representative visual and owner-contract coverage plus exhaustive route/link/media checks; unavailable execution remains not-run.' };
+  const designReferences={version:designerLearning.version,source:'core/designer-learning.json',status:'reference-only',byRoute:task.routes.map(route=>({route:route.path,page:route.page,ids:selectDesignReferences(route.page).map(entry=>entry.id)}))};
+  return { version: 1, taskId: task.id, type: task.type, ownerContract:ownerContract.version, designReferences, routes: task.routes, viewports, items, rule: 'Representative visual and owner-contract coverage plus exhaustive route/link/media checks; unavailable execution remains not-run. Design references are scoped aids, not additional owner-contract obligations or proof of acceptance.' };
 }
 export async function verifyPackage(root) {
   const manifest = await readJson(path.join(root, 'manifest.json'));

@@ -1,42 +1,67 @@
 {
   "version": 1,
   "name": "Game-Automation",
-  "release": "3.2.1",
+  "release": "3.2.10",
   "files": [
     {
       "path": "AGENTS.md",
-      "bytes": 2560,
-      "sha256": "548f9d302c38b9fed050d03eb52917e6bd552994ad8612b44825109db768c94d"
+      "bytes": 3690,
+      "sha256": "c7f02db7feed5cd01b271b0fc399d9903a1e59b115cf2153e6153e683d248ade"
     },
     {
       "path": "bin/game.mjs",
-      "bytes": 2796,
-      "sha256": "617731194507c5be3707f38e24f90b45594e9f1ff038bc7c9f3ade655d00b05a"
+      "bytes": 3235,
+      "sha256": "39891a940a08123c672ee0fb8cbb789a6fd45fab93d573dd8663a16b83a46a94"
     },
     {
       "path": "bin/inspect-games.mjs",
-      "bytes": 7024,
-      "sha256": "a654286430322a7402ccdea8e7c2b7eea27bfefffa7f1c1f265a36177cfd7860"
+      "bytes": 7074,
+      "sha256": "8a877daa187de82385f98a4f516813f0f18ff0ec3c88c4c104ea861d7a0875d7"
+    },
+    {
+      "path": "core/acceptance-application.md",
+      "bytes": 2437,
+      "sha256": "ba8ddb5ec36f32769b62f976b3948cd933b980c5f8fa2870ec80111dacdbf646"
+    },
+    {
+      "path": "core/acceptance-experience-20261028.md",
+      "bytes": 12554,
+      "sha256": "57ad2d2af13af7ab374982b328c5b54de102bb33f4ee3ae322ebd58f6e303030"
+    },
+    {
+      "path": "core/designer-learning.json",
+      "bytes": 19750,
+      "sha256": "9102699c4a2de9a26490370ab0d11c57bfa230191f7aacbf666a60a43a1fa5e6"
+    },
+    {
+      "path": "core/designer-learning.md",
+      "bytes": 4130,
+      "sha256": "4721fa9fb81f0d0f27c51f9688f9159cb39134a75808b8cf18c76a93206ee2e4"
+    },
+    {
+      "path": "core/experience-adoption-20261028.md",
+      "bytes": 4406,
+      "sha256": "526d74a8db4a2ef27ec8fae5cfb4d8a3804f7b2ecca24f2c22e454d038301f61"
     },
     {
       "path": "core/owner-games-rules.md",
-      "bytes": 14795,
-      "sha256": "8d1d26e14db7584aa9ea32f8b3f15e51fbbc7b9b4d1e0660d98f2592b34a96d1"
+      "bytes": 17147,
+      "sha256": "52e6e069d57d0ef7ce8260ae7996aab8134da6f5ef34f93e476c3042385aaf5f"
     },
     {
       "path": "core/owner-requirements.json",
-      "bytes": 23751,
-      "sha256": "7cb4d8f46d6175a67b85cd7c0fa3b270877c9ca786d557b50b26994792042894"
+      "bytes": 32949,
+      "sha256": "d38042e9d48ce332dd1791290caff549605742a0601d2d1e334b4bcd13cbdf1e"
     },
     {
       "path": "core/owner-standards-20261027.md",
-      "bytes": 5348,
-      "sha256": "9b81ba474e5740f782487192cb1b5211c6ca9ccf8f49b8fe0c6f6fb4bf7b143c"
+      "bytes": 6358,
+      "sha256": "f0b7c29d5efbc0b1e1d51a938bc377854847cd0bfa37d13a0289254aec58599b"
     },
     {
       "path": "core/quality.md",
-      "bytes": 6832,
-      "sha256": "372b3c510fcb476d9a15be3f8926c2a2a256596a344dfe45ffffe4209c25a738"
+      "bytes": 9678,
+      "sha256": "f7df52d3bc36599df796c9894de1cad9a5f26c9c8d9f17d636500e5fd5c8c1c0"
     },
     {
       "path": "core/restore-and-refine.md",
@@ -45,8 +70,13 @@
     },
     {
       "path": "core/start.md",
-      "bytes": 2652,
-      "sha256": "9c9b3aa744447503cb44dfb62857db5bbf9c75b5acb8e31c1f73a9f708d67645"
+      "bytes": 3476,
+      "sha256": "db16de47719f21cadfc3910ec92cb8b7b513747a4a44c89a7f5453da132c17f1"
+    },
+    {
+      "path": "core/web-game-publishing-experience.md",
+      "bytes": 5641,
+      "sha256": "f071494496e12b092665a2861d432be3684d775a6bccd6d46c2445d97a849a48"
     },
     {
       "path": "core/workflow.md",
@@ -65,23 +95,23 @@
     },
     {
       "path": "lib/contract.mjs",
-      "bytes": 15095,
-      "sha256": "d2995ab638b044c875483582e2c233e4270ab934f9575aea956ce8e4a42f5632"
+      "bytes": 15700,
+      "sha256": "dbcc0a9d8db81068f4ea6f01f689f9c0c82a76b4f6dca726a4e2c7fd279e3ea6"
     },
     {
       "path": "package.json",
-      "bytes": 235,
-      "sha256": "37d30c8ef97006e6c971ef99ce9fae2c430120af7fa0f23d0a3693bb2ca5aa66"
+      "bytes": 236,
+      "sha256": "734635cce4f27ec2d1683c144994a2aea637477c3cda4cf63ebd7a5ac05dd003"
     },
     {
       "path": "pages/detail.md",
-      "bytes": 4306,
-      "sha256": "66c9c097b85cd0331c2f23013186005bf724a8c3520d8c4b457912b2c5e68d23"
+      "bytes": 5281,
+      "sha256": "7a515c44b3e707caf837701fedfc9500e0cab346b5cf44ec3bd7c47b42d8b8b3"
     },
     {
       "path": "pages/home.md",
-      "bytes": 1460,
-      "sha256": "4bcd7b283a1b7b6143068c83fb76cf11b17ef9ebfe47560f8c0cab470694c527"
+      "bytes": 2482,
+      "sha256": "01fc11a1c9144821fa8141b00de2f7ef00b72ca20f261537ef2421a82e982510"
     },
     {
       "path": "pages/information.md",
@@ -95,13 +125,13 @@
     },
     {
       "path": "pages/play.md",
-      "bytes": 1318,
-      "sha256": "0a7c04eaede3dc08fbbc59390e0691056a97f045d03de0a6125a4bb761f6a443"
+      "bytes": 1528,
+      "sha256": "cf244e40afa8cb78296a363bd7386e1796afa5b007422373e9434164778ca56f"
     },
     {
       "path": "README.md",
-      "bytes": 5133,
-      "sha256": "9d2d9b65ed21d9216c5d9038ab9153cac7aa833740e77f72b41bb6eec02572af"
+      "bytes": 5799,
+      "sha256": "606edeaeb68257c0820df537bad25d5d4f3d6137f77c8c849797baa4001387f4"
     },
     {
       "path": "site-types/store-referral.md",
@@ -125,8 +155,8 @@
     },
     {
       "path": "tests/contract.test.mjs",
-      "bytes": 9978,
-      "sha256": "b68d0214ca0f13bbd175240ffe0b78a7327cc6884d22cd60dbb630da9294a1ba"
+      "bytes": 13098,
+      "sha256": "459d41044817ff4c559471a2a9575eff7b47830fe0e019b6ebd706466d3cab51"
     },
     {
       "path": "tests/owner-inspector.test.mjs",

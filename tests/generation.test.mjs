@@ -27,7 +27,7 @@ test('one generation entry loads matching author rules and freezes the portable 
       assert(context.read.includes('core/creative-generation.md'));
       assert(context.read.includes('knowledge/shared/layout-and-space.md'));
       if(type==='app')assert(context.read.some(p=>p.startsWith('site-types/app/')));
-      if(type==='games')assert(context.read.some(p=>p.startsWith('site-types/games/')));
+      if(type==='games')assert(context.read.includes('site-types/games/core/web-game-publishing-experience.md'));
       if(type!=='coupon')assert(!context.read.some(p=>p.startsWith('knowledge/imported/')));
     }
     await assert.rejects(generationStart({data,id:type,siteType:type,request:'Second task',pages,client:silent}),/already exists/);

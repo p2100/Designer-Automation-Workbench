@@ -1,0 +1,617 @@
+{
+  "version": "2026-10-30.1",
+  "siteType": "games",
+  "sourceKind": "central-creative-reference",
+  "sourceHash": "04f82367f2fd9f1b08ab948577b8e9405a56c40d2cb07a47fea21266e3bb187d",
+  "fetchedAt": "2026-10-30T02:29:11.381Z",
+  "sourceReferences": 38,
+  "uniqueTopics": 19,
+  "policy": "Reference only; no visual acceptance or promotion to universal brand rules. Query current same-type pages and retired IDs for new tasks; this static package is not an automatic live connection.",
+  "ownerPriority": "core/owner-requirements.json",
+  "entries": [
+    {
+      "id": "brand-introduction",
+      "kind": "brand-preference",
+      "status": "reference-only",
+      "component": "Brand introduction",
+      "pages": [
+        "home"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "首页介绍是当前必需模块；说明本站真实定位与能力。",
+        "品牌名称、Logo和介绍来自本次品牌真实配置。"
+      ],
+      "exceptions": [
+        "Playaro黄底深蓝字与Logo位置仅适用于该站。"
+      ],
+      "sources": [
+        {
+          "id": "case-10c8489cfd318a55661e43686beafc35",
+          "revision": 1,
+          "page": "home",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "mobile-game-return",
+      "kind": "brand-preference",
+      "status": "reference-only",
+      "component": "Mobile game return",
+      "pages": [
+        "play"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "按实际游戏方向、导航合同、热区及画面避让检查返回入口。"
+      ],
+      "exceptions": [
+        "Playaro仅竖屏显示返回及白底蓝箭头造型不套其他站。"
+      ],
+      "sources": [
+        {
+          "id": "case-28ebfb84ce15d615a1e904386b9a1e55",
+          "revision": 1,
+          "page": "play",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "heading-scale",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Heading hierarchy",
+      "pages": [
+        "detail",
+        "information",
+        "home",
+        "play"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "同一档位一起检查同级标题、长标题容量和PC/手机层级。"
+      ],
+      "exceptions": [
+        "20px模块标题是Playaro配置，其他品牌使用自己的层级。"
+      ],
+      "sources": [
+        {
+          "id": "case-2a943da7be1d45a4147130a8a68943ff",
+          "revision": 1,
+          "page": "detail",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-6493e70f4b75bd8de281b670a56cc069",
+          "revision": 1,
+          "page": "information",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-7003898fb736417d7bda5dd042d5204a",
+          "revision": 1,
+          "page": "home",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-97a1b18e7e66263344391a6dc262f26b",
+          "revision": 1,
+          "page": "play",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "observable-motion",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Motion",
+      "pages": [
+        "home",
+        "detail",
+        "play"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "检查实际渲染状态和关键帧引用，边界与邻项保持稳定。",
+        "观察离屏暂停及reduced-motion，确认文字和操作可读。"
+      ],
+      "exceptions": [
+        "不把来源站持续强动画推广到所有按钮。"
+      ],
+      "sources": [
+        {
+          "id": "case-2edd342a959f0b1403f0488827812475",
+          "revision": 1,
+          "page": "home",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-c403726d53fe5798ad6e2e3db863854d",
+          "revision": 1,
+          "page": "detail",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-ed5d6864b0250beb25b1dbf340a7ee60",
+          "revision": 1,
+          "page": "play",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "one-candidate-preview",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Candidate identity",
+      "pages": [
+        "home",
+        "detail"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "确认源码、服务目录、候选、截图和下载来自同一个实际版本。",
+        "发现背景或页头改动缺失时先定位版本再继续修复。"
+      ],
+      "exceptions": [
+        "多个端口或历史截图不构成一个完整候选的通过证据。"
+      ],
+      "sources": [
+        {
+          "id": "case-3258487454cfcb29d8da4e85bdb7ecd4",
+          "revision": 1,
+          "page": "home",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-f80da8e3d469b65d179b81b0a79668a6",
+          "revision": 1,
+          "page": "detail",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "loading-handoff",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Startup handoff",
+      "pages": [
+        "play"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "明确图片占位、站点启动层和游戏自身加载的责任及交接状态。",
+        "有ready/progress协议按真实协议；iframe load只表示文档载入，不表示已可玩。"
+      ],
+      "exceptions": [
+        "不得用定时器完成、假百分比或无条件iframe load代替引擎就绪。"
+      ],
+      "sources": [
+        {
+          "id": "case-343377f19ddd917f090c8756898cd807",
+          "revision": 1,
+          "page": "play",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "recently-viewed-truth",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Recently viewed",
+      "pages": [
+        "home"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "首页最近浏览现在必需，记录真实访问和对应实体链接，清除后同步更新实际记录和界面。",
+        "初次访问、清除后及存储不可用均如实处理；无记录保留紧凑空态。"
+      ],
+      "exceptions": [
+        "来源站“记录在上”的位置要求不套所有品牌。",
+        "不能拿推荐游戏、未发生的游玩或访问伪造历史。"
+      ],
+      "sources": [
+        {
+          "id": "case-3615b25b9c3d16e2a8234dfb81ea1e98",
+          "revision": 1,
+          "page": "home",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "background-rhythm",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Game-themed background",
+      "pages": [
+        "detail",
+        "home",
+        "information",
+        "play"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "看整页装饰与内容的距离、分布和页底密度，保持内容主次。"
+      ],
+      "exceptions": [
+        "金币、像素格、橙色阶梯及具体删项属于来源站，不自动移植。"
+      ],
+      "sources": [
+        {
+          "id": "case-3b058c8360d12dde03eef26c886b33a3",
+          "revision": 1,
+          "page": "detail",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-833fdebb5008739d5676c71392940736",
+          "revision": 1,
+          "page": "home",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-899c8a68399b977c88bf3412c18a0070",
+          "revision": 1,
+          "page": "information",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-8b3efb0c3f89086c4ba872d686aa555f",
+          "revision": 1,
+          "page": "play",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "runtime-orientation",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Runtime and orientation",
+      "pages": [
+        "play"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "按实体真实runtime/商店能力分流，并按portrait/landscape/responsive能力安排画框。",
+        "检查PC、手机及转屏后的实际游戏、加载层与操作。"
+      ],
+      "exceptions": [
+        "设备旋转不改变游戏的能力分类，缩放适配不证明实机可玩。"
+      ],
+      "sources": [
+        {
+          "id": "case-3ea2c00df514513b694f7d353d5aafe6",
+          "revision": 1,
+          "page": "play",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "loading-media",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Loading media",
+      "pages": [
+        "play"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "一起核对外框、加载层、iframe裁切和切换前后的边界。",
+        "PC宽框和手机竖框按实际构图选择媒体，检查清晰度、裁切、体积及加载时序。"
+      ],
+      "exceptions": [
+        "不将小竖图硬放大到宽画框，不凭文件体积推断所有慢因。"
+      ],
+      "sources": [
+        {
+          "id": "case-56bcd68ccc385284ef8fc48224a9881a",
+          "revision": 1,
+          "page": "play",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "grid-capacity-and-last-row",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Grid capacity",
+      "pages": [
+        "home",
+        "detail"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "按真实宿主宽度选择数量，检查首中末行、平板及断点两侧。",
+        "保持普通卡尺寸和文字评分容量，不为填末行突然放大。"
+      ],
+      "exceptions": [
+        "来源站手机双大卡和14px边距仅属该站配置。"
+      ],
+      "sources": [
+        {
+          "id": "case-58bf49b1852accfc17af5457067214b3",
+          "revision": 1,
+          "page": "home",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-efc74ba1f9002979179897292bf84511",
+          "revision": 1,
+          "page": "detail",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "brand-inner-composition",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Brand composition",
+      "pages": [
+        "play",
+        "detail",
+        "home"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "按本站参考设计首页、详情和游玩壳的内容分组、推荐、操作、背景及loading。",
+        "忽略颜色后仍比较结构和手机阅读顺序，逐站完成。"
+      ],
+      "exceptions": [
+        "旧Topziz/Mzgen骨架或来源站侧栏不成为所有品牌模板。"
+      ],
+      "sources": [
+        {
+          "id": "case-6534aa16045309ddcd0964db27de3743",
+          "revision": 1,
+          "page": "play",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-efff33a41ac673b7e135c3e50409e34b",
+          "revision": 1,
+          "page": "detail",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-fdfced53c76f0172e3c36d432321f6ff",
+          "revision": 1,
+          "page": "home",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "separate-loading-families",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Loading families",
+      "pages": [
+        "home",
+        "play",
+        "detail"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "区分卡片图片占位和游戏启动层，修改后检查实际同族调用位置。",
+        "本站加载素材保留生成/来源记录和实际引用。"
+      ],
+      "exceptions": [
+        "Playaro蓝黄橙手柄、2.5D视觉与放大尺寸不复制到新品牌。"
+      ],
+      "sources": [
+        {
+          "id": "case-69181c28b3fafbf42c537a83d7f7a92a",
+          "revision": 1,
+          "page": "home",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-ee08528f319572fcb824bcd0292170e1",
+          "revision": 1,
+          "page": "play",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-efd28ff5036349386b9c18913aef55fd",
+          "revision": 1,
+          "page": "detail",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "card-overlay-facts",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Game cards",
+      "pages": [
+        "detail",
+        "home"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "检查单行名称容量、蒙版、真实平台评分及其空间关系。",
+        "hover、焦点和触控信息与同一游戏目的地一致，未知评分不补造。"
+      ],
+      "exceptions": [
+        "来源站顶部侧栏仅名称等删项只作用于其确认范围。"
+      ],
+      "sources": [
+        {
+          "id": "case-69e5841f46530a791971ecf7b34a1b7b",
+          "revision": 1,
+          "page": "detail",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-fc33f20f8e9422b29fbf7e35557e8b0d",
+          "revision": 1,
+          "page": "home",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "header-capacity",
+      "kind": "brand-preference",
+      "status": "reference-only",
+      "component": "Header",
+      "pages": [
+        "home",
+        "information",
+        "detail"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "按真实品牌配置检查Logo比例、操作热区、目的地及所有同族页头。"
+      ],
+      "exceptions": [
+        "28px Logo、50px页头、黄橙图标和Driving目的地是Playaro配置。"
+      ],
+      "sources": [
+        {
+          "id": "case-6f1cce56f0ecce239339dcaa28255c94",
+          "revision": 1,
+          "page": "home",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-724f0fcf70c17098a8c850e13dab60a0",
+          "revision": 1,
+          "page": "information",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-f2a997966874679af4549cf3073df21b",
+          "revision": 1,
+          "page": "detail",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "phone-first-tap",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Touch navigation",
+      "pages": [
+        "detail",
+        "home"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "实际触控检查第一次点击按合同进入目标，不被桌面hover层拦截。",
+        "若明确设计成信息展开，检查展开、退出、导航和键盘路径，并覆盖同族推荐。"
+      ],
+      "exceptions": [
+        "不能用桌面hover截图冒充触控检查。"
+      ],
+      "sources": [
+        {
+          "id": "case-751742f869f610cb874910f30368e726",
+          "revision": 1,
+          "page": "detail",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-f98da4d33805047e878eb8dc96118f07",
+          "revision": 1,
+          "page": "home",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "truthful-information-pages",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Information pages",
+      "pages": [
+        "information"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "About/Privacy/Contacts按本站真实功能、身份和联系资料写作，保留品牌和阅读层级。"
+      ],
+      "exceptions": [
+        "不为SEO凑虚构长文；Playaro手机tags与纯蓝返回按钮只属于该站。"
+      ],
+      "sources": [
+        {
+          "id": "case-95df739861a608e46be308b96f9fba02",
+          "revision": 1,
+          "page": "information",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "footer-flow",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Footer",
+      "pages": [
+        "information",
+        "home"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "短信息页和短列表检查页脚落点，长页按文档流下移。",
+        "检查手机页脚项对齐及点击范围。"
+      ],
+      "exceptions": [
+        "不以固定定位盖正文；Playaro居中与Logo背景删项不自动套其他站。"
+      ],
+      "sources": [
+        {
+          "id": "case-b42339f48db5f40b31f56c46760d7d73",
+          "revision": 1,
+          "page": "information",
+          "kind": "avoid-reference"
+        },
+        {
+          "id": "case-d77f2047be880adf228711e433822fdc",
+          "revision": 1,
+          "page": "home",
+          "kind": "avoid-reference"
+        }
+      ]
+    },
+    {
+      "id": "detail-role-capacity",
+      "kind": "method-reference",
+      "status": "reference-only",
+      "component": "Detail composition",
+      "pages": [
+        "detail"
+      ],
+      "when": "The current task contains this component and the source conditions apply; check the current owner contract first.",
+      "checks": [
+        "一起衡量身份图、标题、动作和上下推荐的真实比例与主次。",
+        "图标、标签与箭头容量不足时按本站参考重组，不挤没主标签。"
+      ],
+      "exceptions": [
+        "100px身份图、底部推荐左主栏、实心动作图标等仅属来源站配置。"
+      ],
+      "sources": [
+        {
+          "id": "case-b6b8a9df596998a4068dffb922b85a58",
+          "revision": 1,
+          "page": "detail",
+          "kind": "avoid-reference"
+        }
+      ]
+    }
+  ]
+}

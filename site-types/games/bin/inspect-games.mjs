@@ -1,6 +1,6 @@
 // Read-only, browser-serializable measurements. Bind selectors from the real
 // candidate; this never edits the page or certifies artwork/runtime/feedback.
-export function inspectGames(document,{page,selectors={},scopeSelector='body',mobile}={}){
+export function inspectGames(document,{page,selectors={},scopeSelector='body',mobile,homeGutterRange=[20,40]}={}){
   const view=document.defaultView,findings=[],measurements=[],notRun=[],bindings=[];
   const phone=mobile??view.innerWidth<=767;
   const visible=e=>{const r=e.getBoundingClientRect(),s=view.getComputedStyle(e);return r.width>0&&r.height>0&&s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)>0;};
@@ -15,7 +15,7 @@ export function inspectGames(document,{page,selectors={},scopeSelector='body',mo
   const measure=(check,value,expected)=>{measurements.push({check,value,expected});if(value<expected[0]-.75||value>expected[1]+.75)findings.push({check,reason:'outside-required-range',value,expected});};
   const root=document.querySelector(scopeSelector);if(!root)return {status:'not-run',notRun:[{check:'scope',reason:'Missing actual scope root'}],findings:[],measurements:[]};
   if(page==='home'){
-    for(const canvas of get('homeCanvas')){const r=canvas.getBoundingClientRect();measure('home-left-gutter',r.left,[20,40]);measure('home-right-gutter',document.documentElement.clientWidth-r.right,[20,40]);}
+    for(const canvas of get('homeCanvas')){const r=canvas.getBoundingClientRect();measure('home-left-gutter',r.left,homeGutterRange);measure('home-right-gutter',document.documentElement.clientWidth-r.right,homeGutterRange);}
     for(const category of get('categories',false))findings.push({check:'home-no-category-module',reason:'visible-homepage-category-module',text:category.textContent.trim().slice(0,80)});
     for(const icon of get('gameIcons',false)){const r=icon.getBoundingClientRect();if(Math.abs(r.width/r.height-1)>.08)findings.push({check:'home-square-artwork',level:'target',reason:'non-square-icon-frame',width:r.width,height:r.height});}
     notRun.push({check:'home-visual-and-disclosure',reason:'View background continuity and real hover/focus/tap information; geometry cannot certify them'});
@@ -33,7 +33,7 @@ export function inspectGames(document,{page,selectors={},scopeSelector='body',mo
   if(page==='play'){
     for(const info of get('bottomInformation'))if(content){const a=content.getBoundingClientRect(),b=info.getBoundingClientRect();measure('bottom-information-width',b.width,[a.width,a.width]);measure('bottom-information-left-offset',b.left-a.left,[0,0]);}
     if(!phone)for(const e of get('fullscreen',false))findings.push({check:'play-no-desktop-fullscreen',reason:'visible-desktop-fullscreen-control',text:e.textContent.trim()});
-    for(const e of get('backToDetail',false))findings.push({check:'play-no-detail-back-button',reason:'visible-detail-back-control',text:e.textContent.trim()});
+    if(!phone)for(const e of get('backToDetail',false))findings.push({check:'play-no-detail-back-button',reason:'visible-detail-back-control',text:e.textContent.trim()});
     notRun.push({check:'generated-loading-art-and-progress',reason:'Observe the actual loading state; verify Image provenance, motion, real progress/indeterminate state and failure/retry separately'});
   }
   if(phone)for(const e of [root,...root.querySelectorAll('*')].filter(visible)){

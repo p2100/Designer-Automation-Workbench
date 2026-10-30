@@ -1,6 +1,6 @@
-# Game-Automation 3.1
+# Game-Automation 3.2.10
 
-Current games-only generation and maintenance rules: read the [owner contract](core/owner-games-rules.md) and [63-item review checklist](core/owner-requirements.json), version2026-10-27.2. They include the owner’s accumulated component, search, action, loading, source-truth and cross-site corrections. The latest task and approved references own layout; no historical skeleton becomes every brand’s template. Every `context` includes these sources and every new `plan` expands applicable checks. Historical packages remain unchanged; these rules do not apply to Coupon or App sites.
+Current games-only generation and maintenance rules: read the [owner contract](core/owner-games-rules.md) and [78-item review checklist](core/owner-requirements.json), version 2026-10-30.3. They include the owner’s accumulated component, search, action, loading, source-truth and cross-site corrections. The latest task and approved references own layout; no historical skeleton becomes every brand’s template. Every `context` includes these sources and every new `plan` expands applicable checks. Historical packages remain unchanged; these rules do not apply to Coupon or App sites.
 
 A portable authoring contract and evidence workflow for game websites. It is independent of Coupon and Harness. Copy this whole folder to another machine; the only CLI dependency is Node 22 or newer. Browser and image-generation tools belong to the receiving agent and must be probed, not assumed.
 
@@ -37,3 +37,7 @@ When a user explicitly locks a detail layout to a source, use the reference modu
 For a complete faithful restoration followed by an improved site, read [core/restore-and-refine.md](core/restore-and-refine.md). Restore actual page families, typography, spacing and mobile behavior; preserve authorized exclusions and truthful data. Freeze that baseline before making the refinement. The two sites own independent visual renderers; shared data or a shared build script does not justify identical details with changed colors. Judge useful structural/interaction differences on both PC and phone. Mode and baseline notes are human/reviewer contracts; the CLI does not automatically certify these visual claims.
 
 The direct 27 October standards are in core/owner-standards-20261027.md. They remove homepage category modules and define full-width gutters, 1200px inner pages, single-column How to play, generated game assets, truthful loading progress, no PC fullscreen/detail-back controls, natural wrapping and the 24px phone font cap. Portable inspection: docs/portable-review.md and bin/inspect-games.mjs.
+
+The owner clarification on 30 October 2026 requires a game grid, real clearable Recently viewed, and a dedicated factual brand introduction on Games homepages. These are required modules, with brand-owned composition; category modules remain excluded. New sites and authorized homepage maintenance use this contract; frozen/locked releases remain unchanged.
+
+Recent Games designer feedback is curated in core/designer-learning.md and core/designer-learning.json: 38 central references, 19 scoped topics. Author/reviewer contexts and plans include page-matched reference IDs and exceptions, without promoting them into owner obligations or aesthetic acceptance.

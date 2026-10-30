@@ -49,7 +49,9 @@ export async function specialistContext(root,{siteType,page,role,gameType}){
   if(page==='play'&&gameType==='store-referral')throw Error('Store-referral has no play page');
   const pageFile=['list','category','genres','collection'].includes(page)?'list':page;
   const branches=gameType&&gameType!=='mixed'?[gameType]:['web-play','store-referral'];
-  return {read:[base+'/AGENTS.md',base+'/core/start.md',base+'/core/quality.md',base+'/core/workflow.md',base+'/core/owner-games-rules.md',base+'/core/owner-standards-20261027.md',base+'/docs/portable-review.md',...branches.map(t=>base+'/site-types/'+t+'.md'),base+'/pages/'+pageFile+'.md'],
-    assets:[{id:'games-owner-requirements',path:base+'/core/owner-requirements.json',kind:'asset'},{id:'games-readonly-inspector',path:base+'/bin/inspect-games.mjs',kind:'asset'}],
+  const learning=await readJSON(inside(root,base+'/core/designer-learning.json'));
+  return {read:[base+'/AGENTS.md',base+'/core/start.md',base+'/core/quality.md',base+'/core/workflow.md',base+'/core/owner-games-rules.md',base+'/core/owner-standards-20261027.md',base+'/core/experience-adoption-20261028.md',base+'/core/acceptance-application.md',base+'/core/acceptance-experience-20261028.md',base+'/core/designer-learning.md',base+'/core/web-game-publishing-experience.md',base+'/docs/portable-review.md',...branches.map(t=>base+'/site-types/'+t+'.md'),base+'/pages/'+pageFile+'.md'],
+    assets:[{id:'games-owner-requirements',path:base+'/core/owner-requirements.json',kind:'asset'},{id:'games-readonly-inspector',path:base+'/bin/inspect-games.mjs',kind:'asset'},{id:'games-designer-learning',path:base+'/core/designer-learning.json',kind:'asset'}],
+    designReferences:learning.entries.filter(entry=>entry.status==='reference-only'&&entry.pages.includes(page)),referenceUse:'Assess component conditions and exceptions; refresh current central references and retired IDs. References are not extra owner obligations or acceptance.',
     readiness:{business:'active',detail:'active'},gaps:gameType?[]:['Verify each real entity capability; both branches remain in coverage until resolved.'],sourceVersion:(await readJSON(inside(root,base+'/core/owner-requirements.json'))).version};
 }

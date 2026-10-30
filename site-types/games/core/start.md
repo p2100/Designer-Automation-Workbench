@@ -1,5 +1,7 @@
 # Start from the product
 
+Load [current designer-learning methods](designer-learning.md) and the page-matched references in designer-learning.json. The references retain source IDs and exceptions; they guide composition and focused checks without becoming extra whole-site acceptance obligations. Refresh the central Games references and retired IDs for a new task; this portable snapshot is not a live service connection.
+
 First read owner-games-rules.md and owner-requirements.json. The current games contract owns factual capability routing, card/action quality and the four-region play shell. The latest user-approved reference owns the requested layout; do not apply an older Topziz/Mzgen skeleton to every new brand. Maintain each site's identity and truthful actions.
 
 For explicit restoration/1:1 or restoration-then-refinement tasks, first read [restore-and-refine.md](restore-and-refine.md). Freeze the faithful baseline before deciding or implementing improvements. Source fidelity and useful refinement are separate outcomes.
@@ -13,3 +15,7 @@ For explicit restoration/1:1 or restoration-then-refinement tasks, first read [r
 7. Freeze, independently review, repair, then export. Unzip to a clean directory, verify bytes and repeat entry/routes/action smoke tests. Record implementation, source integrity, visual review, functional testing and user acceptance separately. Do not publish or commit unless requested.
 
 The latest [owner standards](owner-standards-20261027.md) (from a core file: owner-standards-20261027.md) apply in every author/review phase. They supersede older homepage category, inner-width, fullscreen and surface-palette directions. Use the portable inspector and actual browser/Image capabilities; preserve feedback and distinguish not-run from a pass.
+
+当前[反馈采纳与交互防退化](experience-adoption-20261028.md)按明确授权范围适用；通用方法、三站配置例外、原case候选状态和品牌偏好分开记录。
+
+当前 Games 验收经验需读取 [acceptance-application.md](acceptance-application.md) 和 [01–40 原文](acceptance-experience-20261028.md)；已冻结任务不自动升级，未实现的参数/探针功能不得声称已接入。

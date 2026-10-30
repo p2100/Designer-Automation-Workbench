@@ -4,6 +4,8 @@ Read core/owner-standards-20261027.md. Keep the game viewport, side recommendati
 
 Use Image-generated refined flat game-themed loading artwork, local assets and generation evidence. Loading has purposeful motion and a progress bar: actual observable progress or a clearly indeterminate state. Never fake percentages/completion or equate iframe load with engine readiness. Exercise loading/failure/retry, real source-specific start/input and reduced-motion.
 
-PC has no fullscreen button. There is no separate Back to detail button. Normal browser/exit/recovery navigation remains usable; do not trap game focus/pointer lock. Phones retain usable game space, clear pressed feedback on every interactive shell target and at most 24px visible text. Do not label pointer/synthetic touch as real hardware acceptance.
+PC has no fullscreen button. Desktop has no separate Back to detail button; a directly authorized compact mobile shell may retain a 44px return link to the same game. Normal browser/exit/recovery navigation remains usable; do not trap game focus/pointer lock. Phones retain usable game space, clear pressed feedback on every interactive shell target and at most 24px visible text. Do not label pointer/synthetic touch as real hardware acceptance.
 
 Map actual selectors and run bin/inspect-games.mjs, then independently view pixels and operate states; geometry alone does not verify art, progress truth or playability.
+
+Read ../core/experience-adoption-20261028.md for actual mobile shell/orientation scope and truthful local history.

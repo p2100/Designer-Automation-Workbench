@@ -1,4 +1,4 @@
-# Games owner contract · 2026-10-27.2
+# Games owner contract · 2026-10-30.1
 
 Read [the latest owner standards](owner-standards-20261027.md) in every phase. They own full-width/no-category homepages, 1200px inner pages, single-column instructions, natural wrapping, phone feedback and font cap, and generated game assets. Conflicting historical geometry and category requirements below have been replaced; frozen old releases remain immutable.
 
@@ -14,6 +14,7 @@ The supplied Airport Security reference rendered a download product when inspect
 
 ## Home
 
+- Required homepage modules are the game grid, real clearable Recently viewed, and a factual brand introduction, per the owner's direct clarification on 30 October 2026. Their composition is brand-owned. The introduction is a dedicated content module, not decorative subtitle copy. First-visit and cleared history states are honest; do not present recommended games as prior visits. This applies to new sites and authorized homepage maintenance, without changing frozen/locked releases.
 - Preserve the latest approved image-led opening; games appear before large introductions. The current homepage uses the full viewport with 20–40px side gutters and no category module. Useful authorized discovery may remain without adding a category section.
 - An earlier opening mosaic used 10–12 base tracks. That is not a requirement to squeeze ordinary lower-page cards into twelve tiny columns. Choose desktop card capacity so artwork, centered single-line labels and insets are usable; adjust intermediate widths deliberately.
 - Vary the number and placement of large tiles by brand, plus background, loading treatment, hover/focus and corner/shadow treatment. This owner-requested common grid is allowed; do not invent unrelated home structures to meet an old distinction gate.
@@ -35,6 +36,9 @@ Include real local About, Privacy and Contacts pages in complete Games deliverie
 - Fact labels use 14–16px; fact values 12–15px. Continuous description uses 15–17px. Do not use all-caps microtype or faint text to meet a nominal numeric range.
 - Official-store buttons use blue or green with sufficient text contrast. Preserve exact App Store / Google Play identities and URLs. Do not fabricate an APK or intermediary download.
 - Screenshot images/viewport height is at most 320px; preserve aspect ratios and gallery navigation. Do not crop portrait screenshots into landscape or leave a forced empty tall section.
+- Every game detail includes a real Game Description and How To Play, followed by a Click To Download section with the verified official store actions. Obtain missing gameplay from a source for the same game and record its provenance; if reliable gameplay is unavailable, report the gap rather than inventing instructions or silently dropping the section.
+- Recommendation rails retain brand-specific compositions and may use single rows, two-column square cards, featured cards or other clear layouts, with game names and available real platform-labeled ratings. Vary the selection/order by game where appropriate, keep the data truthful, and preserve single-line names and responsive readability. A shared reference skeleton is not permission to clone one rail design across brands.
+- All image-switching controls sit at the image or gallery viewport's left and right edges, vertically centered. Never put previous/next buttons in a separate row below or above the media. Design their shape, surface, icon and interaction states for the current brand; preserve at least 44px targets, image proportions, readable focus, keyboard and touch navigation. Remove useless controls for a single image or when all images fit. Position indicators must not recreate a separate control bar. Apply this to every image carousel in the authorized scope, not only the reported detail.
 - Verify the actual painted identity, description, section headings, related names and rating panels after every inherited brand stylesheet loads. Body-sized meaningful text, including counts and rating denominators, needs at least 4.5:1 contrast; a correct root token does not prove a nested region is readable.
 
 ## Playable landing (document `Detail`, current layout reference)
@@ -43,6 +47,7 @@ Include real local About, Privacy and Contacts pages in complete Games deliverie
 - Header contains the site's logo and search icon only; height at most 50px. Search must be usable. Do not retain extra Home/Games navigation, breadcrumbs or a new large heading above the game.
 - Reserve a definite visible logo size. Inspect both natural image dimensions and rendered width/height; an existing `src` or a positive header height is insufficient. Keep the original mark/wordmark and adapt its text role to the actual header surface. Execute known/empty/reset search from the icon's real destination.
 - Main content owns true identity and available input facts + Play, description, actual controls and related games. Omit unsupported fields. Preserve full main text and bind Play to the same entity. Regroup mobile content according to the approved design: current identity/action first, ordinary recommendations in three columns. Do not hide required recommendations or force another site's mobile skeleton.
+- Every playable detail includes the game's real description, supported gameplay/controls, and a Click To Play section linked to the same game's actual runtime. When sourced gameplay is missing, obtain verified information or report the gap; never fabricate controls or omit the required section silently.
 - Keep brand-coherent game surfaces and use brighter, higher-purity action colors with readable contrast. Historical web-play blue/green-only surface directions no longer restrict the current design; the separate download-only official-platform button rule remains scoped.
 - PC How to play uses one column by default. A separate background/border box around it is optional. Hover/focus feedback is purposeful and brand-specific: gamepad, arrow or game wording are allowed; triangular video-play controls are not. Do not turn the same overlay or instruction box into every site's mandatory skin.
 - Sidebar recommendation shape is free, but the complete rail should read as one coherent group. Do not stretch it to force the main content to match its height.
@@ -75,3 +80,5 @@ A reported repeated-component defect triggers a bounded review of the entire com
 ## Section browse controls · 2026-10-27
 
 Apply the cross-site Designer-Automation brand-section-actions rule: View all and equivalent section browse entries have a visible-at-rest branded button or named icon tag; bare text, underlined text or text plus an arrow is insufficient. Choose the current site’s own surfaces, typography, corner/edge and icon treatment. Preserve semantic navigation, target/label capacity, at least44px touch targets and hover/focus/pressed feedback. Phone controls can use a fully named icon or a reflowed heading row. Sweep affected home/category/recommendation call sites and redraw states. Ordinary prose and footer navigation links are not all converted to buttons. The rule is captured here so this Games package remains portable without a sibling-package runtime dependency.
+
+当前[反馈采纳与交互防退化](experience-adoption-20261028.md)按明确授权范围适用；通用方法、三站配置例外、原case候选状态和品牌偏好分开记录。

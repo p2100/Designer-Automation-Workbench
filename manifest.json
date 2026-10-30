@@ -87,7 +87,7 @@
     },
     {
       "path": "bin/sites.mjs",
-      "sha256": "5114b5ebb489f1b80af41c0c796945082379f84f7b2964cdfac53668a8f2d782"
+      "sha256": "f15a1a54ef5434a1d2990100b4bfb92886b24f14a96197af5f01ed6d7a562d5f"
     },
     {
       "path": "bin/task.mjs",
@@ -115,7 +115,7 @@
     },
     {
       "path": "config/site-types.json",
-      "sha256": "44cab11aa4d2321d7d0c00c9f476b6b4c51296e874c291ea247e38a5e1f8b237"
+      "sha256": "2e81e81b45fda9656283d24d401be48823d858b3e0587463c6f6f39220149852"
     },
     {
       "path": "config/workspace.json",
@@ -675,15 +675,15 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "d2df23334f844509db59c5ff636eaf00f949969b057767268d98b85f9eec4ecb"
+      "sha256": "afc3365a2acd96e75726270a239963549614bb6d040400d0460c62a238258823"
     },
     {
       "path": "package.json",
-      "sha256": "fb63c662f1fb0544ef9274bdf10da3ebe10a8ff78e14add5dc716824dfc580e3"
+      "sha256": "7db40d95d6f7ee1118de66681fc2ceda0be237ce810f6e399f2815605fb5e6fd"
     },
     {
       "path": "README.md",
-      "sha256": "579537eaaa24e59e7148ca68c5dc84ba55b29d223d939288dc38c1a941e64dce"
+      "sha256": "a8c8118a6010135dc7aa574d22d2c027a72b73661104d5df890b91d07830f026"
     },
     {
       "path": "scripts/connect-experience.mjs",
@@ -815,31 +815,51 @@
     },
     {
       "path": "site-types/games/AGENTS.md",
-      "sha256": "548f9d302c38b9fed050d03eb52917e6bd552994ad8612b44825109db768c94d"
+      "sha256": "c7f02db7feed5cd01b271b0fc399d9903a1e59b115cf2153e6153e683d248ade"
     },
     {
       "path": "site-types/games/bin/game.mjs",
-      "sha256": "617731194507c5be3707f38e24f90b45594e9f1ff038bc7c9f3ade655d00b05a"
+      "sha256": "39891a940a08123c672ee0fb8cbb789a6fd45fab93d573dd8663a16b83a46a94"
     },
     {
       "path": "site-types/games/bin/inspect-games.mjs",
-      "sha256": "a654286430322a7402ccdea8e7c2b7eea27bfefffa7f1c1f265a36177cfd7860"
+      "sha256": "8a877daa187de82385f98a4f516813f0f18ff0ec3c88c4c104ea861d7a0875d7"
+    },
+    {
+      "path": "site-types/games/core/acceptance-application.md",
+      "sha256": "ba8ddb5ec36f32769b62f976b3948cd933b980c5f8fa2870ec80111dacdbf646"
+    },
+    {
+      "path": "site-types/games/core/acceptance-experience-20261028.md",
+      "sha256": "57ad2d2af13af7ab374982b328c5b54de102bb33f4ee3ae322ebd58f6e303030"
+    },
+    {
+      "path": "site-types/games/core/designer-learning.json",
+      "sha256": "9102699c4a2de9a26490370ab0d11c57bfa230191f7aacbf666a60a43a1fa5e6"
+    },
+    {
+      "path": "site-types/games/core/designer-learning.md",
+      "sha256": "4721fa9fb81f0d0f27c51f9688f9159cb39134a75808b8cf18c76a93206ee2e4"
+    },
+    {
+      "path": "site-types/games/core/experience-adoption-20261028.md",
+      "sha256": "526d74a8db4a2ef27ec8fae5cfb4d8a3804f7b2ecca24f2c22e454d038301f61"
     },
     {
       "path": "site-types/games/core/owner-games-rules.md",
-      "sha256": "8d1d26e14db7584aa9ea32f8b3f15e51fbbc7b9b4d1e0660d98f2592b34a96d1"
+      "sha256": "52e6e069d57d0ef7ce8260ae7996aab8134da6f5ef34f93e476c3042385aaf5f"
     },
     {
       "path": "site-types/games/core/owner-requirements.json",
-      "sha256": "7cb4d8f46d6175a67b85cd7c0fa3b270877c9ca786d557b50b26994792042894"
+      "sha256": "d38042e9d48ce332dd1791290caff549605742a0601d2d1e334b4bcd13cbdf1e"
     },
     {
       "path": "site-types/games/core/owner-standards-20261027.md",
-      "sha256": "9b81ba474e5740f782487192cb1b5211c6ca9ccf8f49b8fe0c6f6fb4bf7b143c"
+      "sha256": "f0b7c29d5efbc0b1e1d51a938bc377854847cd0bfa37d13a0289254aec58599b"
     },
     {
       "path": "site-types/games/core/quality.md",
-      "sha256": "372b3c510fcb476d9a15be3f8926c2a2a256596a344dfe45ffffe4209c25a738"
+      "sha256": "f7df52d3bc36599df796c9894de1cad9a5f26c9c8d9f17d636500e5fd5c8c1c0"
     },
     {
       "path": "site-types/games/core/restore-and-refine.md",
@@ -847,7 +867,11 @@
     },
     {
       "path": "site-types/games/core/start.md",
-      "sha256": "9c9b3aa744447503cb44dfb62857db5bbf9c75b5acb8e31c1f73a9f708d67645"
+      "sha256": "db16de47719f21cadfc3910ec92cb8b7b513747a4a44c89a7f5453da132c17f1"
+    },
+    {
+      "path": "site-types/games/core/web-game-publishing-experience.md",
+      "sha256": "f071494496e12b092665a2861d432be3684d775a6bccd6d46c2445d97a849a48"
     },
     {
       "path": "site-types/games/core/workflow.md",
@@ -863,23 +887,23 @@
     },
     {
       "path": "site-types/games/lib/contract.mjs",
-      "sha256": "d2995ab638b044c875483582e2c233e4270ab934f9575aea956ce8e4a42f5632"
+      "sha256": "dbcc0a9d8db81068f4ea6f01f689f9c0c82a76b4f6dca726a4e2c7fd279e3ea6"
     },
     {
       "path": "site-types/games/manifest.json",
-      "sha256": "700cddb76c9c4e53ce9d43008dbc7b7a2c8613ecdbeb9ae9c15f740a75e86308"
+      "sha256": "c3c61a49d114492c18a2668f8405ff765835f2eb02ceea9dc6e5c26c0c5a0337"
     },
     {
       "path": "site-types/games/package.json",
-      "sha256": "37d30c8ef97006e6c971ef99ce9fae2c430120af7fa0f23d0a3693bb2ca5aa66"
+      "sha256": "734635cce4f27ec2d1683c144994a2aea637477c3cda4cf63ebd7a5ac05dd003"
     },
     {
       "path": "site-types/games/pages/detail.md",
-      "sha256": "66c9c097b85cd0331c2f23013186005bf724a8c3520d8c4b457912b2c5e68d23"
+      "sha256": "7a515c44b3e707caf837701fedfc9500e0cab346b5cf44ec3bd7c47b42d8b8b3"
     },
     {
       "path": "site-types/games/pages/home.md",
-      "sha256": "4bcd7b283a1b7b6143068c83fb76cf11b17ef9ebfe47560f8c0cab470694c527"
+      "sha256": "01fc11a1c9144821fa8141b00de2f7ef00b72ca20f261537ef2421a82e982510"
     },
     {
       "path": "site-types/games/pages/information.md",
@@ -891,11 +915,11 @@
     },
     {
       "path": "site-types/games/pages/play.md",
-      "sha256": "0a7c04eaede3dc08fbbc59390e0691056a97f045d03de0a6125a4bb761f6a443"
+      "sha256": "cf244e40afa8cb78296a363bd7386e1796afa5b007422373e9434164778ca56f"
     },
     {
       "path": "site-types/games/README.md",
-      "sha256": "9d2d9b65ed21d9216c5d9038ab9153cac7aa833740e77f72b41bb6eec02572af"
+      "sha256": "606edeaeb68257c0820df537bad25d5d4f3d6137f77c8c849797baa4001387f4"
     },
     {
       "path": "site-types/games/site-types/store-referral.md",
@@ -915,7 +939,7 @@
     },
     {
       "path": "site-types/games/tests/contract.test.mjs",
-      "sha256": "b68d0214ca0f13bbd175240ffe0b78a7327cc6884d22cd60dbb630da9294a1ba"
+      "sha256": "459d41044817ff4c559471a2a9575eff7b47830fe0e019b6ebd706466d3cab51"
     },
     {
       "path": "site-types/games/tests/owner-inspector.test.mjs",
@@ -1035,7 +1059,7 @@
     },
     {
       "path": "tests/generation.test.mjs",
-      "sha256": "568ed4317123f94bb5367e70e0ae63ee81f50d017a1ac264407c6e6ee172d05d"
+      "sha256": "a41ac42a33886854b2167ff582832131b30717b2f0eba2ba71db81205b39af38"
     },
     {
       "path": "tests/library.test.mjs",
@@ -1051,7 +1075,7 @@
     },
     {
       "path": "tests/site-types.test.mjs",
-      "sha256": "bac32acceac9800cc4650b66ec1c818544aad2f9d3c77a816ebc4242df4c5321"
+      "sha256": "67a0102e66e8d555f2e51bc5ff2baa52e4e9434aa58fdfb059ae6ce4a7e1a9cf"
     },
     {
       "path": "tests/team-creative.test.mjs",
