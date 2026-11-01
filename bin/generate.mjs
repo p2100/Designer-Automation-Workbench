@@ -11,6 +11,7 @@ import {workbench} from './workbench.mjs';
 export async function generate(args){
   const [action,...rest]=args,options={};
   if(!action||['help','--help'].includes(action))return {
+    experienceCommands:{plan:'experience-plan --id ID',applications:'After generate review, use audit experience-apply and experience-verify with its exact review task ID'},
     entry:'Agent first identifies actual site type, then uses this entry for Coupon, App or Games. Designers speak naturally; Agent prepares options and any review configuration.',
     commands:{start:'start --request TEXT --site-type coupon|app|games [--game-type web-play|store-referral|mixed] [--id ID]',status:'status --id ID','games-plan':'games-plan --id ID --task ACTUAL_GAME_TASK_JSON',direction:'direction --id ID --page PAGE --image FILE --prompt TEXT',feedback:'feedback --id ID --target DIRECTION_ID --page PAGE --actor DESIGNER --text ACTUAL_FEEDBACK --quote EXACT_TEXT --component COMPONENT --observation OBSERVED_POINT [--sentiment positive|negative] [--visual-spec AGENT_FILE]',review:'review --id ID --config AGENT_CONFIG [--action open|start]'},
     limitation:'This prepares and records an Agent workflow. The host Agent must actually generate images, implement source and inspect results; no aesthetic or user acceptance is fabricated.'};
@@ -21,6 +22,7 @@ export async function generate(args){
     try{return await generationStart({data,id:id||'site-'+randomUUID(),siteType:options['site-type'],request:options.request,gameType:options['game-type'],pages:options.pages?.split(',').filter(Boolean),client});}finally{await client.close();}
   }
   if(action==='status')return generationStatus(data,id);
+  if(action==='experience-plan')return (await generationStatus(data,id)).experiencePlan || {status:'not-run',reason:'Historical generation has no application contract'};
   if(action==='games-plan')return generationGamesPlan({data,id,taskFile:options.task});
   if(action==='direction')return generationDirection({data,id,page:options.page||'home',image:options.image,prompt:options.prompt});
   if(action==='feedback'){
@@ -32,7 +34,8 @@ export async function generate(args){
   if(action==='review'){
     if(!['open','start'].includes(options.action||'open'))throw Error('Review action must be open or start');
     const input=await generationReviewInput({data,id,configFile:options.config});
-    const review=await workbench([options.action||'open','--id',input.id,'--source',input.source,'--config',input.configFile,'--data',data]);
+    const review=await workbench([options.action||'open','--id',input.id,'--source',input.source,'--config',input.configFile,'--data',data,'--generation-id',id,
+      ...(options['experience-url']?['--experience-url',options['experience-url']]:[])]);
     return {...review,generation:{id,homeDirection:input.homeDirection,unreviewedPages:input.unreviewedPages,notice:'A direction is not visual approval; other page families remain unreviewed until checked or explicitly excluded.'}};
   }
   throw Error('Unknown generation action');

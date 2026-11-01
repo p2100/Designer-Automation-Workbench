@@ -1,6 +1,6 @@
 {
   "name": "designer-automation",
-  "version": "0.12.2",
+  "version": "0.13.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -24,7 +24,8 @@
     "knowledge:install-linux": "node scripts/install-experience-linux.mjs",
     "test:sites": "node --test tests/site-types.test.mjs site-types/games/tests/owner-inspector.test.mjs",
     "test:library": "node --test tests/library.test.mjs",
-    "test:adjustment": "node --test tests/adjustment.test.mjs"
+    "test:adjustment": "node --test tests/adjustment.test.mjs",
+    "test:learning-loop": "node --test tests/experience-application.test.mjs tests/experience-loop.test.mjs tests/feedback-delivery.test.mjs tests/io-lock.test.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.32.2",

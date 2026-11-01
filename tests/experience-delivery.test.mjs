@@ -23,15 +23,11 @@ async function until(check, timeout = 15000) {
 }
 async function fixture(t) {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'da-delivery-'));
-  t.after(() => fs.rm(dir, {recursive: true, force: true}));
   const store = new ExperienceStore(path.join(dir, 'shared'));
   let service = await startExperienceServer({store, allowAnonymous: true}),
     active = true;
   const port = service.server.address().port,
     url = service.url;
-  t.after(async () => {
-    if (active) await service.close();
-  });
   const client = new ReliableExperienceClient({
     url,
     data: path.join(dir, 'client'),
@@ -39,7 +35,15 @@ async function fixture(t) {
     retryMin: 75,
     retryMax: 150,
   });
-  t.after(() => client.close());
+  t.after(async () => {
+    // A failed assertion may leave a detached outbox worker writing this
+    // directory. Always close the listener before attempting filesystem cleanup.
+    try { await client.close(); }
+    finally {
+      try { if (active) await service.close(); }
+      finally { await fs.rm(dir, {recursive: true, force: true}); }
+    }
+  });
   return {
     dir,
     store,
