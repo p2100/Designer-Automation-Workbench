@@ -127,7 +127,7 @@
     },
     {
       "path": "core/adjustment-budget.md",
-      "sha256": "6d4f087076a2c3dcd4168947919b4225ce2c674051491a03bd9c9bdae1eb3f2c"
+      "sha256": "e0fec61ab9cf65bbc655d2436c8e463cd3dc1383e90d422c126e5f102a3aad85"
     },
     {
       "path": "core/creative-generation.md",
@@ -211,7 +211,7 @@
     },
     {
       "path": "docs/site-library.md",
-      "sha256": "9543f2f673122942d75e1a9a3f83db77b5ab125a6ec93675fb162df308f965be"
+      "sha256": "feba9c826b6546e00e9f3abe14e07673ff35c87f0ad07df4d072a989da9361a1"
     },
     {
       "path": "docs/standalone-workbench.md",
@@ -671,11 +671,15 @@
     },
     {
       "path": "lib/library-client.mjs",
-      "sha256": "d9283ec03116c25726cbbb25e24d9619047133eec86b70e8b4933e5d2ae52b5b"
+      "sha256": "15e7733bdce7e6d42d5e8ec3a1529b67c5e29b8789967514c47acba131ec7c85"
     },
     {
       "path": "lib/library-feedback.mjs",
       "sha256": "274ed2b992696ac50864a8aa2b72c3485ef627688d44cea31fce76ed30463cfb"
+    },
+    {
+      "path": "lib/portable-delivery.mjs",
+      "sha256": "c531b93297b6249ec193f86cdfd519b1412c6b4924bde3d5b155cbe6c6a766a4"
     },
     {
       "path": "lib/preview.mjs",
@@ -695,15 +699,15 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "5a70db86a43c0ce8317c8fdc2f56fb7ac8b1fee7a23fd9a57503c308362bb7f2"
+      "sha256": "26ad7a04e4f159c6c6bd0ae9f56606ee52cf9f686b851c10efe874ab1573a6e1"
     },
     {
       "path": "package.json",
-      "sha256": "ef70d790a84573aa9bb62c821db424fdc00b6785b823020c53f98c05985fc3a5"
+      "sha256": "571760725b1959a8119184e20855a05ad2f121771eeb9bf6e6d8a427400a8b6b"
     },
     {
       "path": "README.md",
-      "sha256": "8dc43906d266d0acf69daf3902678f34192f95d1ead649a1fb20c87810fc6845"
+      "sha256": "99c4fa08079944d83bb45540390e5de4e6d8e3d3f8e65166a1088859080b63d1"
     },
     {
       "path": "scripts/connect-experience.mjs",
@@ -1132,6 +1136,10 @@
     {
       "path": "tests/local-source.test.mjs",
       "sha256": "079a1ad17e22ed19aedc45526e61270e217a4a3179397bec3cdb340b04f99612"
+    },
+    {
+      "path": "tests/portable-delivery.test.mjs",
+      "sha256": "6336d573463c2509a01f62b00fb4fae931974a671fd55b6379a5df1c27fbe31e"
     },
     {
       "path": "tests/portable.test.mjs",
