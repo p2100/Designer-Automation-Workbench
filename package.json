@@ -1,6 +1,6 @@
 {
   "name": "designer-automation",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "private": true,
   "type": "module",
   "engines": {
@@ -25,7 +25,7 @@
     "test:sites": "node --test tests/site-types.test.mjs site-types/games/tests/owner-inspector.test.mjs",
     "test:library": "node --test tests/library.test.mjs",
     "test:adjustment": "node --test tests/adjustment.test.mjs",
-    "test:learning-loop": "node --test tests/experience-application.test.mjs tests/experience-loop.test.mjs tests/feedback-delivery.test.mjs tests/io-lock.test.mjs"
+    "test:learning-loop": "node --test tests/experience-application.test.mjs tests/experience-loop.test.mjs tests/feedback-delivery.test.mjs tests/io-lock.test.mjs tests/audit-fingerprint.test.mjs tests/library-receipt.test.mjs tests/adjustment.test.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.32.2",

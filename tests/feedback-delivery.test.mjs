@@ -68,7 +68,7 @@ test('upload receipt is durable while a separate experience call is still waitin
   const waiting = new Promise(resolve => {release = resolve;});
   const delivery = deliverFeedback({...f, client: client(() => waiting), upload: async () => uploaded});
   try {
-    await until(async () => {try {return (await f.read()).channels.library.status === 'uploaded';} catch {return false;}});
+    await until(async () => {try {const state=await f.read();return state.channels.library.status === 'uploaded' && state.channels.experience.status === 'running';} catch {return false;}});
     assert.equal((await f.read()).channels.experience.status, 'running');
   } finally {release({pending: 2}); await delivery;}
   assert.equal((await f.read()).experience.pending, 2);

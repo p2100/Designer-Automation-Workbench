@@ -17,6 +17,21 @@ import {startExperienceServer} from '../lib/experience-server.mjs';
 const executable = process.env.SITE_BROWSER_EXECUTABLE;
 const scope = {pages:['home'],component:'home heading',reason:'Only the home heading margin changes. The detail template does not use this selector.'};
 
+test('open then first host-source adjustment learns from initial inventory without inventing a before candidate',async t=>{
+  const directory=await fs.mkdtemp(path.join(os.tmpdir(),'TEST-first-adjust-')),source=path.join(directory,'source'),data=path.join(directory,'data');
+  t.after(()=>fs.rm(directory,{recursive:true,force:true}));await fs.mkdir(source);await fs.writeFile(path.join(source,'index.html'),'<!doctype html><main>TEST before source</main>');
+  const config={version:1,siteType:'app',request:'TEST first adjustment protocol',artifactRoot:'.',allowedPaths:['index.html'],commands:{},pages:[{id:'home',family:'home',route:'/index.html',dependsOn:['index.html']}]};
+  const opened=await openTask({data,id:'first',localSource:source,config});assert.equal(opened.candidates.length,0);
+  await fs.writeFile(path.join(opened.source,'index.html'),'<!doctype html><main>TEST after source</main>');
+  const task=await prepareAdjustment({data,id:'first',scope});
+  const event=task.events.find(e=>e.type==='adjustment');assert.equal(event.from,undefined);assert.equal(event.sourceEdits,true);
+  const entry=taskLesson(task,{...lessonSpec(),classification:'site-preference'},'TEST Agent');
+  const provenance=entry.evidence.find(e=>e.source==='recorded-initial-source-adjustment');
+  assert.equal(provenance.candidate,task.candidates.at(-1).hash);assert.equal(provenance.initialSourceHash,digest(task.initialSource));
+  assert.equal(provenance.baselineKind,'initial-source-inventory-not-before-candidate');assert.deepEqual(provenance.files,['index.html']);
+  assert.equal(provenance.adjustedCandidate,event.candidate);assert.equal(entry.verification.designerApproved,false);assert.equal(entry.approval,undefined);
+});
+
 async function fixture(t, options = {}) {
   const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'da-adjustment-'));
   const source = path.join(directory, 'source'), data = path.join(directory, 'data');
