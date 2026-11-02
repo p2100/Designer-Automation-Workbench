@@ -11,6 +11,7 @@ import {ExperienceBridgeClient} from '../lib/experience-bridge.mjs';
 import {inspectSource} from './intake.mjs';
 import {experiencePage} from '../lib/site-rules.mjs';
 import {selectTaskExperience} from '../lib/experience-selection.mjs';
+import {resolveExperienceSite} from '../lib/experience-site.mjs';
 export async function workbench(args) {
   const receivedAt = Date.now();
   const [action,...rest] = args, options = {};
@@ -47,6 +48,7 @@ export async function workbench(args) {
     const payload = options.file ? await readJSON(path.resolve(options.file)) : {};
     if (action === 'open' || action === 'start') {
       let config = await readJSON(path.resolve(options.config));
+      const declaredSite = resolveExperienceSite({site:options.site, boundSite:config.site});
       if(options.mode)config={...config,workflow:options.mode};
       if(config.workflow==='adjustment')await beginAdjustment('cli-adjustment-' + action + '-received');
       const checkout=await checkoutRepository({data,id,repo:options.repo,ref:options.ref,localSource:options.source});
@@ -58,19 +60,31 @@ export async function workbench(args) {
       if(!config.siteType)throw Error('Site type is ambiguous; Agent must inspect the actual product and pages before selecting rules or experience');
       let inheritedPlan;
       let lessons;
+      let experienceSite;
+      let preserveHistoricalIdentity=false;
       if (options['generation-id']) {
         const {generationStatus}=await import('../lib/generation.mjs');
         const generation=await generationStatus(data,options['generation-id']);
         if (generation.siteType!==config.siteType || path.resolve(options.source||'')!==path.resolve(generation.source)) throw Error('Generation review must use its actual source and site type');
+        if (declaredSite !== undefined && declaredSite !== generation.site) throw Error('Generation review site identity must match the generation task');
+        if (generation.site !== undefined) config={...config,site:generation.site};
+        experienceSite=generation.site;
         inheritedPlan=generation.experiencePlan;
         lessons={cases:generation.experience.lessons,creative:generation.creative.teamReferences||[],creativeRetired:[],source:generation.experience.source,
           truncated:generation.experience.truncated,warning:generation.creative.teamWarning};
       } else {
-        lessons = await client.search({pages:[...new Set(config.pages.map(p=>experiencePage(config.siteType,p.family)))],site:checkout.repo,includePending:true,includeCreative:true,includeRetired:true,includeVisualSpecs:true,siteType:config.siteType,limit:100});
+        const {pulledSourceIdentity}=await import('../lib/library-client.mjs');
+        const pulled=await pulledSourceIdentity(data,options.source);
+        if (pulled && pulled.siteType !== config.siteType) throw Error('Pulled source site type conflicts with the task');
+        const registered=await loadTask(data,id).catch(error=>{if(error.code==='ENOENT')return undefined;throw error;});
+        preserveHistoricalIdentity=Boolean(registered && registered.config.site===undefined && declaredSite===undefined);
+        experienceSite=resolveExperienceSite({site:declaredSite,boundSite:pulled?.site,fallback:checkout.repo});
+        if (!preserveHistoricalIdentity && (declaredSite !== undefined || pulled)) config={...config,site:experienceSite};
+        lessons = await client.search({pages:[...new Set(config.pages.map(p=>experiencePage(config.siteType,p.family)))],site:experienceSite,includePending:true,includeCreative:true,includeRetired:true,includeVisualSpecs:true,siteType:config.siteType,limit:100});
       }
-      const selected=selectTaskExperience(lessons,config);
+      const selected=selectTaskExperience(lessons,{...config,...(experienceSite===undefined?{}:{site:experienceSite})});
       const opened=await openTask({data,id,repo:options.repo,ref:options.ref,localSource:options.source,config,lessons:selected,teamCreative:lessons.creative||[],teamRetired:lessons.creativeRetired||[],experienceMeta:{source:lessons.creativeSource || lessons.source || 'unknown',truncated:lessons.truncated===true,...(lessons.warning?{warning:lessons.warning}:{})},experiencePlan:inheritedPlan});
-      if(options.source){const {bindPulledSource}=await import('../lib/library-client.mjs');await bindPulledSource(data,id,options.source);}
+      if(options.source&&!preserveHistoricalIdentity){const {bindPulledSource}=await import('../lib/library-client.mjs');await bindPulledSource(data,id,options.source);}
       if (action === 'open') return {id,step:'registered',experience:opened.experienceMeta?.source || 'unknown',experienceTruncated:opened.experienceMeta?.truncated===true,lessons:opened.lessons,creative:opened.creative,experiencePlan:opened.experiencePlan};
       if(config.workflow==='adjustment')return adjustmentPreview({scope:config.adjustment});
       if(opened.adjustment)await resumeAcceptance(data,id);

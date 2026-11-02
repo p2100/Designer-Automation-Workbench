@@ -13,13 +13,13 @@ export async function generate(args){
   if(!action||['help','--help'].includes(action))return {
     experienceCommands:{plan:'experience-plan --id ID',applications:'After generate review, use audit experience-apply and experience-verify with its exact review task ID'},
     entry:'Agent first identifies actual site type, then uses this entry for Coupon, App or Games. Designers speak naturally; Agent prepares options and any review configuration.',
-    commands:{start:'start --request TEXT --site-type coupon|app|games [--game-type web-play|store-referral|mixed] [--id ID]',status:'status --id ID','games-plan':'games-plan --id ID --task ACTUAL_GAME_TASK_JSON',direction:'direction --id ID --page PAGE --image FILE --prompt TEXT',feedback:'feedback --id ID --target DIRECTION_ID --page PAGE --actor DESIGNER --text ACTUAL_FEEDBACK --quote EXACT_TEXT --component COMPONENT --observation OBSERVED_POINT [--sentiment positive|negative] [--visual-spec AGENT_FILE]',review:'review --id ID --config AGENT_CONFIG [--action open|start]'},
+    commands:{start:'start --request TEXT --site-type coupon|app|games [--site STABLE_SITE_ID] [--game-type web-play|store-referral|mixed] [--id ID]',status:'status --id ID','games-plan':'games-plan --id ID --task ACTUAL_GAME_TASK_JSON',direction:'direction --id ID --page PAGE --image FILE --prompt TEXT',feedback:'feedback --id ID --target DIRECTION_ID --page PAGE --actor DESIGNER --text ACTUAL_FEEDBACK --quote EXACT_TEXT --component COMPONENT --observation OBSERVED_POINT [--sentiment positive|negative] [--visual-spec AGENT_FILE]',review:'review --id ID --config AGENT_CONFIG [--action open|start]'},
     limitation:'This prepares and records an Agent workflow. The host Agent must actually generate images, implement source and inspect results; no aesthetic or user acceptance is fabricated.'};
   for(let i=0;i<rest.length;i+=2){if(!rest[i].startsWith('--')||rest[i+1]===undefined)throw Error('Expected --key value');options[rest[i].slice(2)]=rest[i+1];}
   const data=path.resolve(options.data||defaultData),id=options.id;
   if(action==='start'){
     const client=new ExperienceBridgeClient({data,url:options['experience-url']||process.env.DA_EXPERIENCE_URL,token:process.env.DA_EXPERIENCE_TOKEN});
-    try{return await generationStart({data,id:id||'site-'+randomUUID(),siteType:options['site-type'],request:options.request,gameType:options['game-type'],pages:options.pages?.split(',').filter(Boolean),client});}finally{await client.close();}
+    try{return await generationStart({data,id:id||'site-'+randomUUID(),siteType:options['site-type'],site:options.site,request:options.request,gameType:options['game-type'],pages:options.pages?.split(',').filter(Boolean),client});}finally{await client.close();}
   }
   if(action==='status')return generationStatus(data,id);
   if(action==='experience-plan')return (await generationStatus(data,id)).experiencePlan || {status:'not-run',reason:'Historical generation has no application contract'};
