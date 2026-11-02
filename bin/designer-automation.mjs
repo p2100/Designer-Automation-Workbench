@@ -11,7 +11,7 @@ export async function designerAutomation(args){
     acceptance:'audit start (full rules and visual acceptance; default)',
     adjustment:'adjust --id ID --file adjustment.json → audit recheck → audit observe → audit handoff → audit feedback',
     maintenance:'audit inspect|checkout|open|start|cycle|adjust|recheck|feedback|handoff|status',
-    library:'library connect|pull|bind|push|status',
+    library:'library connect|pull|bind|prepare|prepare-new|push|status',
     legacy:'Existing workbench actions remain available directly.',
     note:'Agent uses actual Image, source and browser capabilities; no generated page or visual approval is simulated.'};
   if(args[0]==='generate')return generate(args.slice(1));

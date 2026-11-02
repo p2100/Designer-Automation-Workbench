@@ -11,7 +11,7 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "87c2f63eb0cc40ca8b9eefd5427f7ee0283ed227fc6d5c8be29acd80b7a762d9"
+      "sha256": "4e421fc72d8b448cd0fbb345f7d66db85b3cdc4ec3ccaca3be082b8442e74987"
     },
     {
       "path": "bin/automatic-layout.mjs",
@@ -31,7 +31,7 @@
     },
     {
       "path": "bin/designer-automation.mjs",
-      "sha256": "22898102d0da2430e74e739da334118407f04e6cb8800665b64ef138f9794de7"
+      "sha256": "fe1f17ce58f66f665c022b709df1b858df07bcf6a3b81843f9c828287a24a3d6"
     },
     {
       "path": "bin/experience-managed.mjs",
@@ -75,7 +75,7 @@
     },
     {
       "path": "bin/library.mjs",
-      "sha256": "3bb1e24d6e27ef8fc06843af7bcf6147a6de2e0d867eac6e43f90ddf661b0e37"
+      "sha256": "15c38dbc8686491b6548aa147f2e414492972c85983c204667a62266f266f338"
     },
     {
       "path": "bin/module-review.mjs",
@@ -211,7 +211,7 @@
     },
     {
       "path": "docs/site-library.md",
-      "sha256": "feba9c826b6546e00e9f3abe14e07673ff35c87f0ad07df4d072a989da9361a1"
+      "sha256": "cdf179ba8caa701b15dcafa474cc152c79bc36558a6f8dc687c79642071340b8"
     },
     {
       "path": "docs/standalone-workbench.md",
@@ -675,7 +675,7 @@
     },
     {
       "path": "lib/library-client.mjs",
-      "sha256": "72064f60f1f56f624e09ef82960787315d26df5d73b70716f65676cea3f5166e"
+      "sha256": "d2979d933d051eb3fe93fad14999147cba9df429161325af8ed218a7ab03dceb"
     },
     {
       "path": "lib/library-feedback.mjs",
@@ -703,11 +703,11 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "f81426aaa4184ab6db35a1aaf15f1f8b515c1743aee5a2f8a8db4cb0c0903f97"
+      "sha256": "691c3db3cd0259649fae424fbd32a63c7e37f904d58055b38921c42c9f6763e7"
     },
     {
       "path": "package.json",
-      "sha256": "81d95f3ca6c227e689ec634a12e64a26772e6c42b97f49850f65b82d6e3524f2"
+      "sha256": "0c12dff17a65bde1f9b7fd108007047a563a947dbfd9404f4bae4a755520689d"
     },
     {
       "path": "README.md",

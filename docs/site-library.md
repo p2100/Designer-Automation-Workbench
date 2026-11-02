@@ -4,7 +4,7 @@
 
 ## Agent 连接与准备
 
-使用 `node bin/designer-automation.mjs library connect --url <库中预览URL>`；库首页地址需附准确 `--project`。直接连接内网中央站点库，不用 Harness、登录或浏览器配对，连接凭据仅保存在本机私有目录。目标必须是库中准确站点；新建中央站点条目仍通过对应导入入口。
+使用 `node bin/designer-automation.mjs library connect --url <库中预览URL>`；库首页地址需附准确 `--project`。直接连接内网中央站点库，不用 Harness、登录或浏览器配对，连接凭据仅保存在本机私有目录。更新目标必须是库中准确站点。新站使用下面的 prepare-new/push，直接连接中央库，不依赖 Harness 或 dsh_web 登录。
 
 需要获取源码时可使用 `library pull --url <库地址> --project <ID>`。设计师已经制作好的本地成品不需要为上传创建审核任务：
 
@@ -49,3 +49,18 @@ Agent 须打开实际中央版本链接，核对本轮代表页面与已确认�
 中央出现并发更新时保留双方源码，拉取最新版本并合并；如果内容变化，针对实际合并后的版本确认上传，不要求因此补跑全站审核。旧客户端留下的待审核版本和历史记录不会被本次升级自动追认。`library status --id <ID>` 查看连接及当前版本差异，`library disconnect --id <ID>` 断开连接。
 
 经验库仍使用原 designer_experience MCP；站点文件、图片和连接凭据不进入经验库。
+
+## 新站直传（0.13.4）
+
+原条目已被删除时，不恢复它，也不将旧确认默默转给新目标。用户已明确要求“推送一个新的”时，Agent 为当前成品选择新的项目 ID 和新的上传 ID，保留旧任务及确认记录。先从中央库 `/v2/designer-workbench/latest.zip` 获取当前版本；以 manifest 检查包完整性。
+
+```sh
+node bin/designer-automation.mjs library prepare-new --url http://192.168.12.9:4187 --project NEW_PROJECT_ID --slug SITE_SLUG --name SITE_NAME --id NEW_UPLOAD_ID --source SOURCE --artifacts BUILT_SITE --site-type games
+node bin/designer-automation.mjs library push --id NEW_UPLOAD_ID --file ACTUAL_HUMAN_CONFIRMATION_JSON
+```
+
+prepare-new 仅冻结现有文件，要求真实首页（默认 index.html；可用 --home en/index.html）。源码、成品和新目标身份一起形成候选指纹；确认只用于准确候选和目标，已有对该新目标和准确版本的等价授权可复用，不重复询问。没有准确授权时仍须取得一次真实上传确认。文件完整性和版本目录内的相对引用必须通过；不启动页面审核、经验写入或业务验收。
+
+服务端原子创建独立条目，保存源码和成品，标记人工审核通过并提供预览与 ZIP 下载。ZIP 内 source/ 为原源码，site/ 为可预览成品。不会执行上传源码里的脚本；后续继续在设计师本地构建，使用 library prepare/push 更新同一条目，或 library pull 取回源码。服务端 Harness 快速改造按钮不会冒充已支持的构建方式。
+
+网络中断后以同一上传 ID 执行 library push，复用持久化请求、确认和中央回执，防止重复新建。已有项目 ID 一律拒绝覆盖；已成功后被删除的条目也不会由重试恢复。目标或内容改变时建立新准确候选，不覆盖未完成的请求。上传结果须真实返回 uploaded、approved、downloadable 和中央预览地址；Agent 打开该版本核对样式及入口的交付一致性后再报告。
