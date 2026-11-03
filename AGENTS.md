@@ -1,6 +1,8 @@
 # Designer-Automation：Coupon / App / Games 统一维护入口
 
-站点上线状态或正式域名回写：先读 `core/site-status.md`，使用 `node bin/designer-automation.mjs site-status show|update|retry`。开发人员已上线时可由本地 Agent 登记状态和正式地址并回传预览库，无需 Harness、源码上传或再次部署；明确授权不重复询问，保留真实操作者、说明、历史及既有冻结。
+站点上线状态或正式域名回写：先读 `core/site-status.md`，使用 `node bin/designer-automation.mjs site-status show|update|retry|clients`。开发人员已上线时可由本地 Agent 登记状态和正式地址并回传预览库，无需 Harness、源码上传或再次部署；明确授权不重复询问，保留真实操作者、说明、历史及既有冻结。
+
+调用电脑 IP、电脑名和最近使用记录：使用 `site-status clients --url PREVIEW_URL` 查询准确本站。连接中央站点库时自动登记，不要求设计师手填 IP。服务端 socket 地址为观测值，电脑名/软件版本是客户端自报；经过 NAT/代理可能为出口地址，不能将其当成唯一身份或离线电脑探测。
 
 站点接 Git、创建私有源码仓库、推送 Pug 或回写中央库 Git 地址时，先读 `core/git-source.md`，使用 `node bin/designer-automation.mjs git-source prepare|verify|publish|register|status`。此能力已随统一工作台分发，设计师在自己的 Agent/电脑上直接连接中央库，无需 Harness。无仓库默认新建私有仓库，实际 site-template Pug 工程与四项构建通过后，按 Penny 规范最后统一提交；远端 SHA 与源码核实后才回写地址/状态。中途调整只更新预览，原预览/审核/历史及冻结边界不因 Git 接入改变。
 

@@ -4,14 +4,22 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import http from 'node:http';
+import {hostname} from 'node:os';
+import {clientIdentityHeaders} from '../lib/client-identity.mjs';
 import {designerAutomation} from '../bin/designer-automation.mjs';
 
 test('the Agent entry exposes status updates without source preparation or deployment',async()=>{
   assert.match((await designerAutomation([])).siteStatus,/show\|update\|retry/);
   const help=await designerAutomation(['site-status','help']);assert.match(help.commands.update,/--domain/);assert.match(help.note,/no Harness/i);
+  assert.match(help.commands.clients,/hostname/);
   await assert.rejects(designerAutomation(['site-status','update','--status','online']),/actor/);
   await assert.rejects(designerAutomation(['site-status','update','--actor','Developer','--note','Report','--status','online']),/domain/);
   await assert.rejects(designerAutomation(['site-status','update','--owner-freeze','false']),/supported/);
+});
+
+test('automatic computer metadata contains hostname and release version without supplying a claimed IP',()=>{
+  const headers=clientIdentityHeaders(),value=JSON.parse(Buffer.from(headers['X-Designer-Client'],'base64url').toString('utf8'));
+  assert.equal(value.hostname,hostname().slice(0,200));assert.equal(value.version,'0.14.2');assert.deepEqual(Object.keys(value).sort(),['hostname','version']);
 });
 
 test('an unconfirmed response preserves the exact private request for retry rather than silently replacing its revision',async t=>{

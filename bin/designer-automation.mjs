@@ -15,7 +15,7 @@ export async function designerAutomation(args){
     maintenance:'audit inspect|checkout|open|start|cycle|adjust|recheck|feedback|handoff|status',
     library:'library connect|pull|bind|prepare|prepare-new|push|status',
     gitSource:'git-source prepare|repository|verify|capture|publish|register|status (real Pug source; private repositories; no Harness)',
-    siteStatus:'site-status show|update|retry (launch state and official domain; direct library update)',
+    siteStatus:'site-status show|update|retry|clients (launch state, official domain and calling computers; direct library update)',
     legacy:'Existing workbench actions remain available directly.',
     note:'Agent uses actual Image, source and browser capabilities; no generated page or visual approval is simulated.'};
   if(args[0]==='generate')return generate(args.slice(1));
