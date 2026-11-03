@@ -163,7 +163,7 @@
     },
     {
       "path": "core/git-source.md",
-      "sha256": "934e2eba4ceb4f3e660612ba32c0b4785c8df77bd6e56be420033bd75c2a8b03"
+      "sha256": "f94791a55706fce0ff48df4917bcb211259ba7d19a2b2d33c4a5788b58d9b4bf"
     },
     {
       "path": "core/knowledge.md",
@@ -691,7 +691,7 @@
     },
     {
       "path": "lib/git-source.mjs",
-      "sha256": "8c8950856da7a6790ed57459572a4d354c0a546766b822c439e7c109257ab46a"
+      "sha256": "6b0759f3b021c7005ba0ce2274bb53f7cb67513b56d6380a694edf22de226447"
     },
     {
       "path": "lib/io.mjs",

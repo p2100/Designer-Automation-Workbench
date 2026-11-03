@@ -9,7 +9,7 @@
 3. 阅读 prepare 返回的计划 `AGENTS.md`、`input/` 与准确预览。`input/` 不可修改，`project/` 为可编辑工程。按原页面族拆成 `template/common`、`components`、`pages`，保留原数据、素材、样式、交互 hooks 和页面职责。禁止 HTML 改后缀、整页 include/unescaped HTML、iframe 原站和旧 offline.js 包装。Pug 首屏与客户端使用同一规范化数据。只读本次必要文件，不扫描其他工程或重复准备。
 4. 保留准确 site-template 的 index.js、pug-site-core 范围及四项真实构建命令。写 `docs/site-git-source.json`（prepare 返回完整字段示例），映射全部原路由到实际 Pug 与产物，声明国家键、首页和数据。当前 core 3.0.36：`get_*_data(language)` 保留 language 形参；动态 `page_name` 带 `.json`；us 为构建国家键，英文 `html(lang='en')`；首页 `staticSites/us/index.html`，资源在 `staticSites/static/`，链接按深度处理。
 5. 安装依赖使用本计划私有缓存：在 `project/` 运行 `npm install --cache ../npm-cache --no-audit --no-fund`，保留实际锁文件。运行 `git-source verify --id PLAN_ID`：实际执行 getData、compileFn、buildFn、buildStatic，核对全部路由。源码或产物改变后重新验证。实看桌面、手机、深层页面、图片/字体与代表交互；构建成功不冒充视觉认可或全站运行时验收。
-6. 中途只改源码和更新预览，不自动提交。已登记正式 Pug 源码后，验证当前修改，再运行 `git-source capture --id PLAN_ID` 将本轮源码与真实产物回传中央库，直接返回新预览，不要求 Git 提交。新候选状态为未审核，保留旧版及其真实认可；不能把局部改稿自动写成整站认可。后续继续同一计划改稿，最后统一提交发布。另一位设计师准备时会取得中央库尚未提交的最新 Pug 改稿；若 Git 和改稿同时有新更新，先三方合并，不能覆盖。未接 Git 的普通站点调整、确认上传仍使用 `library` 与 `core/maintenance.md`。Git 登记本身不改变当前预览、人工审核和历史。`git-source status --url URL` 返回准确来源。
+6. 中途只改源码和更新预览，不自动提交。已登记正式 Pug 源码后，验证当前修改，再运行 `git-source capture --id PLAN_ID` 将本轮源码与真实产物回传中央库，不要求 Git 提交。返回的 previewUrl 使用固定 `/v2/current/…` 地址，后续修改刷新同一地址；versionPreviewUrl 保留该次不可变历史。新候选状态为未审核，保留旧版及其真实认可；不能把局部改稿自动写成整站认可。后续继续同一计划改稿，最后统一提交发布。另一位设计师准备时会取得中央库尚未提交的最新 Pug 改稿；若 Git 和改稿同时有新更新，先三方合并，不能覆盖。未接 Git 的普通站点调整、确认上传仍使用 `library` 与 `core/maintenance.md`。Git 登记本身不改变当前预览、人工审核和历史。`git-source status --url URL` 返回准确来源。
 
 ## 最后统一提交、推送、登记
 
