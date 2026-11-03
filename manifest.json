@@ -3,7 +3,11 @@
   "files": [
     {
       "path": ".agents/skills/designer-automation/SKILL.md",
-      "sha256": "9bb63c4cd66f97bfd05c4828fce8a10bb59a99776da86e30c1640719549dd801"
+      "sha256": "910a5737cd181bfe24094551cf501b0180277b917a353f504a2747841a63cd1f"
+    },
+    {
+      "path": ".agents/skills/penny-git-traceability/SKILL.md",
+      "sha256": "5445da1ed119a0e7edfb1e59edc5fb2bac1d516aabcff9895eb06904dc382e91"
     },
     {
       "path": ".gitignore",
@@ -11,7 +15,7 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "4e421fc72d8b448cd0fbb345f7d66db85b3cdc4ec3ccaca3be082b8442e74987"
+      "sha256": "51f3caee01e44cb425b5972e3f32b3dca645053abdeaf26d9b9dd65441bc351f"
     },
     {
       "path": "bin/automatic-layout.mjs",
@@ -31,7 +35,7 @@
     },
     {
       "path": "bin/designer-automation.mjs",
-      "sha256": "fe1f17ce58f66f665c022b709df1b858df07bcf6a3b81843f9c828287a24a3d6"
+      "sha256": "84579f6f1a8219822dd6e03e51be5820049c4fdaa08c3d50e4dcf331aa049132"
     },
     {
       "path": "bin/experience-managed.mjs",
@@ -60,6 +64,10 @@
     {
       "path": "bin/generate.mjs",
       "sha256": "69eb620351aab04327cf1b22a6150e1b5e27c2375a591159b1cd80cc3fc585b2"
+    },
+    {
+      "path": "bin/git-source.mjs",
+      "sha256": "1e1a16306507bf17faa6598fd3a44eda8dfa9d01ecb453885dfd3e6384fb0204"
     },
     {
       "path": "bin/intake.mjs",
@@ -100,6 +108,10 @@
     {
       "path": "compatibility/generation-baseline.json",
       "sha256": "a90e424401b2f1e3d98bb81c50d5582a587da46c6b7f36606c5f772e00beb7d9"
+    },
+    {
+      "path": "compatibility/git-skill-source.json",
+      "sha256": "fba70e586767845b521bd4acb7070feac39188d7cbc0e6d6272732905696929a"
     },
     {
       "path": "config/experience-service.json",
@@ -148,6 +160,10 @@
     {
       "path": "core/generation-default.md",
       "sha256": "28640329261af8e44a4f3755b182c141cf9177d40bd1a11db028bb16b323d52e"
+    },
+    {
+      "path": "core/git-source.md",
+      "sha256": "934e2eba4ceb4f3e660612ba32c0b4785c8df77bd6e56be420033bd75c2a8b03"
     },
     {
       "path": "core/knowledge.md",
@@ -211,7 +227,7 @@
     },
     {
       "path": "docs/site-library.md",
-      "sha256": "cdf179ba8caa701b15dcafa474cc152c79bc36558a6f8dc687c79642071340b8"
+      "sha256": "a55f4e6b0c03ac646e9dc1f54f3effb550d77cee1129037aa9fade738654f0fe"
     },
     {
       "path": "docs/standalone-workbench.md",
@@ -670,12 +686,20 @@
       "sha256": "53bb61bd7c012cec23e9c77bb8c007f7d4cdc3793a1f0d51b4fe652e85d9a471"
     },
     {
+      "path": "lib/git-source-contract.mjs",
+      "sha256": "7e94215df4c8956abbcf59ef5adc626f707761e0779871dc9b23e63acabf5d0a"
+    },
+    {
+      "path": "lib/git-source.mjs",
+      "sha256": "8c8950856da7a6790ed57459572a4d354c0a546766b822c439e7c109257ab46a"
+    },
+    {
       "path": "lib/io.mjs",
       "sha256": "b26d2b6f048b9919c4197d6141b0e15295492c6fa658f2e45824f47ce0c7c0f1"
     },
     {
       "path": "lib/library-client.mjs",
-      "sha256": "d2979d933d051eb3fe93fad14999147cba9df429161325af8ed218a7ab03dceb"
+      "sha256": "6ec1a4de3c3337f88246f68a9951032b9e1342fa40dffaf5530be5de2987e878"
     },
     {
       "path": "lib/library-feedback.mjs",
@@ -703,15 +727,15 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "691c3db3cd0259649fae424fbd32a63c7e37f904d58055b38921c42c9f6763e7"
+      "sha256": "16a9b5f53fc1e0358acd3054f31c91b0d0e4fe20c226c97b25f13d8892ff731a"
     },
     {
       "path": "package.json",
-      "sha256": "0c12dff17a65bde1f9b7fd108007047a563a947dbfd9404f4bae4a755520689d"
+      "sha256": "159d7dd84ba4b3db090b44d6ab11a3b8da71bfe1cbdf94fbf80ed45caeabd35a"
     },
     {
       "path": "README.md",
-      "sha256": "c39d29309f1b72b43cb2cfae84fd5fb72c40538e6bf465e2ddc0d79b7b9ec32c"
+      "sha256": "706c5ab4cff6652abfdaf67305f911875492576219687f35aa59fae3e316663b"
     },
     {
       "path": "scripts/connect-experience.mjs",
@@ -1128,6 +1152,10 @@
     {
       "path": "tests/generation.test.mjs",
       "sha256": "0460ef4e8abf8d72da723dad189841c250f889810583faa2a6e9a2d07d28f642"
+    },
+    {
+      "path": "tests/git-source.test.mjs",
+      "sha256": "b08a8b9ed0770ad5e3254541e9ad3d9e5e7d9950bfbc978479bb00c1e9b0b385"
     },
     {
       "path": "tests/io-lock.test.mjs",

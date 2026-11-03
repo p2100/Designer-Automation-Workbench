@@ -1,0 +1,6 @@
+{
+  "name": "penny-git-traceability",
+  "kind": "unmodified upstream skill snapshot",
+  "sha256": "5445da1ed119a0e7edfb1e59edc5fb2bac1d516aabcff9895eb06904dc382e91",
+  "maintenance": "Update the canonical penny-git-traceability skill first, then refresh this exact portable snapshot; do not fork its rules."
+}

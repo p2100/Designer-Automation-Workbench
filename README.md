@@ -12,7 +12,7 @@
 
 **本地成品上传 → 首次询问是否上传并标记人工审核通过 → 确认后直接入库、可下载。上传不启动页面检查，也不要求补齐审核任务。** 见[上传流程](docs/site-library.md)。
 
-项目版本 **0.13.3**；Games 专项规则包为 **3.2.11**，原 Coupon 生成规则快照固定为 **2026-10-26.1**。中央经验服务版本独立，以实际健康检查为准；原话检索工具需要服务端升级。正式仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
+项目版本 **0.14.0**；Games 专项规则包为 **3.2.11**，原 Coupon 生成规则快照固定为 **2026-10-26.1**。中央经验服务版本独立，以实际健康检查为准；原话检索工具需要服务端升级。正式仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
 
 正式交付入口已迁入 p2100 组织。GitHub 阻止旧仓库直接转移，且 `p2100/Designer-Automation` 同名地址被占用但不可访问，因此采用 `Designer-Automation-Workbench` 仓库名，保留原项目名称与完整 Git 历史。旧个人仓库仅保留历史入口；后续更新以本组织仓库为准。
 
@@ -148,3 +148,7 @@ npm run test:experience
 当前尚未进行真实业务站点联测，不能据此宣称任意站点或全部 Agent 已通过生成与验收。
 
 本地 Agent 改造完成后回传原站点库，见[站点库连接与回传](docs/site-library.md)。Agent 直接连接内网站点库并核对准确站点，无需 Harness、登录或浏览器配对，后续确认的准确候选自动回传为待审核新版本，保留旧版本和原有发布门禁。
+
+## 独立 Agent 的 Pug Git 接入（0.14.0）
+
+参见 [完整流程](core/git-source.md)。使用 `node bin/designer-automation.mjs git-source prepare --url 预览网址`，在自己的 Agent 中准备真实 Pug 工程、四项构建，最后按 Penny 规范一次提交并 `git-source publish --id 计划ID`，自动核实远端并回写中央库地址和状态。无仓库默认新建私有仓库；无需 Harness。已有正式来源复用 Git，普通调整不每轮提交。

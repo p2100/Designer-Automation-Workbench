@@ -64,3 +64,7 @@ prepare-new 仅冻结现有文件，要求真实首页（默认 index.html；可
 服务端原子创建独立条目，保存源码和成品，标记人工审核通过并提供预览与 ZIP 下载。ZIP 内 source/ 为原源码，site/ 为可预览成品。不会执行上传源码里的脚本；后续继续在设计师本地构建，使用 library prepare/push 更新同一条目，或 library pull 取回源码。服务端 Harness 快速改造按钮不会冒充已支持的构建方式。
 
 网络中断后以同一上传 ID 执行 library push，复用持久化请求、确认和中央回执，防止重复新建。已有项目 ID 一律拒绝覆盖；已成功后被删除的条目也不会由重试恢复。目标或内容改变时建立新准确候选，不覆盖未完成的请求。上传结果须真实返回 uploaded、approved、downloadable 和中央预览地址；Agent 打开该版本核对样式及入口的交付一致性后再报告。
+
+## 正式 Git 源码（0.14.0）
+
+要求建仓或推送源码时使用 [Pug Git 流程](../core/git-source.md)。正式接入后不再使用旧 `library pull` 设计包；用 `git-source prepare` 取得最新正式源码及未提交改稿，`verify/capture` 更新中央预览，最后统一提交并 `publish`。获取中央库连接与更新下载仍无需 Harness。

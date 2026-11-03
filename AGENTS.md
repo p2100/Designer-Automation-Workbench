@@ -1,5 +1,7 @@
 # Designer-Automation：Coupon / App / Games 统一维护入口
 
+站点接 Git、创建私有源码仓库、推送 Pug 或回写中央库 Git 地址时，先读 `core/git-source.md`，使用 `node bin/designer-automation.mjs git-source prepare|verify|publish|register|status`。此能力已随统一工作台分发，设计师在自己的 Agent/电脑上直接连接中央库，无需 Harness。无仓库默认新建私有仓库，实际 site-template Pug 工程与四项构建通过后，按 Penny 规范最后统一提交；远端 SHA 与源码核实后才回写地址/状态。中途调整只更新预览，原预览/审核/历史及冻结边界不因 Git 接入改变。
+
 新生成和优化任务追加读取 core/experience-application.md。Agent 将适用经验落实到真实组件、源码和准确候选复查，再执行统一工作台 handoff；保存或读取不算采用。采用、不适用和冲突有具体理由，当前范围内调用页完整，旧候选或篡改证据不得通过。经验不新增设计师确认或上传审核；测试回放不冒充业务验收。
 
 设计师改稿追加 core/adjustment-budget.md：复用工作区、按组件集中改稿、立即预览、后台局部检查与独立投递；首次命令可靠计时，失败重试不清零，准确回传成功才停止。两小时预算不能替代质量、真实设计师认可或业务验收。

@@ -1,11 +1,13 @@
 ---
 name: designer-automation
-description: Create, audit, repair and recheck Coupon, App and Games sites through one Agent entry, separate site rules, and scoped designer feedback.
+description: Create, audit, repair and recheck Coupon, App and Games sites through one Agent entry, separate site rules, and scoped designer feedback. 支持私有 Git 建仓、真实 Pug 源码推送、改稿预览和中央站点库 Git 地址回写。
 ---
+
+站点建仓、Pug 源码推送和中央库 Git 地址回写：先读 core/git-source.md，使用统一 git-source 入口；无需 Harness。默认创建私有仓库，验证真实 Pug 后最后统一提交，远端核实后再回写。
 
 以本文件向上三级的 Designer-Automation 为包根，读取 AGENTS.md 和 README.md。复制时携带整个包，不能只复制本 skill。
 
-用户要求本地改造后更新站点库时读取 docs/site-library.md。由 Agent 使用 bin/designer-automation.mjs library 连接准确站点并获取可编辑源码，继续现有审核/修复；既有 ZIP/Git 任务先核对起点再绑定。本地 Agent 直接连接内网站点库，无需 Harness、登录或浏览器配对，不让设计师填写 JSON。绑定任务获准确候选认可后自动回传，返回真实预览才报告已更新；pending/冲突保留原任务，不能覆盖其他更新或代替原生审核、下载与发布批准。
+用户要求本地改造后更新站点库时读取 docs/site-library.md。由 Agent 使用 bin/designer-automation.mjs library 连接准确站点并获取可编辑源码，继续现有审核/修复；既有 ZIP/Git 任务先核对起点再绑定。本地 Agent 直接连接内网站点库，无需 Harness、登录或浏览器配对，不让设计师填写 JSON。如果库返回 formal-git-required，直接按 core/git-source.md 切换到 git-source 准备、调整与回传，不把它说成权限不足，也不重复询问已授权的调整。绑定任务获准确候选认可后自动回传，返回真实预览才报告已更新；pending/冲突保留原任务，不能覆盖其他更新或代替原生审核、下载与发布批准。
 
 用户要求审核/调整站点时，按 docs/designer-quickstart.md、core/site-quality.md、core/maintenance.md 使用 bin/workbench.mjs，由 Agent 检查实际源码与浏览器、判断站型并加载公共/专项规则：Git 用 `--repo`，本地源码用 `--source` 导入隔离副本；checkout一次，配置实际页面和源码范围，start审核，Agent实看问题后通过repair修复；读取同轮截图填写observe；确认实际覆盖后handoff给设计师查看。设计师反馈通过feedback保存，只有准确候选复验并获设计师明确确认后，才通过原 designer_experience MCP 自动共享适用经验；离线队列和补传照常，不让设计师手动发布。普通修复不用另做新站设计、重复克隆或每轮全站复验。所有命令的JSON由Agent准备，设计师只需自然语言要求和实际复核。
 
