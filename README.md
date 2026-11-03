@@ -1,8 +1,55 @@
+# sitefly-designer-automation
+
+面向设计师的站点工作台，支持 **Coupon、App、Games**。当前版本 **0.15.0**，原名 Designer-Automation。
+
+## 支持的功能
+
+| 支持的功能 | 简单说明 |
+| --- | --- |
+| **更新预览库** | 新站入库、更新已有站点、上传新增图片，保留历史版本 |
+| **制作和调整站点** | 根据需求新建站点，或继续修改现有站点 |
+| **生图出设计稿** | 调用所在 Agent 的生图工具，按站型和风格出稿 |
+| **检查页面** | 检查电脑、手机布局，以及图片、文字和常用交互 |
+| **新建和推送 Git 仓库** | 没有仓库时新建私有仓库，改完后统一提交推送 |
+| **交付 Pug 源码** | 按现有 site-template 工程交付模板、样式、脚本、数据和素材 |
+| **维护状态和正式域名** | 更新“开发中 / 已上线 / 已下线”，填写正式域名并同步预览库 |
+| **查看版本和下载** | 查看历史预览，下载已确认版本的 ZIP |
+| **记录使用电脑** | 连接中央库时记录 IP、电脑名、工作台版本和最近使用时间 |
+| **共享团队经验** | 查询和复用明确认可的经验，支持反馈记录、纠正和撤回 |
+| **关联 Penny 任务** | Git 提交关联任务，保存提交和测试记录 |
+
+## 配套工具和插件
+
+- **sitefly-designer-automation 主技能**：统一组织制作、调整和交付流程。
+- **共享经验 MCP**：连接团队经验库，查询及维护已认可经验。
+- **生图、浏览器工具**：使用设计师所在 Agent 已配置的能力。
+- **Git / GitHub 工具、Penny 追溯技能**：使用已有账号权限完成仓库操作和提交记录。
+
+日常直接告诉 Agent：
+
+> 修改这个站点并更新预览库。中途只更新预览，全部改完后，再统一提交 Pug 源码到 Git。
+
+站点库回传、Git 接入和状态维护可在自己的 Agent 中直接执行，无需打开 Harness。生图、浏览器、GitHub 和 Penny 使用所在 Agent 的工具及授权连接。Git 推送与站点实际上线分别记录；上线后可再登记正式域名。
+
+## 名称与更新
+
+主名称、技能名和新命令统一为 **sitefly-designer-automation**。旧 designer-automation 技能和命令保留兼容；原 Git 更新地址、经验连接及私有记录继续使用。已有克隆在原目录执行：
+
+```sh
+git pull --ff-only
+npm ci
+```
+
+新命令示例：`node bin/sitefly-designer-automation.mjs --help`。设计师提供站点链接和需求即可，内部命令与配置由 Agent 处理。
+
+[下载最新版](http://192.168.12.9:4187/v2/designer-workbench/latest.zip) · [详细接入说明](docs/designer-quickstart.md)
+
+## 详细使用说明
+
 当前统一维护入口支持 Coupon / App / Games。设计师接入与中央经验流程见 [设计师接入说明](docs/designer-quickstart.md)，Agent 执行先读 [统一质量入口](core/site-quality.md)。公共方法共用、专项隔离，新增 Games 标准与只读检测器随仓库交付；原 Coupon 生成快照保持。
 
-三类站点新建、授权重做和参考重建使用 `node bin/designer-automation.mjs generate` 统一入口，由 Agent 识别类型、创建工作区、加载规则和适用经验，再调用实际 Image、编码和浏览器工具完成站点。详见[站点生成默认流程](core/generation-default.md)、[视觉创作方法](core/creative-generation.md)与[设计师创作学习方法](core/creative-learning.md)。设计师明确的实际创作反馈先保存在本机，再自动排队同步为中央团队创作参考；Agent 实际查看满意稿件后，提炼布局、留白、配色、组件等文字观察，绑定稿件指纹；后续按站型和页面读取并判断适用条件。团队经验库不存稿件图片。参考不是强制规则；断网或旧服务时保留并重试。
+三类站点新建、授权重做和参考重建使用 `node bin/sitefly-designer-automation.mjs generate` 统一入口，由 Agent 识别类型、创建工作区、加载规则和适用经验，再调用实际 Image、编码和浏览器工具完成站点。详见[站点生成默认流程](core/generation-default.md)、[视觉创作方法](core/creative-generation.md)与[设计师创作学习方法](core/creative-learning.md)。设计师明确的实际创作反馈先保存在本机，再自动排队同步为中央团队创作参考；Agent 实际查看满意稿件后，提炼布局、留白、配色、组件等文字观察，绑定稿件指纹；后续按站型和页面读取并判断适用条件。团队经验库不存稿件图片。参考不是强制规则；断网或旧服务时保留并重试。
 
-# Designer-Automation
 
 面向设计师与 Agent 的站点审核、修复和共享经验工程，维护组织为 [p2100](https://github.com/p2100)。
 
@@ -12,17 +59,17 @@
 
 **本地成品上传 → 首次询问是否上传并标记人工审核通过 → 确认后直接入库、可下载。上传不启动页面检查，也不要求补齐审核任务。** 见[上传流程](docs/site-library.md)。
 
-项目版本 **0.14.2**；Games 专项规则包为 **3.2.11**，原 Coupon 生成规则快照固定为 **2026-10-26.1**。中央经验服务版本独立，以实际健康检查为准；原话检索工具需要服务端升级。正式仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
+项目版本 **0.15.0**；Games 专项规则包为 **3.2.11**，原 Coupon 生成规则快照固定为 **2026-10-26.1**。中央经验服务版本独立，以实际健康检查为准；原话检索工具需要服务端升级。正式仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
 
-正式交付入口已迁入 p2100 组织。GitHub 阻止旧仓库直接转移，且 `p2100/Designer-Automation` 同名地址被占用但不可访问，因此采用 `Designer-Automation-Workbench` 仓库名，保留原项目名称与完整 Git 历史。旧个人仓库仅保留历史入口；后续更新以本组织仓库为准。
+正式源码继续通过 [p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench) 分发；产品和技能使用新名称 sitefly-designer-automation，已有克隆可通过原地址直接更新。
 
 ## 设计师开始使用
 
 需要 Node.js **22.19+**、Git，以及能访问共享服务所在的内网。实际审核还需要宿主 Agent 可用的浏览器；项目不附带浏览器二进制。
 
 ```sh
-git clone https://github.com/p2100/Designer-Automation-Workbench.git Designer-Automation
-cd Designer-Automation
+git clone https://github.com/p2100/Designer-Automation-Workbench.git sitefly-designer-automation
+cd sitefly-designer-automation
 npm ci
 npm run connect
 ```
@@ -52,7 +99,7 @@ npm run connect
 
 设计师把下面这一段发给自己的 Agent 即可，首次接入由 Agent 执行安装和配置：
 
-> 请将 https://github.com/p2100/Designer-Automation-Workbench.git 克隆到 Designer-Automation 目录，按 README 和 docs/designer-quickstart.md 安装 Node 22.19+ 所需依赖，运行 npm run connect，为当前 Agent 配置 designer_experience MCP。先列出四个经验工具并做只读连接检查；需要重启连接时明确告诉我。接入完成后等待我提供站点 Git 地址或本地源码。收到站点后先读 AGENTS.md、core/maintenance.md 和 core/experience.md，沿用同一工作区审核、调整、增量复验，并给我预览。我提出问题就继续调整；我明确确认当前候选没问题后，自动筛选、归并并共享已验证的可复用经验。不要替我编造认可，不要把临时文案或原因不明的问题强行变成规则，不让我手动 sync 或发布经验。
+> 请将 https://github.com/p2100/Designer-Automation-Workbench.git 克隆到 sitefly-designer-automation 目录，按 README 和 docs/designer-quickstart.md 安装 Node 22.19+ 所需依赖，运行 npm run connect，为当前 Agent 配置 designer_experience MCP。先列出四个经验工具并做只读连接检查；需要重启连接时明确告诉我。接入完成后等待我提供站点 Git 地址或本地源码。收到站点后先读 AGENTS.md、core/maintenance.md 和 core/experience.md，沿用同一工作区审核、调整、增量复验，并给我预览。我提出问题就继续调整；我明确确认当前候选没问题后，自动筛选、归并并共享已验证的可复用经验。不要替我编造认可，不要把临时文案或原因不明的问题强行变成规则，不让我手动 sync 或发布经验。
 
 维护规则已统一交付 **Coupon、App、Games**：公共方法共用，专项快照按实际站型加载。原 Coupon 生成仍走其冻结入口；MCP 共享经验继续原有准确候选确认与离线补传流程。
 
@@ -151,7 +198,7 @@ npm run test:experience
 
 ## 独立 Agent 的 Pug Git 接入（0.14.1）
 
-参见 [完整流程](core/git-source.md)。使用 `node bin/designer-automation.mjs git-source prepare --url 预览网址`，在自己的 Agent 中准备真实 Pug 工程、四项构建，最后按 Penny 规范一次提交并 `git-source publish --id 计划ID`，自动核实远端并回写中央库地址和状态。无仓库默认新建私有仓库；无需 Harness。已有正式来源复用 Git，普通调整不每轮提交。
+参见 [完整流程](core/git-source.md)。使用 `node bin/sitefly-designer-automation.mjs git-source prepare --url 预览网址`，在自己的 Agent 中准备真实 Pug 工程、四项构建，最后按 Penny 规范一次提交并 `git-source publish --id 计划ID`，自动核实远端并回写中央库地址和状态。无仓库默认新建私有仓库；无需 Harness。已有正式来源复用 Git，普通调整不每轮提交。
 
 开发人员已上线后，本地 Agent 可通过 `site-status show|update|retry` 回传站点状态和正式域名到中央预览库，见 [状态维护流程](core/site-status.md)。无需 Harness 或重新上传源码。
 

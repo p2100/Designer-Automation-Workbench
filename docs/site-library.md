@@ -4,12 +4,12 @@
 
 ## Agent 连接与准备
 
-使用 `node bin/designer-automation.mjs library connect --url <库中预览URL>`；库首页地址需附准确 `--project`。直接连接内网中央站点库，不用 Harness、登录或浏览器配对，连接凭据仅保存在本机私有目录。更新目标必须是库中准确站点。新站使用下面的 prepare-new/push，直接连接中央库，不依赖 Harness 或 dsh_web 登录。
+使用 `node bin/sitefly-designer-automation.mjs library connect --url <库中预览URL>`；库首页地址需附准确 `--project`。直接连接内网中央站点库，不用 Harness、登录或浏览器配对，连接凭据仅保存在本机私有目录。更新目标必须是库中准确站点。新站使用下面的 prepare-new/push，直接连接中央库，不依赖 Harness 或 dsh_web 登录。
 
 需要获取源码时可使用 `library pull --url <库地址> --project <ID>`。设计师已经制作好的本地成品不需要为上传创建审核任务：
 
 ```sh
-node bin/designer-automation.mjs library prepare --url <库地址> --project <ID> --id <上传ID> --source <可编辑源码目录> --artifacts <已生成页面目录> --site-type <coupon或app或games>
+node bin/sitefly-designer-automation.mjs library prepare --url <库地址> --project <ID> --id <上传ID> --source <可编辑源码目录> --artifacts <已生成页面目录> --site-type <coupon或app或games>
 ```
 
 Agent 按真实项目选择目录和站型；成品目录须直接包含本站实际首页及资源，不能选择另一站或整包父目录。prepare 仅把现有文件冻结为上传版本，不安装依赖、不执行构建脚本、不启动浏览器或审核。源码必须保留库中受保护的数据、运行资源、依赖和构建配置；更新以已连接版本为基线，服务端发现其他修改会停止覆盖。私有 `--data` 目录放在源码与成品之外。
@@ -38,7 +38,7 @@ prepare 或未确认的 push 返回 `confirmation-required`、准确 `candidate`
 
 `library push --id <ID> --file <实际确认文件>` 保存确认后直接上传。没有自动检查也可上传；仅核对文件完整性、可移植本地引用、站点身份、源码起点、受保护路径和版本冲突。确认不伪造工作台自动检查结果或原生审核报告，不产生虚构修复经验。普通 workbench approve 不替代首次上传授权；已记录上传确认后后台回传可以复用它。
 
-服务端支持 `human-upload-approval-v1` 才会发送新协议；旧服务需要升级，已记录的确认保留。返回 `uploaded`、`reviewStatus: approved`、`downloadable: true` 和真实预览地址后，才能报告上传并审核通过。中央保留确认人、原话、时间、准确候选及源码/成品/ZIP指纹，目录显示“人工审核通过”，不再挂“待审核”。入库不自动部署到外部网站。
+服务端支持 `human-upload-approval-v1` 才会发送新协议；旧服务需要升级，已记录的确认保留。返回 `uploaded`、`reviewStatus: approved`、`downloadable: true` 和真实预览地址后，才能报告上传并审核通过。中央保留确认人、原话、时间、准确候选及源码/成品/ZIP指纹，并保存“人工审核通过”和可下载结果。预览库的主状态独立显示“开发中 / 已上线 / 已下线”；入库不自动部署或标记已上线。
 
 Agent 须打开实际中央版本链接，核对本轮代表页面与已确认预览一致、样式及运行入口可加载。该交付一致性核对不要求设计师重新审核或再次确认。若实际入口损坏，或用户继续否定当前稿，保留历史回执和确认，将本轮交付重新打开；不能继续把本地截图、文件指纹相同或首次回传耗时称为最终验收。
 
@@ -55,8 +55,8 @@ Agent 须打开实际中央版本链接，核对本轮代表页面与已确认�
 原条目已被删除时，不恢复它，也不将旧确认默默转给新目标。用户已明确要求“推送一个新的”时，Agent 为当前成品选择新的项目 ID 和新的上传 ID，保留旧任务及确认记录。先从中央库 `/v2/designer-workbench/latest.zip` 获取当前版本；以 manifest 检查包完整性。
 
 ```sh
-node bin/designer-automation.mjs library prepare-new --url http://192.168.12.9:4187 --project NEW_PROJECT_ID --slug SITE_SLUG --name SITE_NAME --id NEW_UPLOAD_ID --source SOURCE --artifacts BUILT_SITE --site-type games
-node bin/designer-automation.mjs library push --id NEW_UPLOAD_ID --file ACTUAL_HUMAN_CONFIRMATION_JSON
+node bin/sitefly-designer-automation.mjs library prepare-new --url http://192.168.12.9:4187 --project NEW_PROJECT_ID --slug SITE_SLUG --name SITE_NAME --id NEW_UPLOAD_ID --source SOURCE --artifacts BUILT_SITE --site-type games
+node bin/sitefly-designer-automation.mjs library push --id NEW_UPLOAD_ID --file ACTUAL_HUMAN_CONFIRMATION_JSON
 ```
 
 prepare-new 仅冻结现有文件，要求真实首页（默认 index.html；可用 --home en/index.html）。源码、成品和新目标身份一起形成候选指纹；确认只用于准确候选和目标，已有对该新目标和准确版本的等价授权可复用，不重复询问。没有准确授权时仍须取得一次真实上传确认。文件完整性和版本目录内的相对引用必须通过；不启动页面审核、经验写入或业务验收。

@@ -1,10 +1,10 @@
-# Designer-Automation：Coupon / App / Games 统一维护入口
+# sitefly-designer-automation：Coupon / App / Games 统一维护入口
 
-站点上线状态或正式域名回写：先读 `core/site-status.md`，使用 `node bin/designer-automation.mjs site-status show|update|retry|clients`。开发人员已上线时可由本地 Agent 登记状态和正式地址并回传预览库，无需 Harness、源码上传或再次部署；明确授权不重复询问，保留真实操作者、说明、历史及既有冻结。
+站点上线状态或正式域名回写：先读 `core/site-status.md`，使用 `node bin/sitefly-designer-automation.mjs site-status show|update|retry|clients`。开发人员已上线时可由本地 Agent 登记状态和正式地址并回传预览库，无需 Harness、源码上传或再次部署；明确授权不重复询问，保留真实操作者、说明、历史及既有冻结。
 
 调用电脑 IP、电脑名和最近使用记录：使用 `site-status clients --url PREVIEW_URL` 查询准确本站。连接中央站点库时自动登记，不要求设计师手填 IP。服务端 socket 地址为观测值，电脑名/软件版本是客户端自报；经过 NAT/代理可能为出口地址，不能将其当成唯一身份或离线电脑探测。
 
-站点接 Git、创建私有源码仓库、推送 Pug 或回写中央库 Git 地址时，先读 `core/git-source.md`，使用 `node bin/designer-automation.mjs git-source prepare|verify|publish|register|status`。此能力已随统一工作台分发，设计师在自己的 Agent/电脑上直接连接中央库，无需 Harness。无仓库默认新建私有仓库，实际 site-template Pug 工程与四项构建通过后，按 Penny 规范最后统一提交；远端 SHA 与源码核实后才回写地址/状态。中途调整只更新预览，原预览/审核/历史及冻结边界不因 Git 接入改变。
+站点接 Git、创建私有源码仓库、推送 Pug 或回写中央库 Git 地址时，先读 `core/git-source.md`，使用 `node bin/sitefly-designer-automation.mjs git-source prepare|verify|publish|register|status`。此能力已随统一工作台分发，设计师在自己的 Agent/电脑上直接连接中央库，无需 Harness。无仓库默认新建私有仓库，实际 site-template Pug 工程与四项构建通过后，按 Penny 规范最后统一提交；远端 SHA 与源码核实后才回写地址/状态。中途调整只更新预览，原预览/审核/历史及冻结边界不因 Git 接入改变。
 
 新生成和优化任务追加读取 core/experience-application.md。Agent 将适用经验落实到真实组件、源码和准确候选复查，再执行统一工作台 handoff；保存或读取不算采用。采用、不适用和冲突有具体理由，当前范围内调用页完整，旧候选或篡改证据不得通过。经验不新增设计师确认或上传审核；测试回放不冒充业务验收。
 
@@ -18,7 +18,7 @@
 
 用户要求把本地成品上传或改造更新回站点库时，先读 docs/site-library.md。0.11 起上传与页面审核分开：首次只询问“是否上传当前版本到中央站点库，并标记为人工审核通过？”，用户对准确版本确认即代表人工审核完成。已有站使用 library prepare/push；用户要求推送新条目时使用 library prepare-new/push，直接连站点库，不需要 dsh_web 登录。新项目须使用新的项目与上传 ID，不恢复已删除站点、不覆盖旧条目；没有审核任务的成品用 prepare 冻结现有文件，已有任务直接 push。不得为上传执行 audit start/recheck/handoff、补 coverage、逐页截图或再次审核；不要求设计师填写 JSON。Agent 保存真实确认人、原话和候选，首次确认后直接入库并可下载。同一版本重试复用确认，内容或目标变化后确认新版本，已有明确等价授权不重复询问。文件完整性、站点身份、保护路径与版本冲突校验保留；不伪造自动测试通过。准确确认与私有待传记录可靠保存，历史版本不改写。上传不代表线上部署；经验仍通过其真实复验与确认规则处理。
 
-新站生成、授权重做或参考重建先读 `core/generation-default.md`、`core/creative-generation.md` 与 `core/creative-learning.md`，由 Agent 使用 `node bin/designer-automation.mjs generate` 统一入口：按真实站型准备隔离工作区和适用规则，调用宿主 Image 生成首页效果稿，再按页面职责实现真实全站并接入审核。设计师不选规则、不填 JSON。实际图稿、代码、浏览器和独立审核由 Agent 与工具执行；创建工作区不等于已经完成生成。设计师明确的满意点随实际图稿/候选记录，自动同步到团队创作参考，后续同站型、页面自动加载；不能把主观偏好当公共规则。原有生成门禁继续执行。
+新站生成、授权重做或参考重建先读 `core/generation-default.md`、`core/creative-generation.md` 与 `core/creative-learning.md`，由 Agent 使用 `node bin/sitefly-designer-automation.mjs generate` 统一入口：按真实站型准备隔离工作区和适用规则，调用宿主 Image 生成首页效果稿，再按页面职责实现真实全站并接入审核。设计师不选规则、不填 JSON。实际图稿、代码、浏览器和独立审核由 Agent 与工具执行；创建工作区不等于已经完成生成。设计师明确的满意点随实际图稿/候选记录，自动同步到团队创作参考，后续同站型、页面自动加载；不能把主观偏好当公共规则。原有生成门禁继续执行。
 
 维护先读 core/site-quality.md。Agent 使用 workbench inspect 从源码与浏览器判断站型，准备 siteType、页面/模块、选择器及内部配置，设计师不选规则、不填JSON。App/Games 的完整专项快照在 site-types，公共布局/留白/间距/对齐/容量在 knowledge/shared；Games 最新标准和可执行检测器一并加载。
 

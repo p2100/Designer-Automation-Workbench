@@ -17,9 +17,9 @@ test('the Agent entry exposes status updates without source preparation or deplo
   await assert.rejects(designerAutomation(['site-status','update','--owner-freeze','false']),/supported/);
 });
 
-test('automatic computer metadata contains hostname and release version without supplying a claimed IP',()=>{
+test('automatic computer metadata contains hostname and release version without supplying a claimed IP',async()=>{
   const headers=clientIdentityHeaders(),value=JSON.parse(Buffer.from(headers['X-Designer-Client'],'base64url').toString('utf8'));
-  assert.equal(value.hostname,hostname().slice(0,200));assert.equal(value.version,'0.14.2');assert.deepEqual(Object.keys(value).sort(),['hostname','version']);
+  assert.equal(value.hostname,hostname().slice(0,200));assert.equal(value.version,JSON.parse(await fs.readFile(new URL('../package.json',import.meta.url),'utf8')).version);assert.deepEqual(Object.keys(value).sort(),['hostname','version']);
 });
 
 test('an unconfirmed response preserves the exact private request for retry rather than silently replacing its revision',async t=>{

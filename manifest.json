@@ -3,11 +3,15 @@
   "files": [
     {
       "path": ".agents/skills/designer-automation/SKILL.md",
-      "sha256": "bddc13faf846409f9cab489354b9f3f6120bc33f14e0152dcda3b05db3614098"
+      "sha256": "67933ae3bda0d4559582e131a2517bd2e272e6d1b4f1a5d494125d52ce28335f"
     },
     {
       "path": ".agents/skills/penny-git-traceability/SKILL.md",
       "sha256": "5445da1ed119a0e7edfb1e59edc5fb2bac1d516aabcff9895eb06904dc382e91"
+    },
+    {
+      "path": ".agents/skills/sitefly-designer-automation/SKILL.md",
+      "sha256": "ed3c94a5edbc556e72e759b20c2decd3dda1e988b9fb21841dafec2040930dd1"
     },
     {
       "path": ".gitignore",
@@ -15,7 +19,7 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "af59abdcada925609a21cf7b5d6be638ad66fe84fbe424fe558ea58890e4b21a"
+      "sha256": "1ba8ad6571f1ceb25c4ddc10741271d14b7cef0e809374c21fb77ba0e75a689c"
     },
     {
       "path": "bin/automatic-layout.mjs",
@@ -98,6 +102,10 @@
       "sha256": "ed61886ab4ae11ca12d15d7f71279db8e9dd73cade6941bc722f17ee76b38504"
     },
     {
+      "path": "bin/sitefly-designer-automation.mjs",
+      "sha256": "6ee17d9ee8541f22880eaa862790d277e58edc26a6389a8a02c2484e68196e6e"
+    },
+    {
       "path": "bin/sites.mjs",
       "sha256": "c43c254b31c37894950aff06cdca7a6e59a71394a9e238fc586af603cb271171"
     },
@@ -163,11 +171,11 @@
     },
     {
       "path": "core/generation-default.md",
-      "sha256": "28640329261af8e44a4f3755b182c141cf9177d40bd1a11db028bb16b323d52e"
+      "sha256": "db37c862639e9aa22d2c6f35b95588ba8c6095472d7ae7d48eed55b7da50ecb1"
     },
     {
       "path": "core/git-source.md",
-      "sha256": "f94791a55706fce0ff48df4917bcb211259ba7d19a2b2d33c4a5788b58d9b4bf"
+      "sha256": "def5fd5ceb75964a7b627f60b208360abe32efa5ef5150a724924af012eda5a0"
     },
     {
       "path": "core/knowledge.md",
@@ -187,7 +195,7 @@
     },
     {
       "path": "core/site-status.md",
-      "sha256": "0fd5ef71065b2ada8661b1cbbf2ef96c444940523b214f4c01a3a3a049ee6dcd"
+      "sha256": "8ba63790db92b3d6957c89ddd8b8e4a729ab4399765e8d2e8edfaa192a9ccde9"
     },
     {
       "path": "core/start.md",
@@ -223,7 +231,7 @@
     },
     {
       "path": "docs/designer-quickstart.md",
-      "sha256": "205aba83295ee543e114511d77992d8d316f388704b12cb623bb64d16b61dfd4"
+      "sha256": "bf2f25995e699c3c954fa641e2ba975bd9acf093235f32c86b7e4176e8e271e8"
     },
     {
       "path": "docs/experience-operations.md",
@@ -235,7 +243,7 @@
     },
     {
       "path": "docs/site-library.md",
-      "sha256": "6794e451b44e5829fbd43885fd41552c0f7a438c2fa756652e4abb147dc41160"
+      "sha256": "09204d0a73bc71a9b151978593e24f6879d2295702c67c850f95228da2aded2b"
     },
     {
       "path": "docs/standalone-workbench.md",
@@ -703,7 +711,7 @@
     },
     {
       "path": "lib/git-source.mjs",
-      "sha256": "92f5f6c1ea28c91a4d365edac301d9a9543455d0331d101d9b9195e9909545b9"
+      "sha256": "06c98b6faba5227d22af35b698d2be6aa8660c3f7762ea340ee2ad29989acdc9"
     },
     {
       "path": "lib/io.mjs",
@@ -731,7 +739,7 @@
     },
     {
       "path": "lib/site-status.mjs",
-      "sha256": "745c0d569cb18a15c13d6cd8d534b739fd5a915dcfcba0f038a191174b688390"
+      "sha256": "2108c618ed875022634ba12298e4bcd4def3c6d1b3f2908bb54d4d16c77a042f"
     },
     {
       "path": "lib/team-creative.mjs",
@@ -743,15 +751,15 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "1b661637e7b044e5620fbd875525c6e47df7d5c09840efe9c3dc7da3ad2f8b45"
+      "sha256": "978caa07c5f1a1c7a02cbea8f3322b8ccfc3f71319185f71fb422adcae959f8d"
     },
     {
       "path": "package.json",
-      "sha256": "d5357320e30aad4f91a088a9fe5c681c164765a2a2d748cb49dcf12e4e07f925"
+      "sha256": "85d8d5ad2f750940d0fca4cab1ef5f5987ec829785971f5fab49d2a7f2a0b31e"
     },
     {
       "path": "README.md",
-      "sha256": "2df8b9b9cf5d7f9bb81fbfdd7b85eaa8f49ac8ebaf2915228126449dc5531abb"
+      "sha256": "812649b59ccc9121ae55dbbc4b804552d942c5c322ca379c225b9b863843d9b6"
     },
     {
       "path": "scripts/connect-experience.mjs",
@@ -1199,7 +1207,7 @@
     },
     {
       "path": "tests/site-status.test.mjs",
-      "sha256": "21ae7e5c16095afb29bdfe46636491f8f02ddca66ae6164ffa6232921c21db59"
+      "sha256": "9127dddba509d76998b7a7928a638688e38e8a6953a116cedd4e632e4392d448"
     },
     {
       "path": "tests/site-types.test.mjs",

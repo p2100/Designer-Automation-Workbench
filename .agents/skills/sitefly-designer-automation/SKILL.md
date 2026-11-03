@@ -1,0 +1,33 @@
+---
+name: sitefly-designer-automation
+description: Create, audit, repair and recheck Coupon, App and Games sites through one Agent entry, separate site rules, and scoped designer feedback. 支持私有 Git 建仓、真实 Pug 源码推送、改稿预览和中央站点库 Git 地址回写，以及上线状态和正式域名更新。
+---
+
+站点上线状态或正式域名回写：先读 `core/site-status.md`，使用 `node bin/sitefly-designer-automation.mjs site-status show|update|retry|clients`。开发人员已上线时可由本地 Agent 登记状态和正式地址并回传预览库，无需 Harness、源码上传或再次部署；明确授权不重复询问，保留真实操作者、说明、历史及既有冻结。
+
+调用电脑 IP、电脑名和最近使用记录：使用 `site-status clients --url PREVIEW_URL` 查询准确本站。连接中央站点库时自动登记，不要求设计师手填 IP。服务端 socket 地址为观测值，电脑名/软件版本是客户端自报；经过 NAT/代理可能为出口地址，不能将其当成唯一身份或离线电脑探测。
+
+
+站点建仓、Pug 源码推送和中央库 Git 地址回写：先读 core/git-source.md，使用统一 git-source 入口；无需 Harness。默认创建私有仓库，验证真实 Pug 后最后统一提交，远端核实后再回写。
+
+以本文件向上三级的 sitefly-designer-automation 为包根，读取 AGENTS.md 和 README.md。复制时携带整个包，不能只复制本 skill。
+
+用户要求本地改造后更新站点库时读取 docs/site-library.md。由 Agent 使用 bin/sitefly-designer-automation.mjs library 连接准确站点并获取可编辑源码，继续现有审核/修复；既有 ZIP/Git 任务先核对起点再绑定。本地 Agent 直接连接内网站点库，无需 Harness、登录或浏览器配对，不让设计师填写 JSON。如果库返回 formal-git-required，直接按 core/git-source.md 切换到 git-source 准备、调整与回传，不把它说成权限不足，也不重复询问已授权的调整。绑定任务获准确候选认可后自动回传，返回真实预览才报告已更新；pending/冲突保留原任务，不能覆盖其他更新或代替原生审核、下载与发布批准。
+
+用户要求审核/调整站点时，按 docs/designer-quickstart.md、core/site-quality.md、core/maintenance.md 使用 bin/workbench.mjs，由 Agent 检查实际源码与浏览器、判断站型并加载公共/专项规则：Git 用 `--repo`，本地源码用 `--source` 导入隔离副本；checkout一次，配置实际页面和源码范围，start审核，Agent实看问题后通过repair修复；读取同轮截图填写observe；确认实际覆盖后handoff给设计师查看。设计师反馈通过feedback保存，只有准确候选复验并获设计师明确确认后，才通过原 designer_experience MCP 自动共享适用经验；离线队列和补传照常，不让设计师手动发布。普通修复不用另做新站设计、重复克隆或每轮全站复验。所有命令的JSON由Agent准备，设计师只需自然语言要求和实际复核。
+
+用户要求新建/授权重做站点时，先读 core/generation-default.md、core/creative-generation.md、core/creative-learning.md，识别真实站型和渠道，以 `node bin/sitefly-designer-automation.mjs generate start --request <原需求> --site-type <coupon|app|games>` 准备私有独立工作区、冻结规则和匹配经验。站型由 Agent 根据实际需求与证据判断，模糊时继续核实；设计师不用选规则或填写 JSON。按返回 contexts 加载对应规则，调用宿主实际可用的 Image 能力生成并审看首页方向，使用 generate direction 登记实际图像；再按实际页面职责设计内页，在返回的 source 中实现真实页面。Agent 准备实际路由/选择器等内部审核配置，调用 generate review --action start 接入现有工作台，继续实际浏览器审核、集中修复与复查；原 Coupon 原生门禁继续执行。只有规则、空目录或图像不等于站点已生成或验收。
+
+设计师明确喜欢或否定某个实际图稿或页面的具体点时，Agent 如实摘取原话、页面、组件和可观察到的设计点：图稿通过 generate feedback 绑定已登记的实际方向，否定时用 sentiment=negative；工作台候选通过 feedback 的 creativeObservations 记录，单独表扬使用 decision=note，需调整时使用 revise，不替设计师批准整站。记录先本机保存并自动排队同步中央团队库；下一次同站型、同页面任务加载本机和团队创作参考；Agent 实际查看明确满意的图稿或对应候选截图后，按 core/creative-learning.md 提炼布局、间距、配色和组件等可观察的文字经验，并注明适用条件和看不到的内容；通过 Agent 内部 visual-spec 或 visualSpec 保存，不上传图片。无法查看时如实说明，不虚构。新任务按站型、页面和组件参考文字经验，不把其当成硬规则；明确纠正或撤回时使用 experience_manage inspect 后按 revision 操作，并保留原因和历史。不得编造满意、根因或跨站型复用；用户只说笼统 OK 时不捏造具体偏好。反馈摘录与观察作为主观创作参考，不能冒充正式审核结论；正式修复经验继续按 core/experience.md 的实际修复、复验及确认门禁执行。
+
+## 原 Coupon 生成分支
+
+下列原生生成门禁只用于 Coupon 合同；App/Games 生成使用上面的统一入口与各自专项，不能套 Coupon 业务尺寸。
+
+后续任务默认执行 core/quality.md「后续任务默认执行的设计标准」；用户无需重述历史对卡片、间距、层级、数字与分类、PC／手机构图的要求。作者先主动落实，审核按同一标准检查；具体本站设计保持自由，历史冻结版本按原契约。
+
+确定真实任务的页面族、模式与角色；用包根 bin/da.mjs context 选择知识。首页、详情和店铺各有适用范围，候选知识不自动启用。源码编辑使用真实项目路径，知识资源相对包根。
+
+按 core/workflow.md 制作、自检、独立整轮审核与返工；审核者先看实际页面，后读作者计划，使用候选冻结规则。能力从 systems 适配，缺失如实 not-run。配置/哈希校验不等于视觉通过，历史通过不继承。
+
+新增页面标准时用 templates/page-rule.md 和 knowledge/index.json，保留 observation/required/target/exception 及适用边界。

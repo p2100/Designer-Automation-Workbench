@@ -1,6 +1,6 @@
 # 在自己的 Agent 中接入 Pug Git 源码
 
-用户要求把站点接 Git、创建源码仓库、推送 Pug 或回写站点库源码地址时，走本流程。无需安装、登录或打开 Harness；直接使用本包 `node bin/designer-automation.mjs git-source` 和中央站点库地址。首次只需用户提供准确站点或预览 URL，Agent 识别项目。支持 `/v2/site-preview/ID/…`、`/v2/current/ID/…`、`/v2/preview/ID/…`。
+用户要求把站点接 Git、创建源码仓库、推送 Pug 或回写站点库源码地址时，走本流程。无需安装、登录或打开 Harness；直接使用本包 `node bin/sitefly-designer-automation.mjs git-source` 和中央站点库地址。首次只需用户提供准确站点或预览 URL，Agent 识别项目。支持 `/v2/site-preview/ID/…`、`/v2/current/ID/…`、`/v2/preview/ID/…`。
 
 ## 一次准备，持续调整
 
