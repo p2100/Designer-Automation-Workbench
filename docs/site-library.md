@@ -68,3 +68,7 @@ prepare-new 仅冻结现有文件，要求真实首页（默认 index.html；可
 ## 正式 Git 源码（0.14.0）
 
 要求建仓或推送源码时使用 [Pug Git 流程](../core/git-source.md)。正式接入后不再使用旧 `library pull` 设计包；用 `git-source prepare` 取得最新正式源码及未提交改稿，`verify/capture` 更新中央预览，最后统一提交并 `publish`。获取中央库连接与更新下载仍无需 Harness。
+
+## 上线状态与正式域名
+
+开发人员在外部完成部署后，使用 `site-status` 直接回传开发中、已上线或已下线状态和正式 HTTPS 域名。先读 [状态维护流程](../core/site-status.md)。此流程不上传文件、不执行部署、不修改 Git 地址或既有审核；断网可重试，版本冲突先核对再更新。

@@ -1,7 +1,10 @@
 ---
 name: designer-automation
-description: Create, audit, repair and recheck Coupon, App and Games sites through one Agent entry, separate site rules, and scoped designer feedback. 支持私有 Git 建仓、真实 Pug 源码推送、改稿预览和中央站点库 Git 地址回写。
+description: Create, audit, repair and recheck Coupon, App and Games sites through one Agent entry, separate site rules, and scoped designer feedback. 支持私有 Git 建仓、真实 Pug 源码推送、改稿预览和中央站点库 Git 地址回写，以及上线状态和正式域名更新。
 ---
+
+站点上线状态或正式域名回写：先读 `core/site-status.md`，使用 `node bin/designer-automation.mjs site-status show|update|retry`。开发人员已上线时可由本地 Agent 登记状态和正式地址并回传预览库，无需 Harness、源码上传或再次部署；明确授权不重复询问，保留真实操作者、说明、历史及既有冻结。
+
 
 站点建仓、Pug 源码推送和中央库 Git 地址回写：先读 core/git-source.md，使用统一 git-source 入口；无需 Harness。默认创建私有仓库，验证真实 Pug 后最后统一提交，远端核实后再回写。
 
