@@ -243,7 +243,7 @@
     },
     {
       "path": "docs/site-library.md",
-      "sha256": "09204d0a73bc71a9b151978593e24f6879d2295702c67c850f95228da2aded2b"
+      "sha256": "912cffa597627b492e1166ec319cb9c2432975d843fdad734a0b16e35c40bd25"
     },
     {
       "path": "docs/standalone-workbench.md",
@@ -699,7 +699,7 @@
     },
     {
       "path": "lib/feedback-delivery.mjs",
-      "sha256": "002a302f8b8747da8444c27f5a22cd8344ec32246765864521c1c0b344a55bef"
+      "sha256": "ed441aa826728586d3cec312845b72a77a5557fc831388908f4a0e7bcbc813e5"
     },
     {
       "path": "lib/generation.mjs",
@@ -719,7 +719,7 @@
     },
     {
       "path": "lib/library-client.mjs",
-      "sha256": "a3c1c52e11a7ab2e2556ea3964db78f4b4a04102f1c669942daf85ff219d1fbd"
+      "sha256": "53d19f41743502023dace1d5c23bb3251600d640510274087efa5fd76567fe66"
     },
     {
       "path": "lib/library-feedback.mjs",
@@ -751,15 +751,15 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "978caa07c5f1a1c7a02cbea8f3322b8ccfc3f71319185f71fb422adcae959f8d"
+      "sha256": "6462b0b7c827a216e2ccfc3f5a03fec70f139663ae71d8db4b6c52d4fcbb7383"
     },
     {
       "path": "package.json",
-      "sha256": "85d8d5ad2f750940d0fca4cab1ef5f5987ec829785971f5fab49d2a7f2a0b31e"
+      "sha256": "6af4e9bc8c9022e55f2899c1dd29fee597fe07a2e4f087b19dff4fca383972e6"
     },
     {
       "path": "README.md",
-      "sha256": "812649b59ccc9121ae55dbbc4b804552d942c5c322ca379c225b9b863843d9b6"
+      "sha256": "1d1bf47b001df08ce324a0c7e13c388570dab9b45f2270aa206cb65ed2bd9521"
     },
     {
       "path": "scripts/connect-experience.mjs",
