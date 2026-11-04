@@ -175,7 +175,7 @@
     },
     {
       "path": "core/git-source.md",
-      "sha256": "def5fd5ceb75964a7b627f60b208360abe32efa5ef5150a724924af012eda5a0"
+      "sha256": "3347b69dcb6bed007a354c03b3b08f4463a6183953aa1d50b82b87ffc91eb759"
     },
     {
       "path": "core/knowledge.md",
@@ -751,15 +751,15 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "6462b0b7c827a216e2ccfc3f5a03fec70f139663ae71d8db4b6c52d4fcbb7383"
+      "sha256": "51f4a612d8f13de73c83e31e9ef0b1b4f46ddb8bc3311b8d90c6ac348b5190a9"
     },
     {
       "path": "package.json",
-      "sha256": "6af4e9bc8c9022e55f2899c1dd29fee597fe07a2e4f087b19dff4fca383972e6"
+      "sha256": "891b388601dcb0cfeb471b37f7f14db7f556d7d145560dc35c4be3742e8f3d42"
     },
     {
       "path": "README.md",
-      "sha256": "1d1bf47b001df08ce324a0c7e13c388570dab9b45f2270aa206cb65ed2bd9521"
+      "sha256": "72821b99f94a9a52f0f72b3f30d2c659f1da325e94f8f1aa669c1985060edc1d"
     },
     {
       "path": "scripts/connect-experience.mjs",

@@ -1,6 +1,6 @@
 # sitefly-designer-automation
 
-面向设计师的站点工作台，支持 **Coupon、App、Games**。当前版本 **0.15.1**，原名 Designer-Automation。
+面向设计师的站点工作台，支持 **Coupon、App、Games**。当前版本 **0.15.2**，原名 Designer-Automation。
 
 ## 支持的功能
 
@@ -59,7 +59,7 @@ npm ci
 
 **本地成品上传 → 首次询问是否上传并标记人工审核通过 → 确认后直接入库、可下载。上传不启动页面检查，也不要求补齐审核任务。** 见[上传流程](docs/site-library.md)。
 
-项目版本 **0.15.1**；Games 专项规则包为 **3.2.11**，原 Coupon 生成规则快照固定为 **2026-10-26.1**。中央经验服务版本独立，以实际健康检查为准；原话检索工具需要服务端升级。正式仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
+项目版本 **0.15.2**；Games 专项规则包为 **3.2.11**，原 Coupon 生成规则快照固定为 **2026-10-26.1**。中央经验服务版本独立，以实际健康检查为准；原话检索工具需要服务端升级。正式仓库：[p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench)。
 
 正式源码继续通过 [p2100/Designer-Automation-Workbench](https://github.com/p2100/Designer-Automation-Workbench) 分发；产品和技能使用新名称 sitefly-designer-automation，已有克隆可通过原地址直接更新。
 

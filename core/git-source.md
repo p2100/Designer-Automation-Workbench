@@ -13,7 +13,7 @@
 
 ## 最后统一提交、推送、登记
 
-7. 加载 `penny-git-traceability`（优先本机最新技能；未安装时读取随包 `.agents/skills/penny-git-traceability/SKILL.md` 完整快照，Penny MCP 使用设计师自己的授权连接），解析准确有效任务；未指定先查 assigned_to_me、related_to_me 和范围搜索，无准确任务则创建。已有用户授权不重复询问。缺少 Penny 能力时不伪造任务。只在实际 `project/` 初始化/操作 Git，先确认 `git rev-parse --show-toplevel`，不要误把父目录作为仓库。新仓默认 `htmlFun_dev`；已有来源保持真实分支和历史。排除编译产物、依赖、缓存、私有配置，暂存检查至少 `git diff --cached --check`。
+7. 加载 `penny-git-traceability`（优先本机最新技能；未安装时读取随包 `.agents/skills/penny-git-traceability/SKILL.md` 完整快照，Penny MCP 使用设计师自己的授权连接），解析准确有效任务；未指定先查 assigned_to_me、related_to_me 和范围搜索，无准确任务则创建。已有用户授权不重复询问。缺少 Penny 能力时不伪造任务。只在实际 `project/` 初始化/操作 Git，先确认 `git rev-parse --show-toplevel`，不要误把父目录作为仓库。新站首次接入由中央站点库默认选择小写 `main`；已有来源保持已登记分支和历史，切换分支前先合并目标历史并重新登记。排除编译产物、依赖、缓存、私有配置，暂存检查至少 `git diff --cached --check`。
 8. 全部改完后创建一次授权提交，精确 trailer `Penny: TASK_ID`。核对完整提交 SHA 和提交信息，写入 Penny 开发记录。运行 `git-source publish --id PLAN_ID`：推送准确分支，核对远端 SHA，并向中央库登记。若已由 Agent 推送，用 `git-source register --id PLAN_ID`。程序不会替 Agent 创建未关联 Penny 的提交。
 9. 中央库核对准确项目/版本、真实 Pug 结构、四项客户端构建回执、私有仓库、分支、远端 Git 对象中的完整源码、Penny trailer 和原历史后，登记源码快照、Git 地址、提交与 `git-connected` 状态。中央库不执行上传来的代码。连接令牌只保存在本机私有 `.designer-data`，限定本站和 Git 用途；不经 Harness，也不进入源码/分发包。断网后源码和待登记记录保留，同一 `publish/register` 可幂等重试；他人更新或冻结会拒绝旧起点，必须先合并。
 10. 记录最终远端与登记回执到 Penny，分别报告 Pug 构建、浏览器实看、Git 推送、中央库回写和域名部署。Git 接入不部署域名、不修改 DNS、不扩大设计认可、不写共享经验。不得声称别的设计师电脑已更新或已通过，除非真实验证了该机器/版本。
