@@ -175,7 +175,7 @@
     },
     {
       "path": "core/git-source.md",
-      "sha256": "b7a793d43079a32f2a3dae2cf98674f9b42f8acb6b163f96f96f7c0bc71a6021"
+      "sha256": "456f5bb4df299ee4c8d4ed97f09f5e1bb95942bc1eb5f87b54a1d82bb12e30bf"
     },
     {
       "path": "core/knowledge.md",
@@ -711,7 +711,7 @@
     },
     {
       "path": "lib/git-source.mjs",
-      "sha256": "8419fc8a50657ada55b0d1943c5359a4ddd8566ac18a81f3a7ae02829583db3f"
+      "sha256": "7c6ffc67b1a9ae0259ae7a07666cd529d27178e528fd1224171f3c6b3c8c16ea"
     },
     {
       "path": "lib/io.mjs",
@@ -751,15 +751,15 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "d12c6e73126901cc1550b4849c47e47ea79e10e52ef5c17c9c526b08fa0035f4"
+      "sha256": "4a2859dcd7d99bf438862563c279ddcc48e4e3436228829a126b5c8d49588d91"
     },
     {
       "path": "package.json",
-      "sha256": "78f3fb7ad392acf1fd0ea5e9708c20ba12104171590d86cbc0cb4ff9f7a0c91d"
+      "sha256": "5c57bcfae271f971684dd9a0cb1588708cb4e919997e495658cab88683d4ef8c"
     },
     {
       "path": "README.md",
-      "sha256": "29a11d74517d3e89f6d839ac65bbbdcbfb5bf32f7e7e8eefc9105b04ebb7881f"
+      "sha256": "1dbb595ef1de0d31643014bd280d600e88d2e51ca1cd5893bbbfc64f7a8c7345"
     },
     {
       "path": "scripts/connect-experience.mjs",
